@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 final internal class WebService {
     private let session = URLSession(configuration: .default)
     private let baseURL = URL(string: "https://node.winatpodium.com")!

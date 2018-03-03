@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */; };
+		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
+		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
+		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
 		E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 		330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podium_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
+		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */,
 				B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +56,7 @@
 		12383E012ABCEB5B191E49AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E02F5BDD204B022000531033 /* RxSwift.framework */,
 				4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */,
 			);
 			name = Frameworks;
@@ -59,6 +69,29 @@
 				A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E02F5BE0204B067900531033 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E02F5BE5204B06A100531033 /* User.swift */,
+				E02F5BE7204B088000531033 /* Tournament.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E02F5BE1204B067E00531033 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E02F5BE2204B068600531033 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		E0DAB9ED2047FF0A00AA3A77 = {
@@ -83,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */,
+				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
 				E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
@@ -116,6 +150,9 @@
 		E0DABA0D204838EF00AA3A77 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E02F5BE2204B068600531033 /* Utilities */,
+				E02F5BE1204B067E00531033 /* Resources */,
+				E02F5BE0204B067900531033 /* Domain */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -244,12 +281,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +299,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
+				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
+				E02F5BE6204B06A100531033 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

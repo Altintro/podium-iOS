@@ -9,7 +9,6 @@
 import Foundation
 
 internal enum Endpoint {
-    case configuration
     case tournaments(query: String)
     case users(query: String)
     case games(query: String)
@@ -44,8 +43,6 @@ private enum HTTPMethod: String {
 private extension Endpoint {
     var method: HTTPMethod {
         switch self {
-        case .configuration:
-            return .get
         case .users:
             return .get
         case .tournaments:
@@ -58,13 +55,10 @@ private extension Endpoint {
             return .get
         case .game:
             return .get
-        }
     }
     
     var path: String {
         switch self {
-        case .configuration:
-            return "configuration"
         case .users:
             return "users"
         case .tournaments:
@@ -77,13 +71,10 @@ private extension Endpoint {
             return "users/\(identifier)"
         case .game(let identifier):
             return "games/\(identifier)"
-        }
     }
     
     var parameters: [String:String] {
         switch self {
-        case .configuration:
-            return [:]
         case .users(let query):
             return ["query": query]
         case .tournaments(let query):
@@ -96,6 +87,5 @@ private extension Endpoint {
             return [:]
         case .game:
             return [:]
-        }
     }
 }
