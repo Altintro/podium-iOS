@@ -19,12 +19,12 @@ struct User: Decodable {
     let longitude: Float
     // let ranking
     // let points
-    let interests: [Sport]
-    let emblems : [Emblem]
-    let played : [Tournament]
-    let playing : [Tournament]
-    let won : [Tournament]
-    let upcoming: [Tournament]
+//    let interests: [Sport]
+//    let emblems : [Emblem]
+//    let played : [Tournament]
+//    let playing : [Tournament]
+//    let won : [Tournament]
+//    let upcoming: [Tournament]
 }
 
 

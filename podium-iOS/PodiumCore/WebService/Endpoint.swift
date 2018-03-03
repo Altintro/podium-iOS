@@ -55,6 +55,7 @@ private extension Endpoint {
             return .get
         case .game:
             return .get
+        }
     }
     
     var path: String {
@@ -71,6 +72,7 @@ private extension Endpoint {
             return "users/\(identifier)"
         case .game(let identifier):
             return "games/\(identifier)"
+        }
     }
     
     var parameters: [String:String] {
@@ -87,5 +89,6 @@ private extension Endpoint {
             return [:]
         case .game:
             return [:]
+    }
     }
 }
