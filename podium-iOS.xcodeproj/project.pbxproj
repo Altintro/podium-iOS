@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
 		E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
 		E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */; };
+		E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABA102048392400AA3A77 /* Endpoint.swift */; };
+		E0DABA152048393400AA3A77 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABA142048393400AA3A77 /* WebService.swift */; };
+		E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABA162048393D00AA3A77 /* WebServiceAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podium_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0DABA002047FF0A00AA3A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0DABA032047FF0A00AA3A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0DABA052047FF0A00AA3A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0DABA102048392400AA3A77 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E0DABA142048393400AA3A77 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		E0DABA162048393D00AA3A77 /* WebServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebServiceAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12383E012ABCEB5B191E49AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D60299770D1E8E2A7F54FE1A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */,
+				A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E0DAB9ED2047FF0A00AA3A77 = {
 			isa = PBXGroup;
 			children = (
 				E0DAB9F82047FF0A00AA3A77 /* podium-iOS */,
 				E0DAB9F72047FF0A00AA3A77 /* Products */,
+				D60299770D1E8E2A7F54FE1A /* Pods */,
+				12383E012ABCEB5B191E49AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,8 +87,51 @@
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
 				E0DABA052047FF0A00AA3A77 /* Info.plist */,
+				E0DABA0B204838BD00AA3A77 /* PodiumCore */,
 			);
 			path = "podium-iOS";
+			sourceTree = "<group>";
+		};
+		E0DABA0B204838BD00AA3A77 /* PodiumCore */ = {
+			isa = PBXGroup;
+			children = (
+				E0DABA0C204838DB00AA3A77 /* WebService */,
+				E0DABA0D204838EF00AA3A77 /* Common */,
+				E0DABA0E204838F400AA3A77 /* DI */,
+				E0DABA0F204838F800AA3A77 /* Config */,
+			);
+			path = PodiumCore;
+			sourceTree = "<group>";
+		};
+		E0DABA0C204838DB00AA3A77 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				E0DABA102048392400AA3A77 /* Endpoint.swift */,
+				E0DABA142048393400AA3A77 /* WebService.swift */,
+				E0DABA162048393D00AA3A77 /* WebServiceAssembly.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		E0DABA0D204838EF00AA3A77 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E0DABA0E204838F400AA3A77 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		E0DABA0F204838F800AA3A77 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -68,9 +141,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0DABA082047FF0A00AA3A77 /* Build configuration list for PBXNativeTarget "podium-iOS" */;
 			buildPhases = (
+				909B077B193AD8EEF6649B79 /* [CP] Check Pods Manifest.lock */,
 				E0DAB9F22047FF0A00AA3A77 /* Sources */,
 				E0DAB9F32047FF0A00AA3A77 /* Frameworks */,
 				E0DAB9F42047FF0A00AA3A77 /* Resources */,
+				F91EE7CAE2744A98182FAD9A /* [CP] Embed Pods Frameworks */,
+				DD059243C23A7D7D7A6AB2E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -127,13 +203,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		909B077B193AD8EEF6649B79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-podium-iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD059243C23A7D7D7A6AB2E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F91EE7CAE2744A98182FAD9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E0DAB9F22047FF0A00AA3A77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */,
+				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
+				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
+				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +395,7 @@
 		};
 		E0DABA092047FF0A00AA3A77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -275,6 +411,7 @@
 		};
 		E0DABA0A2047FF0A00AA3A77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
