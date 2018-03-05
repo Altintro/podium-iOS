@@ -12,7 +12,7 @@ struct Emblem: Decodable {
     
     let id              : String
     let name            : String
-    //let sigil           : UIImage  //UIImage is not decodable
+    let sigil           : String
     let description     : String
     let requirements    : String
     let users           : [User]

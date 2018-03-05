@@ -8,19 +8,13 @@
 
 import Foundation
 
-struct Game : Decodable, Hashable {
-    
-    var hashValue: Int
-    
-    static func ==(lhs: Game, rhs: Game) -> Bool {
-        return lhs.id == rhs.id
-    }
-    
+struct Game : Decodable {
+
     let id          : String
     let tournament  : Tournament
     let oponents    : [Team]
-    let wins        : Team
-    let loses       : Team
+    let winner      : Team?
+    let loser       : Team?
     let concluded   : Bool
-    let date        : Date
+    let date        : String
 }

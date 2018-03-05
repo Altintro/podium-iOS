@@ -10,8 +10,7 @@ import Foundation
 
 struct Clasification : Decodable {
     
-    let id          : String
-    let chart       : [Game:Int]
-    let compType    : CompType
-    //let tournament  : Tournament     // Cannot have recursive reference to tournamente that has a reference to Clasification, anyway we dont need it ??
+    let game    : Game
+    let round   : Int
+    let match   : Int
 }

@@ -13,5 +13,5 @@ struct Team : Decodable {
     let id          : String
     let players     : [User]
     let name        : String
-    let image       : String  //Has to be String to put the imageUrl and get it from the server
+    let image       : String
 }

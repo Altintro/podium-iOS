@@ -16,18 +16,18 @@ struct User: Decodable {
     let email       : String
     let image       : String
     let gender      : String
-    let birthdate   : Date
+    let birthdate   : String
     let latitude    : Float
     let longitude   : Float
-    let interests   : [ActivitySport]
+    let interests   : [Sport]
     let emblems     : [Emblem]
     let played      : [Tournament]
     let playing     : [Tournament]
     let won         : [Tournament]
     let upcoming    : [Tournament]
     
-    // let ranking
-    // let points
+    // let ranking  : Int
+    // let points   : Float
 }
 
 
