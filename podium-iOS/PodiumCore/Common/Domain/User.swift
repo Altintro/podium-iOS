@@ -9,22 +9,25 @@
 import Foundation
 
 struct User: Decodable {
-    let name: String
-    let userName: String
-    let email: String
-    let image: String
-    let gender: String
-    let birthdate: Date
-    let latitude: Float
-    let longitude: Float
+    
+    let id          : String
+    let name        : String
+    let alias       : String
+    let email       : String
+    let image       : String
+    let gender      : String
+    let birthdate   : Date
+    let latitude    : Float
+    let longitude   : Float
+    let interests   : [ActivitySport]
+    let emblems     : [Emblem]
+    let played      : [Tournament]
+    let playing     : [Tournament]
+    let won         : [Tournament]
+    let upcoming    : [Tournament]
+    
     // let ranking
     // let points
-//    let interests: [Sport]
-//    let emblems : [Emblem]
-//    let played : [Tournament]
-//    let playing : [Tournament]
-//    let won : [Tournament]
-//    let upcoming: [Tournament]
 }
 
 
