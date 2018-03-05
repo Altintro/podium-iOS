@@ -10,11 +10,11 @@ import Foundation
 
 struct Game : Decodable {
 
-    let id          : String
-    let tournament  : Tournament
-    let oponents    : [Team]
-    let winner      : Team?
-    let loser       : Team?
-    let concluded   : Bool
-    let date        : String
+    let id              : String
+    let tournament      : Tournament
+    let participants    : [Team]
+    let wins            : Team?
+    let loses           : Team?
+    let concluded       : Bool
+    let date            : String
 }

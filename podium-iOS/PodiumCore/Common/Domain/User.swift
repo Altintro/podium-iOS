@@ -25,8 +25,7 @@ struct User: Decodable {
     let playing     : [Tournament]
     let won         : [Tournament]
     let upcoming    : [Tournament]
-    
-    // let ranking  : Int
+    //let ranking     : [Ranking]
     // let points   : Float
 }
 

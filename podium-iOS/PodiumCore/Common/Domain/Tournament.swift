@@ -12,9 +12,9 @@ struct Tournament: Decodable {
     
     let id              : String
     let name            : String
-    let activitySport   : Sport
+    let sport           : Sport
     let compType        : CompType
-    let oponents        : [Team]
+    let participants    : [Team]
     let players         : [User]
     let levelAverage    : Level
     let starts          : String

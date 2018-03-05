@@ -10,13 +10,13 @@ import Foundation
 
 enum Level : Int, Decodable {
     
-    case Novice
-    case Rookie
-    case Beginner
-    case Talented
-    case Intermediate
-    case Experienced
-    case Advanced
-    case Expert
-    case Master
+    case novice
+    case rookie
+    case beginner
+    case talented
+    case intermediate
+    case experienced
+    case advanced
+    case expert
+    case master
 }

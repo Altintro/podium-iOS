@@ -10,6 +10,6 @@ import Foundation
 
 enum Sides : Int, Decodable {
     
-    case Team
-    case Individual
+    case team
+    case individual
 }

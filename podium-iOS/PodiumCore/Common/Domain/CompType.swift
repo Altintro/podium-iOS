@@ -10,6 +10,6 @@ import Foundation
 
 enum CompType : Int, Decodable {
     
-    case Knockout
-    case League
+    case knockout
+    case league
 }
