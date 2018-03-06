@@ -14,8 +14,8 @@ struct Tournament: Decodable {
     let name            : String
     let sport           : Sport
     let compType        : CompType
-    let participants    : [Team]
     let players         : [User]
+    let participants    : [Team]
     let levelAverage    : Level
     let starts          : String
     let finishes        : String
@@ -23,5 +23,5 @@ struct Tournament: Decodable {
     let latitude        : Float
     let longitude       : Float
     let open            : Bool
-    // let rankPoints      : Float
+    // let points
 }
