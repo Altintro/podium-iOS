@@ -11,6 +11,8 @@ import Foundation
 struct Game : Decodable {
 
     let id              : String
+    let name            : String
+    let sport           : Sport
     let tournament      : Tournament
     let participants    : [Team]
     let wins            : Team?
