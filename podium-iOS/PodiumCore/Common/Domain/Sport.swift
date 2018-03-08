@@ -17,7 +17,7 @@ struct Sport: Decodable {
     let ranking             : [User]
     let rules               : String
     let popularity          : Float
-    let sides               : Sides
+    let modality            : Modality
     let activeTournaments   : [Tournament]
     let openTournaments     : [Tournament]
 }
