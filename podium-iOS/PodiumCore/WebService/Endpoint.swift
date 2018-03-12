@@ -9,26 +9,27 @@
 import Foundation
 
 internal enum Endpoint {
-    case tournaments(query: String)
-    case users(query: String)
-    case games(query: String)
-    case user(identifier: String)
-    case tournament(identifier: String)
-    case game(identifier: String)
+    case register (user: [String: String])
+    case login (user: [String: String])
+    case tournaments (query: String)
+    case users (query: String)
+    case games (query: String)
 }
 
 internal extension Endpoint {
-    func request(with baseURL: URL, adding parameters: [String: String])-> URLRequest {
+    func request(with baseURL: URL)-> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         
-        var newParameters = self.parameters
-        parameters.forEach { newParameters.updateValue($1, forKey: $0)}
-        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)!
-        components.queryItems = newParameters.map(URLQueryItem.init)
+        components.queryItems = parameters.map(URLQueryItem.init)
+        
+        let body = try! JSONSerialization.data(withJSONObject: self.body,
+                                          options: .prettyPrinted)
+        
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
+        request.httpBody = body
         
         return request
     }
@@ -43,52 +44,61 @@ private enum HTTPMethod: String {
 private extension Endpoint {
     var method: HTTPMethod {
         switch self {
+        case .register:
+            return .post
+        case .login:
+            return .post
         case .users:
             return .get
         case .tournaments:
             return .get
         case .games:
-            return .get
-        case .tournament:
-            return .get
-        case .user:
-            return .get
-        case .game:
             return .get
         }
     }
     
     var path: String {
         switch self {
+        case .register:
+            return "auth/register"
+        case .login:
+            return "auth/login"
         case .users:
             return "users"
         case .tournaments:
             return "tournaments"
         case .games:
             return "games"
-        case .tournament(let identifier):
-            return "tournaments/\(identifier)"
-        case .user(let identifier):
-            return "users/\(identifier)"
-        case .game(let identifier):
-            return "games/\(identifier)"
         }
     }
     
     var parameters: [String:String] {
         switch self {
+        case .register:
+            return [:]
+        case .login:
+            return [:]
         case .users(let query):
             return ["query": query]
         case .tournaments(let query):
             return ["query": query]
         case .games(let query):
             return ["query": query]
-        case .tournament:
-            return [:]
-        case .user:
-            return [:]
-        case .game:
-            return [:]
+        }
     }
+    
+    var body: [String: String] {
+        switch self {
+        case .register(let user):
+            return user
+        case .login(let user):
+            return user
+        case .users:
+            return [:]
+        case .games:
+            return [:]
+        case .tournaments:
+            return [:]
+        }
     }
 }
