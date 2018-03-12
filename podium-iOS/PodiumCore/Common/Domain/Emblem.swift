@@ -15,5 +15,5 @@ struct Emblem: Decodable {
     let sigil           : String
     let description     : String
     let requirements    : String
-    let users           : [User]
+    let users           : [User]?
 }

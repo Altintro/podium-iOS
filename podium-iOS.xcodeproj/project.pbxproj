@@ -22,6 +22,7 @@
 		E0852C94204E01A2002A4A81 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C93204E01A2002A4A81 /* Sport.swift */; };
 		E0852C96204E056E002A4A81 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C95204E056E002A4A81 /* Gender.swift */; };
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
+		E0A52295205706970024D612 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A52294205706970024D612 /* Facebook.swift */; };
 		E0AFB833205139EA000E07D4 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFB832205139EA000E07D4 /* Modality.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
+		E0A52294205706970024D612 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		E0AFB832205139EA000E07D4 /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,15 +99,16 @@
 				E02F5BE5204B06A100531033 /* User.swift */,
 				E02F5BE7204B088000531033 /* Tournament.swift */,
 				DB77C1A2204DD16A005174FA /* Emblem.swift */,
-				DB77C1A4204DD7F8005174FA /* CompType.swift */,
 				DB77C1A6204DD828005174FA /* Team.swift */,
 				DB77C1A8204DD837005174FA /* Game.swift */,
-				DB77C1AA204DD843005174FA /* Level.swift */,
 				DB77C1AC204DD856005174FA /* Clasification.swift */,
 				E0852C93204E01A2002A4A81 /* Sport.swift */,
-				E0852C95204E056E002A4A81 /* Gender.swift */,
 				E0852C9B204E06E3002A4A81 /* UserRanking.swift */,
+				E0A52294205706970024D612 /* Facebook.swift */,
+				DB77C1AA204DD843005174FA /* Level.swift */,
+				E0852C95204E056E002A4A81 /* Gender.swift */,
 				E0AFB832205139EA000E07D4 /* Modality.swift */,
+				DB77C1A4204DD7F8005174FA /* CompType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
+				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
 				E0852C96204E056E002A4A81 /* Gender.swift in Sources */,
 			);
