@@ -14,6 +14,7 @@
 		DB77C1A9204DD837005174FA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A8204DD837005174FA /* Game.swift */; };
 		DB77C1AB204DD843005174FA /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AA204DD843005174FA /* Level.swift */; };
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
+		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		DB848A252055B29400CE047C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB848A242055B14700CE047C /* GoogleService-Info.plist */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
@@ -22,9 +23,9 @@
 		E0852C94204E01A2002A4A81 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C93204E01A2002A4A81 /* Sport.swift */; };
 		E0852C96204E056E002A4A81 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C95204E056E002A4A81 /* Gender.swift */; };
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
+		E0A52295205706970024D612 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A52294205706970024D612 /* Facebook.swift */; };
 		E0AFB833205139EA000E07D4 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFB832205139EA000E07D4 /* Modality.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
-		E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
 		E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */; };
 		E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DABA102048392400AA3A77 /* Endpoint.swift */; };
@@ -42,6 +43,7 @@
 		DB77C1A8204DD837005174FA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DB77C1AA204DD843005174FA /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
+		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		DB848A242055B14700CE047C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
@@ -50,10 +52,10 @@
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
+		E0A52294205706970024D612 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		E0AFB832205139EA000E07D4 /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0DABA002047FF0A00AA3A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E0DABA032047FF0A00AA3A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E0DABA052047FF0A00AA3A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,15 +101,16 @@
 				E02F5BE5204B06A100531033 /* User.swift */,
 				E02F5BE7204B088000531033 /* Tournament.swift */,
 				DB77C1A2204DD16A005174FA /* Emblem.swift */,
-				DB77C1A4204DD7F8005174FA /* CompType.swift */,
 				DB77C1A6204DD828005174FA /* Team.swift */,
 				DB77C1A8204DD837005174FA /* Game.swift */,
-				DB77C1AA204DD843005174FA /* Level.swift */,
 				DB77C1AC204DD856005174FA /* Clasification.swift */,
 				E0852C93204E01A2002A4A81 /* Sport.swift */,
-				E0852C95204E056E002A4A81 /* Gender.swift */,
 				E0852C9B204E06E3002A4A81 /* UserRanking.swift */,
+				E0A52294205706970024D612 /* Facebook.swift */,
+				DB77C1AA204DD843005174FA /* Level.swift */,
+				E0852C95204E056E002A4A81 /* Gender.swift */,
 				E0AFB832205139EA000E07D4 /* Modality.swift */,
+				DB77C1A4204DD7F8005174FA /* CompType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -149,7 +152,6 @@
 			children = (
 				E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */,
 				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
-				E0DAB9FB2047FF0A00AA3A77 /* ViewController.swift */,
 				DB848A242055B14700CE047C /* GoogleService-Info.plist */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
@@ -193,6 +195,7 @@
 		E0DABA0E204838F400AA3A77 /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				E01B1B012053082A007C6016 /* CoreAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -341,16 +344,17 @@
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
-				E0DAB9FC2047FF0A00AA3A77 /* ViewController.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
 				DB77C1AB204DD843005174FA /* Level.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
+				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
+				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
 				E0852C96204E056E002A4A81 /* Gender.swift in Sources */,
 			);

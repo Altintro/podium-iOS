@@ -14,14 +14,15 @@ struct Tournament: Decodable {
     let name            : String
     let sport           : Sport
     let compType        : CompType
-    let players         : [User]
-    let participants    : [Team]
-    let levelAverage    : Level
+    let players         : [User]?
+    let participants    : [Team]?
+    let levelAverage    : Level?
+    let modality        : Modality
     let starts          : String
     let finishes        : String
-    let clasification   : [Clasification]
-    let latitude        : Float
-    let longitude       : Float
+    let clasification   : [Clasification]?
+    let latitude        : Float?
+    let longitude       : Float?
     let open            : Bool
-    // let points
+    let points          : Float?
 }
