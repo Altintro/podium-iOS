@@ -30,21 +30,16 @@ final class AuthenticationPresenter {
         // Make Logic for User Registration
     }
     
-    func didTapRegister() {
-        // Dummy
-        let dummyRegistration = ["name":"dummyName",
-                                 "alias":"ddummyAlias",
-                                 "email":"ddummyEmail",
-                                 "pass":"ddummyPass"]
-        
-        interactor.registerUser(userRegistration: dummyRegistration)
+    func didTapRegister(info:[String:String]) {
+
+        interactor.registerUser(userRegistration: info)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] _ in
                 guard let `self` = self else {
                     return
                 }
                     print("Success")
-                self.userDidRegister()
+                    self.userDidRegister()
                 }, onError: { error in
                     print("Error")
                 }, onDisposed: { [weak self] in

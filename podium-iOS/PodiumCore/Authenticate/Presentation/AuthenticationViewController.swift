@@ -11,11 +11,21 @@ import UIKit
 import RxSwift
 
 class AuthenticationViewController: UIViewController {
-
+    
+    // MARK: Outlets
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var userNameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passField: UITextField!
+    
     // MARK: Actions
     
     @IBAction func registerButtonTapped(_ sender: Any) {
-        presenter.didTapRegister()
+        let userInfo = ["name": self.nameField.text ?? "",
+                       "alias": self.userNameField.text ?? "",
+                       "email": self.emailField.text ?? "",
+                        "pass": self.passField.text ?? ""]
+        presenter.didTapRegister(info: userInfo)
     }
     
     // MARK: Properties
