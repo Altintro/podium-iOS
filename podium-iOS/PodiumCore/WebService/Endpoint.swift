@@ -26,11 +26,10 @@ internal extension Endpoint {
         let body = try! JSONSerialization.data(withJSONObject: self.body,
                                           options: .prettyPrinted)
         
-        
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
         request.httpBody = body
-        
+        headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         return request
     }
 }
@@ -60,9 +59,9 @@ private extension Endpoint {
     var path: String {
         switch self {
         case .register:
-            return "auth/register"
+            return "users/register"
         case .login:
-            return "auth/login"
+            return "users/login"
         case .users:
             return "users"
         case .tournaments:
@@ -93,6 +92,21 @@ private extension Endpoint {
             return user
         case .login(let user):
             return user
+        case .users:
+            return [:]
+        case .games:
+            return [:]
+        case .tournaments:
+            return [:]
+        }
+    }
+    
+    var headers: [String: String] {
+        switch self {
+        case .register:
+            return ["Content-Type": "application/json"]
+        case .login:
+            return ["Content-Type": "application/json"]
         case .users:
             return [:]
         case .games:

@@ -25,6 +25,12 @@
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
 		E0A52295205706970024D612 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A52294205706970024D612 /* Facebook.swift */; };
 		E0AFB833205139EA000E07D4 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFB832205139EA000E07D4 /* Modality.swift */; };
+		E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */; };
+		E0D18F4620599C1000F8BD80 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */; };
+		E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */; };
+		E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */; };
+		E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */; };
+		E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
 		E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */; };
@@ -54,6 +60,12 @@
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
 		E0A52294205706970024D612 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		E0AFB832205139EA000E07D4 /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
+		E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAssembly.swift; sourceTree = "<group>"; };
+		E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
+		E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
+		E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DABA002047FF0A00AA3A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,6 +141,59 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		E0D18F3B20599AD300F8BD80 /* Authenticate */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4020599B2800F8BD80 /* Presentation */,
+				E0D18F3F20599B2000F8BD80 /* Domain */,
+				E0D18F3E20599B1B00F8BD80 /* DI */,
+				E0D18F3D20599B1500F8BD80 /* Navigators */,
+				E0D18F3C20599AF700F8BD80 /* Interactors */,
+			);
+			path = Authenticate;
+			sourceTree = "<group>";
+		};
+		E0D18F3C20599AF700F8BD80 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		E0D18F3D20599B1500F8BD80 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		E0D18F3E20599B1B00F8BD80 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		E0D18F3F20599B2000F8BD80 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		E0D18F4020599B2800F8BD80 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */,
+				E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */,
+				E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
 		E0DAB9ED2047FF0A00AA3A77 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +229,7 @@
 		E0DABA0B204838BD00AA3A77 /* PodiumCore */ = {
 			isa = PBXGroup;
 			children = (
+				E0D18F3B20599AD300F8BD80 /* Authenticate */,
 				E0DABA0C204838DB00AA3A77 /* WebService */,
 				E0DABA0D204838EF00AA3A77 /* Common */,
 				E0DABA0E204838F400AA3A77 /* DI */,
@@ -269,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
 				DB848A252055B29400CE047C /* GoogleService-Info.plist in Resources */,
@@ -343,20 +410,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
+				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
+				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
+				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
 				DB77C1AB204DD843005174FA /* Level.swift in Sources */,
+				E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
+				E0D18F4620599C1000F8BD80 /* AuthenticationInteractor.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
 				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
