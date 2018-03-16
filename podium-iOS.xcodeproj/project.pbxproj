@@ -14,7 +14,7 @@
 		DB77C1A9204DD837005174FA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A8204DD837005174FA /* Game.swift */; };
 		DB77C1AB204DD843005174FA /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AA204DD843005174FA /* Level.swift */; };
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
-		DB848A252055B29400CE047C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB848A242055B14700CE047C /* GoogleService-Info.plist */; };
+		DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB91B35E205B05E800B229BE /* GoogleService-Info.plist */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
@@ -49,7 +49,7 @@
 		DB77C1A8204DD837005174FA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DB77C1AA204DD843005174FA /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
-		DB848A242055B14700CE047C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB91B35E205B05E800B229BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
@@ -217,8 +217,8 @@
 			children = (
 				E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */,
 				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
-				DB848A242055B14700CE047C /* GoogleService-Info.plist */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
+				DB91B35E205B05E800B229BE /* GoogleService-Info.plist */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
 				E0DABA052047FF0A00AA3A77 /* Info.plist */,
 				E0DABA0B204838BD00AA3A77 /* PodiumCore */,
@@ -338,7 +338,7 @@
 				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
-				DB848A252055B29400CE047C /* GoogleService-Info.plist in Resources */,
+				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,7 +567,7 @@
 				INFOPLIST_FILE = "podium-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keepcoding.podium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.podium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -584,7 +584,7 @@
 				INFOPLIST_FILE = "podium-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.keepcoding.podium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.podium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
