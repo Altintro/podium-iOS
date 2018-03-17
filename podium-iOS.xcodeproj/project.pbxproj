@@ -20,6 +20,8 @@
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
 		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
 		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
+		E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */; };
+		E05107BF205D966F001836D4 /* aqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BE205D966F001836D4 /* aqua.ttf */; };
 		E0852C94204E01A2002A4A81 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C93204E01A2002A4A81 /* Sport.swift */; };
 		E0852C96204E056E002A4A81 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C95204E056E002A4A81 /* Gender.swift */; };
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
@@ -55,6 +57,8 @@
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E05107BE205D966F001836D4 /* aqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aqua.ttf; sourceTree = "<group>"; };
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
@@ -130,6 +134,8 @@
 		E02F5BE1204B067E00531033 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E05107BE205D966F001836D4 /* aqua.ttf */,
+				E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -337,7 +343,9 @@
 			files = (
 				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
+				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
+				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
 				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,9 +377,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -385,6 +396,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -392,6 +408,11 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",

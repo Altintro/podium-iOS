@@ -7,26 +7,16 @@
 //
 
 import UIKit
-
 import RxSwift
+import GoogleSignIn
 
 class AuthenticationViewController: UIViewController {
     
     // MARK: Outlets
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var userNameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passField: UITextField!
-    
-    // MARK: Actions
-    
-    @IBAction func registerButtonTapped(_ sender: Any) {
-        let userInfo = ["name": self.nameField.text ?? "",
-                       "alias": self.userNameField.text ?? "",
-                       "email": self.emailField.text ?? "",
-                        "pass": self.passField.text ?? ""]
-        presenter.didTapRegister(info: userInfo)
-    }
+    @IBOutlet weak var googleButton: UIView!
+    @IBOutlet weak var facebookButton: UIView!
+    @IBOutlet weak var emailButton: UIView!
+    @IBOutlet weak var signInButton: UILabel!
     
     // MARK: Properties
     
@@ -49,9 +39,70 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
+        configureGoogle()
+        configureFaceBook()
+        configureViews()
+    }
+    
+    func configureViews() {
+        let SignUpbuttons = [googleButton: #selector(self.googleSignUp(tap:)),
+                       facebookButton: #selector(facebookSignUp(tap:)),
+                       emailButton: #selector(emailSignUp(tap:))]
+        SignUpbuttons.forEach {
+            $0.layer.borderWidth = 1.0
+            $0.layer.cornerRadius = 5.0
+            $0.layer.borderColor = UIColor.darkGray.cgColor
+            $0.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                            action: $1))
+        }
+        
+        signInButton.addGestureRecognizer( UITapGestureRecognizer(target: self,
+                                                                  action: #selector(signIn(tap:))))
+    }
+    
+    func configureGoogle() {
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    func configureFaceBook() {
+        // Configure FB Delegates or others
+    }
+    
+    @objc func googleSignUp(tap: UITapGestureRecognizer) {
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @objc func facebookSignUp(tap: UITapGestureRecognizer) {
+        // Facebook Sign up
+    }
+    
+    @objc func emailSignUp(tap: UITapGestureRecognizer) {
+        // Email sign up
+    }
+    
+    @objc func signIn(tap: UITapGestureRecognizer) {
+        // Show sign in view
     }
 }
 
 extension AuthenticationViewController: AuthenticationView {
     
 }
+
+extension AuthenticationViewController: GIDSignInUIDelegate {
+    
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+       // Stop animating activity indicator
+    }
+
+    func sign(_ signIn: GIDSignIn!,
+              present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!,
+              dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}
+

@@ -5,6 +5,8 @@ target 'podium-iOS' do
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'Firebase/Core'
+    pod 'GoogleSignIn'
+    pod 'FBSDKLoginKit'
 end
 
 

@@ -26,10 +26,6 @@ final class AuthenticationPresenter {
         view?.title = NSLocalizedString("Sign up or Sign in", comment: "")
     }
     
-    func userDidRegister() {
-        // Make Logic for User Registration
-    }
-    
     func didTapRegister(info:[String:String]) {
 
         interactor.registerUser(userRegistration: info)
@@ -39,7 +35,6 @@ final class AuthenticationPresenter {
                     return
                 }
                     print("Success")
-                    self.userDidRegister()
                 }, onError: { error in
                     print("Error")
                 }, onDisposed: { [weak self] in
