@@ -22,6 +22,7 @@
 		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
 		E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */; };
 		E05107BF205D966F001836D4 /* aqua.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BE205D966F001836D4 /* aqua.ttf */; };
+		E05107C1205DB872001836D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E05107C0205DB872001836D4 /* Constants.swift */; };
 		E0852C94204E01A2002A4A81 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C93204E01A2002A4A81 /* Sport.swift */; };
 		E0852C96204E056E002A4A81 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C95204E056E002A4A81 /* Gender.swift */; };
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
@@ -59,6 +60,7 @@
 		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
 		E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E05107BE205D966F001836D4 /* aqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aqua.ttf; sourceTree = "<group>"; };
+		E05107C0205DB872001836D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "podium-iOS/PodiumCore/Authenticate/Domain/Constants.swift"; sourceTree = SOURCE_ROOT; };
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		E02F5BE2204B068600531033 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E05107C0205DB872001836D4 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E05107C1205DB872001836D4 /* Constants.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
