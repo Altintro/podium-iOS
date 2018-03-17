@@ -26,6 +26,15 @@ final class AuthenticationPresenter {
         view?.title = NSLocalizedString("Sign up or Sign in", comment: "")
     }
     
+    func userWantsToSignUpWithEmail() {
+        // Show email sign up view
+    }
+    
+    func userAlreadyHasAnAccount() {
+        // Show Sign in view
+    }
+    
+    
     func didTapRegister(info:[String:String]) {
 
         interactor.registerUser(userRegistration: info)

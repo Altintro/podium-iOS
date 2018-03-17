@@ -77,11 +77,11 @@ class AuthenticationViewController: UIViewController {
     }
     
     @objc func emailSignUp(tap: UITapGestureRecognizer) {
-        // Email sign up
+        presenter.userWantsToSignUpWithEmail()
     }
     
     @objc func signIn(tap: UITapGestureRecognizer) {
-        // Show sign in view
+        presenter.userAlreadyHasAnAccount()
     }
 }
 
