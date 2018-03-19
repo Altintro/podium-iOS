@@ -5,7 +5,7 @@
 ## Build generated
 build/
 DerivedData/
-podium-iOS.xcworkspace/xcuserdata/fernandofrances.xcuserdatad/UserInterfaceState.xcuserstate
+podium-iOS.xcworkspace/xcuserdata/
 ## Various settings
 *.pbxuser
 !default.pbxuser
