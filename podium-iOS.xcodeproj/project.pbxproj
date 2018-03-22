@@ -28,8 +28,9 @@
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
 		E0A52295205706970024D612 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A52294205706970024D612 /* Facebook.swift */; };
 		E0AFB833205139EA000E07D4 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFB832205139EA000E07D4 /* Modality.swift */; };
+		E0C278A22061949F00C17DD2 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C278A12061949F00C17DD2 /* Google.swift */; };
 		E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */; };
-		E0D18F4620599C1000F8BD80 /* AuthenticationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */; };
+		E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4520599C1000F8BD80 /* AuthenticationRepository.swift */; };
 		E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */; };
 		E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */; };
 		E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */; };
@@ -66,8 +67,9 @@
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
 		E0A52294205706970024D612 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		E0AFB832205139EA000E07D4 /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
+		E0C278A12061949F00C17DD2 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAssembly.swift; sourceTree = "<group>"; };
-		E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationInteractor.swift; sourceTree = "<group>"; };
+		E0D18F4520599C1000F8BD80 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				DB77C1AC204DD856005174FA /* Clasification.swift */,
 				E0852C93204E01A2002A4A81 /* Sport.swift */,
 				E0852C9B204E06E3002A4A81 /* UserRanking.swift */,
+				E0C278A12061949F00C17DD2 /* Google.swift */,
 				E0A52294205706970024D612 /* Facebook.swift */,
 				DB77C1AA204DD843005174FA /* Level.swift */,
 				E0852C95204E056E002A4A81 /* Gender.swift */,
@@ -157,17 +160,17 @@
 				E0D18F3F20599B2000F8BD80 /* Domain */,
 				E0D18F3E20599B1B00F8BD80 /* DI */,
 				E0D18F3D20599B1500F8BD80 /* Navigators */,
-				E0D18F3C20599AF700F8BD80 /* Interactors */,
+				E0D18F3C20599AF700F8BD80 /* Repositories */,
 			);
 			path = Authenticate;
 			sourceTree = "<group>";
 		};
-		E0D18F3C20599AF700F8BD80 /* Interactors */ = {
+		E0D18F3C20599AF700F8BD80 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				E0D18F4520599C1000F8BD80 /* AuthenticationInteractor.swift */,
+				E0D18F4520599C1000F8BD80 /* AuthenticationRepository.swift */,
 			);
-			path = Interactors;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		E0D18F3D20599B1500F8BD80 /* Navigators */ = {
@@ -453,8 +456,9 @@
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
-				E0D18F4620599C1000F8BD80 /* AuthenticationInteractor.swift in Sources */,
+				E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
+				E0C278A22061949F00C17DD2 /* Google.swift in Sources */,
 				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
 				E0852C96204E056E002A4A81 /* Gender.swift in Sources */,

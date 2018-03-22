@@ -11,6 +11,7 @@ import Foundation
 internal enum Endpoint {
     case register (user: [String: String])
     case login (user: [String: String])
+    case googleSignIn(token: String)
     case tournaments (query: String)
     case users (query: String)
     case games (query: String)
@@ -47,6 +48,8 @@ private extension Endpoint {
             return .post
         case .login:
             return .post
+        case .googleSignIn:
+            return .post
         case .users:
             return .get
         case .tournaments:
@@ -62,6 +65,8 @@ private extension Endpoint {
             return "users/register"
         case .login:
             return "users/login"
+        case .googleSignIn:
+            return "users/google"
         case .users:
             return "users"
         case .tournaments:
@@ -77,6 +82,8 @@ private extension Endpoint {
             return [:]
         case .login:
             return [:]
+        case .googleSignIn(let token):
+            return ["googleToken": token]
         case .users(let query):
             return ["query": query]
         case .tournaments(let query):
@@ -92,6 +99,8 @@ private extension Endpoint {
             return user
         case .login(let user):
             return user
+        case .googleSignIn:
+            return [:]
         case .users:
             return [:]
         case .games:
@@ -107,6 +116,8 @@ private extension Endpoint {
             return ["Content-Type": "application/json"]
         case .login:
             return ["Content-Type": "application/json"]
+        case .googleSignIn:
+            return [:]
         case .users:
             return [:]
         case .games:

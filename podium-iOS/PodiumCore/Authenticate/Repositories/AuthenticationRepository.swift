@@ -8,11 +8,12 @@
 
 import RxSwift
 
-protocol AuthenticationInteractorProtocol {
+protocol AuthenticationRepositoryProtocol {
     func registerUser(userRegistration:[String: String]) -> Observable<RegisterResponse>
+    func googleSignIn(token: String) -> Observable<RegisterResponse>
 }
 
-final class AuthenticationInteractor: AuthenticationInteractorProtocol {
+final class AuthenticationRepository: NSObject, AuthenticationRepositoryProtocol {
     private let webService: WebService
     
     init(webService: WebService){
@@ -22,4 +23,9 @@ final class AuthenticationInteractor: AuthenticationInteractorProtocol {
     func registerUser(userRegistration: [String: String]) -> Observable<RegisterResponse> {
         return webService.load(_type: RegisterResponse.self, from: .register(user:userRegistration))
     }
+    
+    func googleSignIn(token: String) -> Observable<RegisterResponse> {
+        return webService.load(_type: RegisterResponse.self, from: .googleSignIn(token: token))
+    }
 }
+

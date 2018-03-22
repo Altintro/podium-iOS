@@ -45,10 +45,10 @@ class AuthenticationViewController: UIViewController {
     }
     
     func configureViews() {
-        let SignUpbuttons = [googleButton: #selector(self.googleSignUp(tap:)),
+        let signUpbuttons = [googleButton: #selector(self.googleSignUp(tap:)),
                        facebookButton: #selector(facebookSignUp(tap:)),
                        emailButton: #selector(emailSignUp(tap:))]
-        SignUpbuttons.forEach {
+        signUpbuttons.forEach {
             $0.layer.borderWidth = 1.0
             $0.layer.cornerRadius = 5.0
             $0.layer.borderColor = UIColor.darkGray.cgColor
@@ -83,6 +83,11 @@ class AuthenticationViewController: UIViewController {
     @objc func signIn(tap: UITapGestureRecognizer) {
         presenter.userAlreadyHasAnAccount()
     }
+    
+    @IBAction func dummySignOut(_ sender: Any) {
+        GIDSignIn.sharedInstance().signOut()
+    }
+    
 }
 
 extension AuthenticationViewController: AuthenticationView {

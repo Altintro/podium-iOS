@@ -21,11 +21,11 @@ final public class AuthenticationAssembbly {
     }
     
     func presenter() -> AuthenticationPresenter {
-        return AuthenticationPresenter(interactor: interactor())
+        return AuthenticationPresenter(repository: repository())
     }
     
-    func interactor() -> AuthenticationInteractorProtocol {
-        return AuthenticationInteractor(webService: webServiceAssembly.webService)
+    func repository() -> AuthenticationRepositoryProtocol {
+        return AuthenticationRepository(webService: webServiceAssembly.webService)
     }
     
 }
