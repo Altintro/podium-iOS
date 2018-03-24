@@ -16,12 +16,10 @@ class AuthenticationViewController: UIViewController {
     @IBOutlet weak var googleButton: UIView!
     @IBOutlet weak var facebookButton: UIView!
     @IBOutlet weak var emailButton: UIView!
-    @IBOutlet weak var signInButton: UILabel!
     
     // MARK: Properties
     
     private let presenter: AuthenticationPresenter
-    private let disposeBag = DisposeBag()
     
     // MARK: Initialization
     
@@ -44,46 +42,41 @@ class AuthenticationViewController: UIViewController {
         configureViews()
     }
     
-    func configureViews() {
-        let signUpbuttons = [googleButton: #selector(self.googleSignUp(tap:)),
-                       facebookButton: #selector(facebookSignUp(tap:)),
-                       emailButton: #selector(emailSignUp(tap:))]
+    private func configureViews() {
+        self.navigationController?.isNavigationBarHidden = true
+        let signUpbuttons = [
+            googleButton: #selector(self.google(tap:)),
+            facebookButton: #selector(facebook(tap:)),
+            emailButton: #selector(email(tap:))]
         signUpbuttons.forEach {
             $0.layer.borderWidth = 1.0
             $0.layer.cornerRadius = 5.0
             $0.layer.borderColor = UIColor.darkGray.cgColor
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                            action: $1))
-        }
-        
-        signInButton.addGestureRecognizer( UITapGestureRecognizer(target: self,
-                                                                  action: #selector(signIn(tap:))))
+                                                            action: $1))}
     }
     
-    func configureGoogle() {
-        GIDSignIn.sharedInstance().uiDelegate = self
+    private func configureGoogle() {
+        GIDSignIn.sharedInstance().uiDelegate = presenter
     }
     
-    func configureFaceBook() {
+    private func configureFaceBook() {
         // Configure FB Delegates or others
     }
     
-    @objc func googleSignUp(tap: UITapGestureRecognizer) {
+    @objc func google(tap: UITapGestureRecognizer) {
         GIDSignIn.sharedInstance().signIn()
     }
     
-    @objc func facebookSignUp(tap: UITapGestureRecognizer) {
+    @objc func facebook(tap: UITapGestureRecognizer) {
         // Facebook Sign up
     }
     
-    @objc func emailSignUp(tap: UITapGestureRecognizer) {
-        presenter.userWantsToSignUpWithEmail()
+    @objc func email(tap: UITapGestureRecognizer) {
+        presenter.emailConnect()
     }
     
-    @objc func signIn(tap: UITapGestureRecognizer) {
-        presenter.userAlreadyHasAnAccount()
-    }
-    
+    // DUMMY: To sign in and out with same google email
     @IBAction func dummySignOut(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
     }
@@ -92,22 +85,5 @@ class AuthenticationViewController: UIViewController {
 
 extension AuthenticationViewController: AuthenticationView {
     
-}
-
-extension AuthenticationViewController: GIDSignInUIDelegate {
-    
-    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
-       // Stop animating activity indicator
-    }
-
-    func sign(_ signIn: GIDSignIn!,
-              present viewController: UIViewController!) {
-        self.present(viewController, animated: true, completion: nil)
-    }
-    
-    func sign(_ signIn: GIDSignIn!,
-              dismiss viewController: UIViewController!) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }
 
