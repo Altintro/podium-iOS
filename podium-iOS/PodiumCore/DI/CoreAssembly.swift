@@ -12,6 +12,7 @@ final public class CoreAssembly {
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
     public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly)
+    public private(set) lazy var homeAssembbly = HomeAssembly()
     
     private let navigationController: UINavigationController
     

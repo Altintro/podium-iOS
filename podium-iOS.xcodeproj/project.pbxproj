@@ -14,6 +14,10 @@
 		DB77C1A9204DD837005174FA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A8204DD837005174FA /* Game.swift */; };
 		DB77C1AB204DD843005174FA /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AA204DD843005174FA /* Level.swift */; };
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
+		DB78831D20669FC9002F6870 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78831C20669FC9002F6870 /* HomeAssembly.swift */; };
+		DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78831E2066A02C002F6870 /* HomePresenter.swift */; };
+		DB7883212066A03C002F6870 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7883202066A03C002F6870 /* HomeViewController.swift */; };
+		DB7883232066A056002F6870 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7883222066A056002F6870 /* Home.xib */; };
 		DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB91B35E205B05E800B229BE /* GoogleService-Info.plist */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -53,6 +57,10 @@
 		DB77C1A8204DD837005174FA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DB77C1AA204DD843005174FA /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
+		DB78831C20669FC9002F6870 /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		DB78831E2066A02C002F6870 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		DB7883202066A03C002F6870 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DB7883222066A056002F6870 /* Home.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
 		DB91B35E205B05E800B229BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +121,33 @@
 				A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DB78831920669F79002F6870 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DB78831B20669FA1002F6870 /* DI */,
+				DB78831A20669F97002F6870 /* Presentation */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DB78831A20669F97002F6870 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				DB78831E2066A02C002F6870 /* HomePresenter.swift */,
+				DB7883202066A03C002F6870 /* HomeViewController.swift */,
+				DB7883222066A056002F6870 /* Home.xib */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		DB78831B20669FA1002F6870 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DB78831C20669FC9002F6870 /* HomeAssembly.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		E02F5BE0204B067900531033 /* Domain */ = {
@@ -241,6 +276,7 @@
 		E0DABA0B204838BD00AA3A77 /* PodiumCore */ = {
 			isa = PBXGroup;
 			children = (
+				DB78831920669F79002F6870 /* Home */,
 				E0D18F3B20599AD300F8BD80 /* Authenticate */,
 				E0DABA0C204838DB00AA3A77 /* WebService */,
 				E0DABA0D204838EF00AA3A77 /* Common */,
@@ -349,6 +385,7 @@
 			files = (
 				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
+				DB7883232066A056002F6870 /* Home.xib in Resources */,
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
@@ -443,8 +480,10 @@
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
+				DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
+				DB78831D20669FC9002F6870 /* HomeAssembly.swift in Sources */,
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
@@ -453,6 +492,7 @@
 				E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
+				DB7883212066A03C002F6870 /* HomeViewController.swift in Sources */,
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
