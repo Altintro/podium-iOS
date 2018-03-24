@@ -5,8 +5,7 @@
 ## Build generated
 build/
 DerivedData/
-podium-iOS.xcodeproj/project.xcworkspace/xcuserdata/
-
+podium-iOS.xcworkspace/xcuserdata/
 ## Various settings
 *.pbxuser
 !default.pbxuser

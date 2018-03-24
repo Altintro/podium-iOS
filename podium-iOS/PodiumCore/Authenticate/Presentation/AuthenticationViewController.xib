@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="aqua.ttf">
+            <string>AquaGrotesque</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthenticationViewController" customModule="podium_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="emailButton" destination="4dD-11-Osg" id="UbZ-Uj-DF1"/>
+                <outlet property="facebookButton" destination="y2s-Gm-89D" id="WDe-Hy-Nnh"/>
+                <outlet property="googleButton" destination="h00-1z-9Ch" id="hWg-L0-BHz"/>
+                <outlet property="signInButton" destination="TKi-es-PbR" id="zCq-wK-GKh"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h00-1z-9Ch">
+                    <rect key="frame" x="45" y="365" width="285" height="54"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="google" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-Uf-mXL">
+                            <rect key="frame" x="15" y="15" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="M10-7n-gZh"/>
+                                <constraint firstAttribute="height" constant="25" id="kfs-b9-9ag"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with Google" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-fU-Mvg">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.97265625" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Hr5-fU-Mvg" firstAttribute="leading" secondItem="MtZ-Uf-mXL" secondAttribute="trailing" constant="15" id="4vu-jr-jiJ"/>
+                        <constraint firstItem="MtZ-Uf-mXL" firstAttribute="centerY" secondItem="h00-1z-9Ch" secondAttribute="centerY" id="U54-nb-jHv"/>
+                        <constraint firstItem="MtZ-Uf-mXL" firstAttribute="leading" secondItem="h00-1z-9Ch" secondAttribute="leading" constant="15" id="hQw-2S-21M"/>
+                        <constraint firstItem="Hr5-fU-Mvg" firstAttribute="centerY" secondItem="h00-1z-9Ch" secondAttribute="centerY" id="kc8-dZ-BpN"/>
+                        <constraint firstAttribute="trailing" secondItem="Hr5-fU-Mvg" secondAttribute="trailing" constant="15" id="wdh-To-7iy"/>
+                        <constraint firstAttribute="height" constant="54" id="zuq-Q7-0ej"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dD-11-Osg">
+                    <rect key="frame" x="45" y="523" width="285" height="54"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oCE-dp-4KY">
+                            <rect key="frame" x="15" y="15" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="25" id="amD-Ob-Jd3"/>
+                                <constraint firstAttribute="height" constant="25" id="avm-6t-eUO"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCs-fV-bOA">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.97265625" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="YCs-fV-bOA" firstAttribute="leading" secondItem="oCE-dp-4KY" secondAttribute="trailing" constant="15" id="M05-T8-NND"/>
+                        <constraint firstAttribute="trailing" secondItem="YCs-fV-bOA" secondAttribute="trailing" constant="15" id="VAv-aG-m7n"/>
+                        <constraint firstItem="YCs-fV-bOA" firstAttribute="centerY" secondItem="4dD-11-Osg" secondAttribute="centerY" id="XTd-qb-lbx"/>
+                        <constraint firstAttribute="height" constant="54" id="mpQ-a7-MCK"/>
+                        <constraint firstItem="oCE-dp-4KY" firstAttribute="centerY" secondItem="4dD-11-Osg" secondAttribute="centerY" id="qOV-Pw-2MR"/>
+                        <constraint firstItem="oCE-dp-4KY" firstAttribute="leading" secondItem="4dD-11-Osg" secondAttribute="leading" constant="15" id="vwA-nE-bYf"/>
+                    </constraints>
+                </view>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y2s-Gm-89D">
+                    <rect key="frame" x="45" y="444" width="285" height="54"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb" translatesAutoresizingMaskIntoConstraints="NO" id="Mug-z8-MDR">
+                            <rect key="frame" x="15" y="15" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="cxL-1g-bJe"/>
+                                <constraint firstAttribute="width" constant="25" id="d9n-bh-xmn"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with Facebobok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-7c-5f5">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.97265625" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="9RP-KA-tur"/>
+                        <constraint firstItem="nO5-7c-5f5" firstAttribute="centerY" secondItem="y2s-Gm-89D" secondAttribute="centerY" id="9UM-8L-Yzu"/>
+                        <constraint firstItem="nO5-7c-5f5" firstAttribute="leading" secondItem="Mug-z8-MDR" secondAttribute="trailing" constant="15" id="Mn4-j1-OzN"/>
+                        <constraint firstItem="Mug-z8-MDR" firstAttribute="centerY" secondItem="y2s-Gm-89D" secondAttribute="centerY" id="OfO-7l-xP9"/>
+                        <constraint firstAttribute="trailing" secondItem="nO5-7c-5f5" secondAttribute="trailing" constant="15" id="wuY-AX-RM6"/>
+                        <constraint firstItem="Mug-z8-MDR" firstAttribute="leading" secondItem="y2s-Gm-89D" secondAttribute="leading" constant="15" id="z4I-Dg-qmZ"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up or sign in to continue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-z5-SRm">
+                    <rect key="frame" x="103" y="42" width="256" height="80"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" name="AquaGrotesque" family="Aqua Grotesque" pointSize="19"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-hX-mcC" userLabel="Already Logged Stack View">
+                    <rect key="frame" x="80" y="592" width="215.5" height="16"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2Y-Q3-aIS">
+                            <rect key="frame" x="0.0" y="0.0" width="170.5" height="16"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKi-es-PbR">
+                            <rect key="frame" x="170.5" y="0.0" width="45" height="16"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="13"/>
+                            <color key="textColor" red="0.56556147336959839" green="0.91621947288513184" blue="0.81937044858932495" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
+                    <rect key="frame" x="224" y="327" width="106" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="sign out google"/>
+                    <connections>
+                        <action selector="dummySignOut:" destination="-1" eventType="touchUpInside" id="d3d-pm-Yz8"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="4dD-11-Osg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Yf-B9-dkY"/>
+                <constraint firstItem="y2s-Gm-89D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="5oI-fP-g6q"/>
+                <constraint firstItem="TTY-hX-mcC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9lJ-GL-G3w"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TTY-hX-mcC" secondAttribute="bottom" constant="59" id="DJS-PT-zci"/>
+                <constraint firstItem="TTY-hX-mcC" firstAttribute="top" secondItem="4dD-11-Osg" secondAttribute="bottom" constant="15" id="Gfl-pZ-u7w"/>
+                <constraint firstItem="4dD-11-Osg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="KUA-kg-Mte"/>
+                <constraint firstItem="4dD-11-Osg" firstAttribute="top" secondItem="y2s-Gm-89D" secondAttribute="bottom" constant="25" id="RU7-d1-x1D"/>
+                <constraint firstItem="h00-1z-9Ch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S8v-o2-2S1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dD-11-Osg" secondAttribute="trailing" constant="45" id="T8I-OH-r0V"/>
+                <constraint firstItem="y2s-Gm-89D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZsL-hj-2bh"/>
+                <constraint firstItem="h00-1z-9Ch" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gRd-DL-mEP"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h00-1z-9Ch" secondAttribute="trailing" constant="45" id="iVD-4y-3Wo"/>
+                <constraint firstItem="y2s-Gm-89D" firstAttribute="top" secondItem="h00-1z-9Ch" secondAttribute="bottom" constant="25" id="v5f-cY-oTa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2s-Gm-89D" secondAttribute="trailing" constant="45" id="ygI-Yk-5do"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="fb" width="2000" height="2000"/>
+        <image name="google" width="1000" height="1000"/>
+    </resources>
+</document>

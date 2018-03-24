@@ -9,5 +9,6 @@
 import Foundation
 
 final class WebServiceAssembly {
+    
     private(set) lazy var webService = WebService()
 }

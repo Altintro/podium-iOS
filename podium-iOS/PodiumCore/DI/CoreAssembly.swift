@@ -11,15 +11,9 @@ import UIKit
 final public class CoreAssembly {
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
-    private let navigationController: UINavigationController
+    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly)
     
-    public func dummyViewController() -> UIViewController {
-        let vc = UIViewController()
-        vc.view = UIView(frame: UIScreen.main.bounds)
-        vc.view.backgroundColor = UIColor.blue
-        return vc
-        
-    }
+    private let navigationController: UINavigationController
     
     public init(navigationController: UINavigationController) {
         self.navigationController = navigationController

@@ -13,7 +13,7 @@ struct User: Decodable {
     let id: String
     let name: String?
     let alias: String
-    let email: String?
+    let email: String
     let profilePic: String?
     let gender: String
     let birthdate: String
@@ -31,6 +31,7 @@ struct User: Decodable {
     let gamesUpcoming: [Game]?
     let ranking  : [UserRanking]?
     let fb: Facebook
+    let google: Google
     let hasPassword: Bool
     let mergedWithFB: Bool
 }

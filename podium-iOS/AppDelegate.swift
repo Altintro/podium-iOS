@@ -14,20 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let appAssembly = AppAssembly()
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = appAssembly.coreAssembly.dummyViewController()
-        
-        appAssembly.window.rootViewController = appAssembly.navigationController
-        appAssembly.navigationController.pushViewController(initialViewController, animated: false)
+        let initialViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
+        appAssembly.window.rootViewController = initialViewController
+        // Init with navigation
+        // appAssembly.window.rootViewController = appAssembly.navigationController
+        // appAssembly.navigationController.pushViewController(initialViewController, animated: false)
         appAssembly.window.makeKeyAndVisible()
-      
-        FirebaseApp.configure()
+    
+        configureFirebase()
 
         return true
     }
-
+    
+    private func configureFirebase() {
+        FirebaseApp.configure()
+    }
 
 }
-
