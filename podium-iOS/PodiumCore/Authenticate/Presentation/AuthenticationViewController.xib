@@ -22,7 +22,6 @@
                 <outlet property="emailButton" destination="4dD-11-Osg" id="UbZ-Uj-DF1"/>
                 <outlet property="facebookButton" destination="y2s-Gm-89D" id="WDe-Hy-Nnh"/>
                 <outlet property="googleButton" destination="h00-1z-9Ch" id="hWg-L0-BHz"/>
-                <outlet property="signInButton" destination="TKi-es-PbR" id="zCq-wK-GKh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,8 +40,13 @@
                                 <constraint firstAttribute="height" constant="25" id="kfs-b9-9ag"/>
                             </constraints>
                         </imageView>
+<<<<<<< HEAD
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with Google" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-fU-Mvg">
                             <rect key="frame" x="55" y="18.5" width="215" height="17.5"/>
+=======
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Google" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hr5-fU-Mvg">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+>>>>>>> 0b3b0f7bd66e27c53741d937c00ea416205da894
                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -68,8 +72,13 @@
                                 <constraint firstAttribute="height" constant="25" id="avm-6t-eUO"/>
                             </constraints>
                         </imageView>
+<<<<<<< HEAD
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCs-fV-bOA">
                             <rect key="frame" x="55" y="18.5" width="215" height="17.5"/>
+=======
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCs-fV-bOA">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+>>>>>>> 0b3b0f7bd66e27c53741d937c00ea416205da894
                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -95,8 +104,13 @@
                                 <constraint firstAttribute="width" constant="25" id="d9n-bh-xmn"/>
                             </constraints>
                         </imageView>
+<<<<<<< HEAD
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up with Facebobok" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-7c-5f5">
                             <rect key="frame" x="55" y="18.5" width="215" height="17.5"/>
+=======
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO5-7c-5f5">
+                            <rect key="frame" x="55" y="18" width="215" height="18.5"/>
+>>>>>>> 0b3b0f7bd66e27c53741d937c00ea416205da894
                             <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -119,6 +133,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+<<<<<<< HEAD
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TTY-hX-mcC" userLabel="Already Logged Stack View">
                     <rect key="frame" x="90.5" y="592.5" width="194.5" height="15.5"/>
                     <subviews>
@@ -136,6 +151,8 @@
                         </label>
                     </subviews>
                 </stackView>
+=======
+>>>>>>> 0b3b0f7bd66e27c53741d937c00ea416205da894
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
                     <rect key="frame" x="224" y="327" width="106" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -149,9 +166,6 @@
             <constraints>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Yf-B9-dkY"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="5oI-fP-g6q"/>
-                <constraint firstItem="TTY-hX-mcC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9lJ-GL-G3w"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TTY-hX-mcC" secondAttribute="bottom" constant="59" id="DJS-PT-zci"/>
-                <constraint firstItem="TTY-hX-mcC" firstAttribute="top" secondItem="4dD-11-Osg" secondAttribute="bottom" constant="15" id="Gfl-pZ-u7w"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="KUA-kg-Mte"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="top" secondItem="y2s-Gm-89D" secondAttribute="bottom" constant="25" id="RU7-d1-x1D"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S8v-o2-2S1"/>
@@ -159,6 +173,7 @@
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZsL-hj-2bh"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gRd-DL-mEP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h00-1z-9Ch" secondAttribute="trailing" constant="45" id="iVD-4y-3Wo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dD-11-Osg" secondAttribute="bottom" constant="90" id="mI7-Je-LQa"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="top" secondItem="h00-1z-9Ch" secondAttribute="bottom" constant="25" id="v5f-cY-oTa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2s-Gm-89D" secondAttribute="trailing" constant="45" id="ygI-Yk-5do"/>
             </constraints>

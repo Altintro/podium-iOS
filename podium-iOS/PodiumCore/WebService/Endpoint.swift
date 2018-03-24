@@ -9,9 +9,10 @@
 import Foundation
 
 internal enum Endpoint {
-    case register (user: [String: String])
     case login (user: [String: String])
     case googleSignIn(token: String)
+    case checkEmail(email: String)
+    case checkAlias(alias: String)
     case tournaments (query: String)
     case users (query: String)
     case games (query: String)
@@ -44,11 +45,13 @@ private enum HTTPMethod: String {
 private extension Endpoint {
     var method: HTTPMethod {
         switch self {
-        case .register:
-            return .post
         case .login:
             return .post
         case .googleSignIn:
+            return .post
+        case .checkEmail:
+            return .post
+        case .checkAlias:
             return .post
         case .users:
             return .get
@@ -61,12 +64,14 @@ private extension Endpoint {
     
     var path: String {
         switch self {
-        case .register:
-            return "users/register"
         case .login:
             return "users/login"
         case .googleSignIn:
             return "users/google"
+        case .checkEmail:
+            return "users/checkEmail"
+        case .checkAlias:
+            return "users/checkAlias"
         case .users:
             return "users"
         case .tournaments:
@@ -78,12 +83,14 @@ private extension Endpoint {
     
     var parameters: [String:String] {
         switch self {
-        case .register:
-            return [:]
         case .login:
             return [:]
         case .googleSignIn(let token):
             return ["googleToken": token]
+        case .checkEmail(let email):
+            return ["email": email]
+        case .checkAlias(let alias):
+            return ["alias": alias]
         case .users(let query):
             return ["query": query]
         case .tournaments(let query):
@@ -95,11 +102,13 @@ private extension Endpoint {
     
     var body: [String: String] {
         switch self {
-        case .register(let user):
-            return user
         case .login(let user):
             return user
         case .googleSignIn:
+            return [:]
+        case .checkEmail:
+            return [:]
+        case .checkAlias:
             return [:]
         case .users:
             return [:]
@@ -112,11 +121,13 @@ private extension Endpoint {
     
     var headers: [String: String] {
         switch self {
-        case .register:
-            return ["Content-Type": "application/json"]
         case .login:
             return ["Content-Type": "application/json"]
         case .googleSignIn:
+            return [:]
+        case .checkEmail:
+            return [:]
+        case .checkAlias:
             return [:]
         case .users:
             return [:]
