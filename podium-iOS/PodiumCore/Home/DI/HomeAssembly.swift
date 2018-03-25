@@ -10,15 +10,26 @@ import UIKit
 
 final public class HomeAssembly {
     
-    init() {
+    private let webServiceAssembly: WebServiceAssembly
+    
+    init(webServiceAssembly: WebServiceAssembly) {
         
+        self.webServiceAssembly = webServiceAssembly
     }
     
     public func viewController() -> UIViewController {
-        return HomeViewController(presenter: presenter())
+        return HomeViewController(presenter: presenter(), eventsPresenter: eventsPresenter())
     }
     
     func presenter() -> HomePresenter {
-        return HomePresenter()
+        return HomePresenter(repository: homeRepository())
+    }
+    
+    func eventsPresenter() -> EventsPresenter {
+        return EventsPresenter()
+    }
+    
+    func homeRepository() -> HomeRepositoryProtocol {
+        return HomeRespository(webService: webServiceAssembly.webService)
     }
 }

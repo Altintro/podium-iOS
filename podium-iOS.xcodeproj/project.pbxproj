@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */; };
+		DB2B5BAD20685F7F00D6B92D /* EventsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BAC20685F7F00D6B92D /* EventsPresenter.swift */; };
+		DB2B5BAF2068606B00D6B92D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BAE2068606B00D6B92D /* ReusableView.swift */; };
+		DB2B5BB12068609C00D6B92D /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB02068609C00D6B92D /* NibLoadableView.swift */; };
+		DB2B5BB32068624200D6B92D /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB22068624200D6B92D /* UICollectionView+Reusable.swift */; };
 		DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A2204DD16A005174FA /* Emblem.swift */; };
 		DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A4204DD7F8005174FA /* CompType.swift */; };
 		DB77C1A7204DD828005174FA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A6204DD828005174FA /* Team.swift */; };
@@ -18,6 +22,14 @@
 		DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78831E2066A02C002F6870 /* HomePresenter.swift */; };
 		DB7883212066A03C002F6870 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7883202066A03C002F6870 /* HomeViewController.swift */; };
 		DB7883232066A056002F6870 /* Home.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7883222066A056002F6870 /* Home.xib */; };
+		DB87E9D82066C95000CCCE7A /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9D72066C95000CCCE7A /* HomeRepository.swift */; };
+		DB87E9DA2066C9A100CCCE7A /* GamesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9D92066C9A100CCCE7A /* GamesResponse.swift */; };
+		DB87E9DC2066CEC500CCCE7A /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB87E9DB2066CEBB00CCCE7A /* AuthenticationViewController.xib */; };
+		DB87E9DE206857A000CCCE7A /* EventView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB87E9DD206857A000CCCE7A /* EventView.xib */; };
+		DB87E9E0206857B200CCCE7A /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB87E9DF206857B200CCCE7A /* EventCell.xib */; };
+		DB87E9E2206859BB00CCCE7A /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9E1206859BB00CCCE7A /* EventCell.swift */; };
+		DB87E9E520685CE900CCCE7A /* EventsCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9E420685CE900CCCE7A /* EventsCollectionViewLayout.swift */; };
+		DB87E9E720685DA300CCCE7A /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9E620685DA300CCCE7A /* EventView.swift */; };
 		DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB91B35E205B05E800B229BE /* GoogleService-Info.plist */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -42,7 +54,6 @@
 		E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */; };
 		E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4520599C1000F8BD80 /* AuthenticationRepository.swift */; };
 		E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */; };
-		E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */; };
 		E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */; };
 		E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
@@ -57,6 +68,10 @@
 		330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podium_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		DB2B5BAC20685F7F00D6B92D /* EventsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPresenter.swift; sourceTree = "<group>"; };
+		DB2B5BAE2068606B00D6B92D /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = "podium-iOS/PodiumCore/Home/Presentation/Events/ReusableView.swift"; sourceTree = SOURCE_ROOT; };
+		DB2B5BB02068609C00D6B92D /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = "podium-iOS/PodiumCore/Home/Presentation/Events/NibLoadableView.swift"; sourceTree = SOURCE_ROOT; };
+		DB2B5BB22068624200D6B92D /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Reusable.swift"; path = "podium-iOS/PodiumCore/Home/Presentation/Events/UICollectionView+Reusable.swift"; sourceTree = SOURCE_ROOT; };
 		DB77C1A2204DD16A005174FA /* Emblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emblem.swift; sourceTree = "<group>"; };
 		DB77C1A4204DD7F8005174FA /* CompType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompType.swift; sourceTree = "<group>"; };
 		DB77C1A6204DD828005174FA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -67,6 +82,14 @@
 		DB78831E2066A02C002F6870 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		DB7883202066A03C002F6870 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DB7883222066A056002F6870 /* Home.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home.xib; sourceTree = "<group>"; };
+		DB87E9D72066C95000CCCE7A /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		DB87E9D92066C9A100CCCE7A /* GamesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesResponse.swift; sourceTree = "<group>"; };
+		DB87E9DB2066CEBB00CCCE7A /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
+		DB87E9DD206857A000CCCE7A /* EventView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventView.xib; sourceTree = "<group>"; };
+		DB87E9DF206857B200CCCE7A /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		DB87E9E1206859BB00CCCE7A /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		DB87E9E420685CE900CCCE7A /* EventsCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewLayout.swift; sourceTree = "<group>"; };
+		DB87E9E620685DA300CCCE7A /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		DB91B35E205B05E800B229BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +114,6 @@
 		E0D18F4120599B3F00F8BD80 /* AuthenticationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAssembly.swift; sourceTree = "<group>"; };
 		E0D18F4520599C1000F8BD80 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
-		E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
 		E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +160,8 @@
 		DB78831920669F79002F6870 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DB7883252066C3DA002F6870 /* Repositories */,
+				DB7883242066C3CA002F6870 /* Domain */,
 				DB78831B20669FA1002F6870 /* DI */,
 				DB78831A20669F97002F6870 /* Presentation */,
 			);
@@ -147,6 +171,7 @@
 		DB78831A20669F97002F6870 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DB87E9E320685CB400CCCE7A /* Events */,
 				DB78831E2066A02C002F6870 /* HomePresenter.swift */,
 				DB7883202066A03C002F6870 /* HomeViewController.swift */,
 				DB7883222066A056002F6870 /* Home.xib */,
@@ -160,6 +185,35 @@
 				DB78831C20669FC9002F6870 /* HomeAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		DB7883242066C3CA002F6870 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DB87E9D92066C9A100CCCE7A /* GamesResponse.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		DB7883252066C3DA002F6870 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DB87E9D72066C95000CCCE7A /* HomeRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DB87E9E320685CB400CCCE7A /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				DB87E9DD206857A000CCCE7A /* EventView.xib */,
+				DB87E9DF206857B200CCCE7A /* EventCell.xib */,
+				DB87E9E1206859BB00CCCE7A /* EventCell.swift */,
+				DB87E9E420685CE900CCCE7A /* EventsCollectionViewLayout.swift */,
+				DB87E9E620685DA300CCCE7A /* EventView.swift */,
+				DB2B5BAC20685F7F00D6B92D /* EventsPresenter.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		E02F5BE0204B067900531033 /* Domain */ = {
@@ -196,6 +250,9 @@
 			isa = PBXGroup;
 			children = (
 				E05107C0205DB872001836D4 /* Constants.swift */,
+				DB2B5BAE2068606B00D6B92D /* ReusableView.swift */,
+				DB2B5BB02068609C00D6B92D /* NibLoadableView.swift */,
+				DB2B5BB22068624200D6B92D /* UICollectionView+Reusable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -251,7 +308,7 @@
 				E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */,
 				E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */,
 				E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */,
-				E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */,
+				DB87E9DB2066CEBB00CCCE7A /* AuthenticationViewController.xib */,
 				E0C278A720641A0700C17DD2 /* EmailPresenter.swift */,
 				E0C278A32064173100C17DD2 /* EmailViewController.swift */,
 				E0C278A42064173100C17DD2 /* EmailViewController.xib */,
@@ -401,7 +458,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
+				DB87E9DC2066CEC500CCCE7A /* AuthenticationViewController.xib in Resources */,
+				DB87E9E0206857B200CCCE7A /* EventCell.xib in Resources */,
+				DB87E9DE206857A000CCCE7A /* EventView.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
 				DB7883232066A056002F6870 /* Home.xib in Resources */,
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
@@ -496,17 +555,23 @@
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
 				E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
+				DB87E9E520685CE900CCCE7A /* EventsCollectionViewLayout.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
+				DB2B5BAD20685F7F00D6B92D /* EventsPresenter.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
 				DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
+				DB87E9E2206859BB00CCCE7A /* EventCell.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
+				DB2B5BB32068624200D6B92D /* UICollectionView+Reusable.swift in Sources */,
 				DB78831D20669FC9002F6870 /* HomeAssembly.swift in Sources */,
+				DB87E9E720685DA300CCCE7A /* EventView.swift in Sources */,
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
+				DB87E9D82066C95000CCCE7A /* HomeRepository.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
 				DB77C1AB204DD843005174FA /* Level.swift in Sources */,
@@ -517,14 +582,17 @@
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
 				DB7883212066A03C002F6870 /* HomeViewController.swift in Sources */,
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
+				DB2B5BB12068609C00D6B92D /* NibLoadableView.swift in Sources */,
 				E0C278A820641A0700C17DD2 /* EmailPresenter.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
 				E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */,
+				DB2B5BAF2068606B00D6B92D /* ReusableView.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
 				E0C278A22061949F00C17DD2 /* Google.swift in Sources */,
 				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
+				DB87E9DA2066C9A100CCCE7A /* GamesResponse.swift in Sources */,
 				E0852C96204E056E002A4A81 /* Gender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

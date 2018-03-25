@@ -15,10 +15,11 @@ internal enum Endpoint {
     case checkAlias(alias: String)
     case tournaments (query: String)
     case users (query: String)
-    case games (query: String)
+    case games
 }
 
 internal extension Endpoint {
+    
     func request(with baseURL: URL)-> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         
@@ -30,6 +31,7 @@ internal extension Endpoint {
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
+        request.setValue("\(parameters.count)", forHTTPHeaderField: "Content-Length")
         request.httpBody = body
         headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         return request
@@ -95,8 +97,8 @@ private extension Endpoint {
             return ["query": query]
         case .tournaments(let query):
             return ["query": query]
-        case .games(let query):
-            return ["query": query]
+        case .games:
+            return [:]
         }
     }
     

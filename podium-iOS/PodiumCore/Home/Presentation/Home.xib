@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="podium_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="wks-sr-IG3" id="3Bu-pT-HAd"/>
                 <outlet property="view" destination="iN0-l3-epB" id="R3C-P9-9qf"/>
             </connections>
         </placeholder>
@@ -19,21 +20,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenidos al Home!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXk-Ud-mHK">
-                    <rect key="frame" x="72" y="90" width="230" height="30"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-wT-VaD">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="200" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wks-sr-IG3">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        </stackView>
+                    </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="0xs-Ry-trd"/>
-                        <constraint firstAttribute="width" constant="230" id="EKw-9r-02K"/>
+                        <constraint firstItem="wks-sr-IG3" firstAttribute="leading" secondItem="HbI-wT-VaD" secondAttribute="leading" id="2Wq-b1-txK"/>
+                        <constraint firstItem="wks-sr-IG3" firstAttribute="top" secondItem="HbI-wT-VaD" secondAttribute="top" id="79c-gD-NPD"/>
+                        <constraint firstAttribute="trailing" secondItem="wks-sr-IG3" secondAttribute="trailing" id="PJ0-4X-NcO"/>
+                        <constraint firstAttribute="bottom" secondItem="wks-sr-IG3" secondAttribute="bottom" id="T7S-ev-ndr"/>
+                        <constraint firstItem="wks-sr-IG3" firstAttribute="centerX" secondItem="HbI-wT-VaD" secondAttribute="centerX" id="ia2-Mq-Wcl"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                    <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </scrollView>
             </subviews>
-            <color key="backgroundColor" red="0.1045243704" green="0.39918636660000001" blue="0.071483015060000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="EXk-Ud-mHK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="70" id="L5Z-a2-BJF"/>
-                <constraint firstItem="EXk-Ud-mHK" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="jkY-N0-Kfg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="HbI-wT-VaD" secondAttribute="bottom" id="2Va-4h-ffh"/>
+                <constraint firstItem="HbI-wT-VaD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Tvk-rb-Uro"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="top" secondItem="HbI-wT-VaD" secondAttribute="top" id="WB6-BA-VKz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="HbI-wT-VaD" secondAttribute="trailing" id="c7J-UB-2gc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="-59.5" y="67.5"/>
