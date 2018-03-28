@@ -12,6 +12,9 @@
 		DB2B5BAF2068606B00D6B92D /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BAE2068606B00D6B92D /* ReusableView.swift */; };
 		DB2B5BB12068609C00D6B92D /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB02068609C00D6B92D /* NibLoadableView.swift */; };
 		DB2B5BB32068624200D6B92D /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB22068624200D6B92D /* UICollectionView+Reusable.swift */; };
+		DB2B5BB5206C168100D6B92D /* SportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB4206C168100D6B92D /* SportsView.swift */; };
+		DB2B5BB7206C168D00D6B92D /* SportsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2B5BB6206C168D00D6B92D /* SportsPresenter.swift */; };
+		DB2B5BB9206C188200D6B92D /* SportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2B5BB8206C188200D6B92D /* SportsView.xib */; };
 		DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A2204DD16A005174FA /* Emblem.swift */; };
 		DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A4204DD7F8005174FA /* CompType.swift */; };
 		DB77C1A7204DD828005174FA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A6204DD828005174FA /* Team.swift */; };
@@ -72,6 +75,9 @@
 		DB2B5BAE2068606B00D6B92D /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReusableView.swift; path = "podium-iOS/PodiumCore/Home/Presentation/Events/ReusableView.swift"; sourceTree = SOURCE_ROOT; };
 		DB2B5BB02068609C00D6B92D /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = "podium-iOS/PodiumCore/Home/Presentation/Events/NibLoadableView.swift"; sourceTree = SOURCE_ROOT; };
 		DB2B5BB22068624200D6B92D /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Reusable.swift"; path = "podium-iOS/PodiumCore/Home/Presentation/Events/UICollectionView+Reusable.swift"; sourceTree = SOURCE_ROOT; };
+		DB2B5BB4206C168100D6B92D /* SportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsView.swift; sourceTree = "<group>"; };
+		DB2B5BB6206C168D00D6B92D /* SportsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsPresenter.swift; sourceTree = "<group>"; };
+		DB2B5BB8206C188200D6B92D /* SportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsView.xib; sourceTree = "<group>"; };
 		DB77C1A2204DD16A005174FA /* Emblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emblem.swift; sourceTree = "<group>"; };
 		DB77C1A4204DD7F8005174FA /* CompType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompType.swift; sourceTree = "<group>"; };
 		DB77C1A6204DD828005174FA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 				DB87E9E420685CE900CCCE7A /* EventsCollectionViewLayout.swift */,
 				DB87E9E620685DA300CCCE7A /* EventView.swift */,
 				DB2B5BAC20685F7F00D6B92D /* EventsPresenter.swift */,
+				DB2B5BB4206C168100D6B92D /* SportsView.swift */,
+				DB2B5BB6206C168D00D6B92D /* SportsPresenter.swift */,
+				DB2B5BB8206C188200D6B92D /* SportsView.xib */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
+				DB2B5BB9206C188200D6B92D /* SportsView.xib in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
 				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
 			);
@@ -556,10 +566,12 @@
 				E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
 				DB87E9E520685CE900CCCE7A /* EventsCollectionViewLayout.swift in Sources */,
+				DB2B5BB7206C168D00D6B92D /* SportsPresenter.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
+				DB2B5BB5206C168100D6B92D /* SportsView.swift in Sources */,
 				DB2B5BAD20685F7F00D6B92D /* EventsPresenter.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
 				DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */,

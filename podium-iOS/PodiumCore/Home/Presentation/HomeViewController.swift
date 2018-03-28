@@ -12,14 +12,17 @@ class HomeViewController: UIViewController {
     
     private let presenter: HomePresenter
     private let eventsPresenter: EventsPresenter
+    private let sportsPresenter: SportsPresenter
     
     @IBOutlet weak var stackView: UIStackView!
     
     init(presenter: HomePresenter,
-        eventsPresenter: EventsPresenter) {
+        eventsPresenter: EventsPresenter,
+        sportsPresenter: SportsPresenter) {
         
         self.presenter = presenter
         self.eventsPresenter = eventsPresenter
+        self.sportsPresenter = sportsPresenter
         
         super.init(nibName: "Home", bundle: Bundle(for: type(of: self)))
     }
@@ -38,11 +41,22 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeView {
     
-    func update(with games: [Game]) {
+    func update(with sports: [Sport], categoryTitle: String) {
+       
+        let sportsView = SportsView.instantiate()
+        sportsView.presenter = sportsPresenter
+        sportsView.title = categoryTitle
+        sportsView.items = sports
+        
+        stackView.addArrangedSubview(sportsView)
+    }
+    
+    
+    func update(with games: [Game], categoryTitle:String) {
         
         let eventsView = EventView.instantiate()
         eventsView.presenter = eventsPresenter
-        eventsView.title = "Recientes"
+        eventsView.title = categoryTitle
         eventsView.items = games
         
         stackView.addArrangedSubview(eventsView)

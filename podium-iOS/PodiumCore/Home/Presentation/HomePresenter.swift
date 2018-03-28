@@ -13,7 +13,8 @@ protocol HomeView: class {
     
     var title: String? { get set }
     
-    func update(with games: [Game])
+    func update(with games: [Game], categoryTitle: String)
+    func update(with sports: [Sport], categoryTitle: String)
 }
 
 final class HomePresenter {
@@ -32,19 +33,33 @@ final class HomePresenter {
         view?.title = NSLocalizedString("Games", comment: "")
 
         loadGames()
-        loadGames()
+        loadSports()
     }
 }
 
 private extension HomePresenter {
     
+    func loadSports() {
+        
+        let futbol = Sport(id: "1", name: "Fubtol", image: "nada", description: "Deporte con 2 arcos y una pelota", ranking: nil, rules: "Un referi", popularity: 9, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+        
+        let tennis = Sport(id: "2", name: "Tennis", image: "nada", description: "Raqueta y red", ranking: nil, rules: "Hay que pasar la pelota del otro la de la red", popularity: 7, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+        
+        let pingPong = Sport(id: "3", name: "Ping Pong", image: "nada", description: "Deporte con dos paletas y una pequeña red", ranking: nil, rules: "Hay que pasar la pelota en del otro lado de la red en la mesa pequeña", popularity: 4, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+        
+        let sports = [futbol,tennis, pingPong]
+        self.view?.update(with: sports, categoryTitle: "Popular Sports")
+    }
+    
     func loadGames() {
         
-        /*let facebook = Facebook(id: "1", name: "Tomás", picture: "nada", email: "tom@as.com")
+        let facebook = Facebook(id: "1", name: "Tomás", picture: "nada", email: "tom@as.com")
         let google = Google(id: "1", name: "Tomás", picture: "nada", email: "tom@as.com")
         let myUser = User(id: "1", name: "Tomás Moyano", alias: "Tom", email: "moyanotomasi@gmail.com", profilePic: nil, gender: "male", birthdate: "529191000", latitude: 52.52, longitude: 13.4050, interests: nil, emblems: nil, tournamentsPlayed: nil, tournamentsPlaying: nil, tournamentsWon: nil, tournamentsUpcoming: nil, gamesPlayed: nil, gamesPlaying: nil, gamesWon: nil, gamesUpcoming: nil, ranking: nil, fb: facebook, google: google, hasPassword: true, mergedWithFB: false)
-        let futbol = Sport(id: "1", name: "Fubtol", image: "nada", description: "Deporte con 2 arcos y una pelota", ranking: nil, rules: "Un referi", popularity: 9, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+        
         let team = Team(id: "1", players: [myUser], name: "River Plate", image: nil, description: "El mas grande")
+        
+        let futbol = Sport(id: "1", name: "Fubtol", image: "nada", description: "Deporte con 2 arcos y una pelota", ranking: nil, rules: "Un referi", popularity: 9, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
         
         let tennis = Sport(id: "2", name: "Tennis", image: "nada", description: "Raqueta y red", ranking: nil, rules: "Hay que pasar la pelota del otro la de la red", popularity: 7, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
         
@@ -57,9 +72,9 @@ private extension HomePresenter {
         let game4 = Game(id: "2", name: "Tennis 2 v 2", sport: tennis, description: "Partida de tennis 2 contra 2", tournament: nil, participants: [team], wins: nil, loses: nil, concluded: false, open: true, date: "1524997200", latitude: nil, longitude: nil, modality: .team, levelAverage: .talented)
  
         
-        let games = [game1,game2, game3, game4]*/
-        //self.view?.update(with: games)
-        repository.allGames()
+        let games = [game1,game2, game3, game4]
+        self.view?.update(with: games, categoryTitle: "Games")
+        /*repository.allGames()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] games in
                 
@@ -71,6 +86,6 @@ private extension HomePresenter {
             }, onDisposed: { [weak self] in
                 print("onDisposed")
             })
-            .disposed(by: disposeBag)
+            .disposed(by: disposeBag)*/
     }
 }

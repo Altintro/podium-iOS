@@ -22,6 +22,6 @@ final class HomeRespository: HomeRepositoryProtocol {
     }
     
     func allGames() -> Observable<GamesResponse> {
-        return webService.load(_type: GamesResponse.self, from: .game(id: "5ab68b9aeb2e7332dfe2280c"))
+        return webService.load(_type: GamesResponse.self, from: .games)
     }
 }
