@@ -16,7 +16,7 @@ final class EventView: UIView, NibLoadableView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private enum Constants {
-        static let height: CGFloat = 218
+        static let height: CGFloat = 200
     }
     
     var title: String {

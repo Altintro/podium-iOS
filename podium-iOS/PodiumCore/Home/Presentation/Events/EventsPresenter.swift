@@ -13,5 +13,6 @@ final class EventsPresenter {
     func present(game: Game, in cell: EventCell) {
         
         cell.eventName.text = game.name
+        cell.eventImageView.backgroundColor = UIColor.gray
     }
 }

@@ -10,8 +10,9 @@
 import UIKit
 
 final class EventsCollectionViewLayout: UICollectionViewFlowLayout {
+    
     private enum Constants {
-        static let itemSize = CGSize(width: 100, height: 125)
+        static let itemSize = CGSize(width: 125, height: 125)
         static let minimumLineSpacing: CGFloat = 16
         static let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }

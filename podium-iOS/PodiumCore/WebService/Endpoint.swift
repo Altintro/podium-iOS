@@ -14,8 +14,9 @@ internal enum Endpoint {
     case checkEmail(email: String)
     case checkAlias(alias: String)
     case tournaments (query: String)
-    case users (query: String)
+    case users
     case games
+    case game(id: String)
 }
 
 internal extension Endpoint {
@@ -31,7 +32,6 @@ internal extension Endpoint {
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
-        request.setValue("\(parameters.count)", forHTTPHeaderField: "Content-Length")
         request.httpBody = body
         headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         return request
@@ -61,6 +61,8 @@ private extension Endpoint {
             return .get
         case .games:
             return .get
+        case .game:
+            return .get
         }
     }
     
@@ -80,6 +82,8 @@ private extension Endpoint {
             return "tournaments"
         case .games:
             return "games"
+        case .game (let id):
+            return "games/\(id)"
         }
     }
     
@@ -93,11 +97,13 @@ private extension Endpoint {
             return ["email": email]
         case .checkAlias(let alias):
             return ["alias": alias]
-        case .users(let query):
-            return ["query": query]
+        case .users:
+            return [:]
         case .tournaments(let query):
             return ["query": query]
         case .games:
+            return [:]
+        case .game:
             return [:]
         }
     }
@@ -118,6 +124,8 @@ private extension Endpoint {
             return [:]
         case .tournaments:
             return [:]
+        case .game:
+            return [:]
         }
     }
     
@@ -134,7 +142,9 @@ private extension Endpoint {
         case .users:
             return [:]
         case .games:
-            return [:]
+            return ["Content-Type": "application/json"]
+        case .game:
+            return ["Content-Type": "application/json"]
         case .tournaments:
             return [:]
         }
