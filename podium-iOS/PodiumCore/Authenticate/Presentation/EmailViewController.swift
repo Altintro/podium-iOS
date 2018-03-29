@@ -57,10 +57,6 @@ class EmailViewController: UIViewController {
 
 extension EmailViewController: EmailView {
     
-    func showNext(userAlreadyExists: Bool) {
-        
-    }
-    
 }
 
 

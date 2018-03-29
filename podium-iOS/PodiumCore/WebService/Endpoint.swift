@@ -10,12 +10,12 @@ import Foundation
 
 internal enum Endpoint {
     case login (user: [String: String])
-    case googleSignIn(token: String)
-    case checkEmail(email: String)
+    case googleConnect(token: String)
+    case emailConnect(email: String)
     case checkAlias(alias: String)
-    case tournaments (query: String)
-    case users (query: String)
-    case games (query: String)
+    case tournaments
+    case users
+    case games
 }
 
 internal extension Endpoint {
@@ -47,9 +47,9 @@ private extension Endpoint {
         switch self {
         case .login:
             return .post
-        case .googleSignIn:
+        case .googleConnect:
             return .post
-        case .checkEmail:
+        case .emailConnect:
             return .post
         case .checkAlias:
             return .post
@@ -66,10 +66,10 @@ private extension Endpoint {
         switch self {
         case .login:
             return "users/login"
-        case .googleSignIn:
-            return "users/google"
-        case .checkEmail:
-            return "users/checkEmail"
+        case .googleConnect:
+            return "users/googleConnect"
+        case .emailConnect:
+            return "users/emailConnect"
         case .checkAlias:
             return "users/checkAlias"
         case .users:
@@ -85,18 +85,18 @@ private extension Endpoint {
         switch self {
         case .login:
             return [:]
-        case .googleSignIn(let token):
+        case .googleConnect(let token):
             return ["googleToken": token]
-        case .checkEmail(let email):
+        case .emailConnect(let email):
             return ["email": email]
         case .checkAlias(let alias):
             return ["alias": alias]
-        case .users(let query):
-            return ["query": query]
-        case .tournaments(let query):
-            return ["query": query]
-        case .games(let query):
-            return ["query": query]
+        case .users:
+            return [:]
+        case .tournaments:
+            return [:]
+        case .games:
+            return [:]
         }
     }
     
@@ -104,9 +104,9 @@ private extension Endpoint {
         switch self {
         case .login(let user):
             return user
-        case .googleSignIn:
+        case .googleConnect:
             return [:]
-        case .checkEmail:
+        case .emailConnect:
             return [:]
         case .checkAlias:
             return [:]
@@ -123,9 +123,9 @@ private extension Endpoint {
         switch self {
         case .login:
             return ["Content-Type": "application/json"]
-        case .googleSignIn:
+        case .googleConnect:
             return [:]
-        case .checkEmail:
+        case .emailConnect:
             return [:]
         case .checkAlias:
             return [:]

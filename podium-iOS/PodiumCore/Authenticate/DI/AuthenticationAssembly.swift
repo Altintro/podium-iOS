@@ -38,15 +38,28 @@ final public class AuthenticationAssembbly {
     }
     
     func emailPresenter() -> EmailPresenter {
-        return EmailPresenter(repository: authenticationRepository())
+        return EmailPresenter(repository: authenticationRepository(),
+                              magicLinkNavigator: magicLinkNavigator())
+    }
+    
+    func magicLinkNavigator() -> MagicLinkNavigator {
+        return MagicLinkNavigator(navigationController: navigationController,
+                                  viewControllerProvider: self)
+    }
+    
+    func magicLinkPresenter() -> MagicLinkPresenter {
+        return MagicLinkPresenter()
     }
     
 }
 
-extension AuthenticationAssembbly: EmailViewControllerProvider {
+extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider {
     func emailViewController() -> UIViewController {
         return EmailViewController(presenter: emailPresenter())
     }
     
+    func magicLinkViewController() -> UIViewController {
+        return MagicLinkViewController(presenter: magicLinkPresenter())
+    }
     
 }

@@ -20,6 +20,11 @@
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
 		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
 		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
+		E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */; };
+		E0384B80206BEE4F00FFA71F /* MagicLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */; };
+		E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */; };
+		E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */; };
+		E0384B86206BF38B00FFA71F /* MagicLinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */; };
 		E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */; };
 		E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */; };
 		E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */; };
@@ -65,11 +70,17 @@
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkViewController.swift; sourceTree = "<group>"; };
+		E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicLinkViewController.xib; sourceTree = "<group>"; };
+		E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkNavigator.swift; sourceTree = "<group>"; };
+		E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkPresenter.swift; sourceTree = "<group>"; };
 		E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNavigator.swift; sourceTree = "<group>"; };
 		E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationPresenter+GoogleDelegates.swift"; sourceTree = "<group>"; };
 		E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E05107BE205D966F001836D4 /* aqua.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aqua.ttf; sourceTree = "<group>"; };
 		E05107C0205DB872001836D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "podium-iOS/PodiumCore/Authenticate/Domain/Constants.swift"; sourceTree = SOURCE_ROOT; };
+		E07DA8E920697B5A002E9A04 /* podium-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "podium-iOS.entitlements"; sourceTree = "<group>"; };
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
@@ -152,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				E05107BE205D966F001836D4 /* aqua.ttf */,
+				E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */,
 				E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */,
 			);
 			path = Resources;
@@ -189,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */,
+				E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -220,6 +233,9 @@
 				E0C278A720641A0700C17DD2 /* EmailPresenter.swift */,
 				E0C278A32064173100C17DD2 /* EmailViewController.swift */,
 				E0C278A42064173100C17DD2 /* EmailViewController.xib */,
+				E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */,
+				E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */,
+				E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -245,6 +261,7 @@
 		E0DAB9F82047FF0A00AA3A77 /* podium-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				E07DA8E920697B5A002E9A04 /* podium-iOS.entitlements */,
 				E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */,
 				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
@@ -339,6 +356,11 @@
 					E0DAB9F52047FF0A00AA3A77 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -367,9 +389,11 @@
 			files = (
 				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
+				E0384B80206BEE4F00FFA71F /* MagicLinkViewController.xib in Resources */,
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
+				E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
 				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
 			);
@@ -461,6 +485,7 @@
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
+				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
@@ -469,6 +494,7 @@
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
+				E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
 				DB77C1AB204DD843005174FA /* Level.swift in Sources */,
 				E0BAE4512064231C00AB6FEF /* CheckResponse.swift in Sources */,
@@ -479,6 +505,7 @@
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				E0C278A820641A0700C17DD2 /* EmailPresenter.swift in Sources */,
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
+				E0384B86206BF38B00FFA71F /* MagicLinkPresenter.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
 				E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
@@ -615,13 +642,14 @@
 			baseConfigurationReference = 330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "podium-iOS/podium-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R3AUYQD5R4;
 				INFOPLIST_FILE = "podium-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.podium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.winatpodium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -635,13 +663,14 @@
 			baseConfigurationReference = A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "podium-iOS/podium-iOS.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R3AUYQD5R4;
 				INFOPLIST_FILE = "podium-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.podium;
+				PRODUCT_BUNDLE_IDENTIFIER = com.altintro.winatpodium;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

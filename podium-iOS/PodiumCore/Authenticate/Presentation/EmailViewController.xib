@@ -31,6 +31,7 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qFJ-5t-AhF">
                             <rect key="frame" x="45" y="253" width="285" height="30"/>
+                            <color key="tintColor" red="0.69337815719999996" green="0.97828954459999995" blue="0.84651246459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Vow-Vi-uJa"/>
                             </constraints>
