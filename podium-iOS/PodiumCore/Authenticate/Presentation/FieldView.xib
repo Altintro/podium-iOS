@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="VFh-v2-0Bn" customClass="FieldView" customModule="podium_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="419" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-zn-QSQ">
+                    <rect key="frame" x="45" y="50" width="329" height="30"/>
+                    <color key="tintColor" red="0.69337815719999996" green="0.97828954459999995" blue="0.84651246459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ZOe-5p-cwt"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in something here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4J-j3-rgA">
+                    <rect key="frame" x="45" y="0.0" width="329" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Q7N-yr-Xd8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Faf-yu-CgC" firstAttribute="trailing" secondItem="S4J-j3-rgA" secondAttribute="trailing" constant="45" id="3wC-ga-HPb"/>
+                <constraint firstItem="RKU-zn-QSQ" firstAttribute="centerX" secondItem="VFh-v2-0Bn" secondAttribute="centerX" id="CAu-8h-owJ"/>
+                <constraint firstItem="S4J-j3-rgA" firstAttribute="leading" secondItem="Faf-yu-CgC" secondAttribute="leading" constant="45" id="IAW-KU-wmy"/>
+                <constraint firstItem="RKU-zn-QSQ" firstAttribute="top" secondItem="S4J-j3-rgA" secondAttribute="bottom" id="NjX-Tn-V5I"/>
+                <constraint firstItem="RKU-zn-QSQ" firstAttribute="bottom" secondItem="Faf-yu-CgC" secondAttribute="bottom" id="cee-YF-UBS"/>
+                <constraint firstItem="Faf-yu-CgC" firstAttribute="trailing" secondItem="RKU-zn-QSQ" secondAttribute="trailing" constant="45" id="gvj-wQ-XJd"/>
+                <constraint firstItem="S4J-j3-rgA" firstAttribute="centerX" secondItem="VFh-v2-0Bn" secondAttribute="centerX" id="ll8-2j-mw1"/>
+                <constraint firstItem="RKU-zn-QSQ" firstAttribute="leading" secondItem="Faf-yu-CgC" secondAttribute="leading" constant="45" id="typ-e6-v5z"/>
+                <constraint firstItem="S4J-j3-rgA" firstAttribute="top" secondItem="Faf-yu-CgC" secondAttribute="top" id="v7G-U4-3C2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Faf-yu-CgC"/>
+            <connections>
+                <outlet property="textField" destination="RKU-zn-QSQ" id="UA6-O0-9Kc"/>
+                <outlet property="titleLabel" destination="S4J-j3-rgA" id="Yl6-BP-ENo"/>
+            </connections>
+            <point key="canvasLocation" x="-4.5" y="-282"/>
+        </view>
+    </objects>
+</document>

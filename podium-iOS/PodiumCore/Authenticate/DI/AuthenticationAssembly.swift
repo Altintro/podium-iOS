@@ -39,7 +39,8 @@ final public class AuthenticationAssembbly {
     
     func emailPresenter() -> EmailPresenter {
         return EmailPresenter(repository: authenticationRepository(),
-                              magicLinkNavigator: magicLinkNavigator())
+                              magicLinkNavigator: magicLinkNavigator(),
+                              registerNavigator: registerNavigator())
     }
     
     func magicLinkNavigator() -> MagicLinkNavigator {
@@ -51,9 +52,36 @@ final public class AuthenticationAssembbly {
         return MagicLinkPresenter()
     }
     
+    func registerNavigator() -> RegisterNavigator {
+        return RegisterNavigator(navigationController: navigationController,
+                                 viewControllerProvider: self)
+    }
+    
+    func emailRegisterPresenter() -> RegisterPresenter {
+        return EmailRegisterPresenter(repository: authenticationRepository())
+    }
+    
+    func socialRegisterPresenter() -> RegisterPresenter {
+        return SocialRegisterPresenter(repository: authenticationRepository())
+    }
+    
+    
 }
 
-extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider {
+extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+    
+    func registerViewController(registerType: RegisterType) -> UIViewController {
+        let presenter : RegisterPresenter
+        switch registerType {
+        case .email:
+            presenter = emailRegisterPresenter()
+        case .social:
+            presenter = socialRegisterPresenter()
+        }
+        
+        return RegisterViewController(presenter: presenter)
+    }
+    
     func emailViewController() -> UIViewController {
         return EmailViewController(presenter: emailPresenter())
     }

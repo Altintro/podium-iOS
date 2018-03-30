@@ -15,13 +15,17 @@ protocol EmailView: class {
 final class EmailPresenter {
     private let repository: AuthenticationRepositoryProtocol
     private let magicLinkNavigator: MagicLinkNavigator
+    private let registerNavigator: RegisterNavigator
     private let disposeBag = DisposeBag()
     
     weak var view: EmailView?
     
-    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator){
+    init(repository: AuthenticationRepositoryProtocol,
+         magicLinkNavigator: MagicLinkNavigator,
+         registerNavigator: RegisterNavigator){
         self.repository = repository
         self.magicLinkNavigator = magicLinkNavigator
+        self.registerNavigator = registerNavigator
     }
     
     func didLoad() {
@@ -29,21 +33,23 @@ final class EmailPresenter {
     }
     
     func didTapCheckEmail(email: String) {
-        repository.emailConnect(email: email)
-        .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] check in
-                guard let `self` = self else {
-                    return
-                }
-                print("Check email response:\(check)")
-                // Check if user exists or not with "check"
-                self.magicLinkNavigator.showMagicLinkViewController()
-                }, onError: { error in
-                    print("Check email error:\(error)")
-            }, onDisposed: { [weak self] in
-                print("onDisposed")
-            })
-        .disposed(by: disposeBag)
+        self.registerNavigator.showRegisterViewController(registerType: .email)
+//        repository.emailConnect(email: email)
+//        .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: {[weak self] check in
+//                guard let `self` = self else {
+//                    return
+//                }
+//                print("Check email response:\(check)")
+//                // Check if user exists or not with "check" and show register or magiclink
+//                self.registerNavigator.showRegisterViewController(registerType: .email)
+//               // self.magicLinkNavigator.showMagicLinkViewController()
+//                }, onError: { error in
+//                    print("Check email error:\(error)")
+//            }, onDisposed: { [weak self] in
+//                print("onDisposed")
+//            })
+//        .disposed(by: disposeBag)
     }
     
 }
