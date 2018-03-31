@@ -10,7 +10,7 @@ import Foundation
 
 struct Google: Decodable {
     
-    let id: String
+    let sub: String
     let name: String
     let picture: String
     let email: String

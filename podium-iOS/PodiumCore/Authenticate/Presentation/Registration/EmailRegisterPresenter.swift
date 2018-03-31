@@ -34,8 +34,8 @@ final class EmailRegisterPresenter: RegisterPresenter {
                 self.magicLinkNavigator.showMagicLinkViewController()
                 }, onError: { error in
                     print("Email register error: \(error)")
-            }, onDisposed: { [weak self] in
-                print("onDisposed")
+                }, onDisposed: { [weak self] in
+                    print("onDisposed")
             })
             .disposed(by: disposeBag)
     }
