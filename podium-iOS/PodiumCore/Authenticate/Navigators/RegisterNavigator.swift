@@ -18,8 +18,8 @@ final class RegisterNavigator {
         self.viewControllerProvider = viewControllerProvider
     }
     
-    func showRegisterViewController(registerType: RegisterType){
-        let viewController = viewControllerProvider.registerViewController(registerType: registerType)
+    func showRegisterViewController(registerType: RegisterType, email: String){
+        let viewController = viewControllerProvider.registerViewController(registerType: registerType, email: email)
         navigationController.pushViewController(viewController,
                                                 animated: true)
     }

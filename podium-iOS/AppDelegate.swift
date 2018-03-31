@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,14 +30,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Handle Universal links
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
 
+        // If we use more than one deeplink, check the path to make difference between urls
         let comps = URLComponents(url: userActivity.webpageURL!,
                                   resolvingAgainstBaseURL: false)
         var queryParams = [String: String] ()
         comps?.queryItems?.forEach { queryParams[$0.name] = $0.value }
         
-        // Create AppDelegate repository worker, to call /me and realad contents, then pop to the root of the app.
+        let token = queryParams["token"]
+        UserDefaults.standard.set(token, forKey:"x-access-token")
+        appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().me()
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: { user in
+                    print(user)
+                    // Navigation Controller pops to root view controller, and reloads to user relative content
+                }, onError: { error in
+                    print(error)
+                }, onDisposed: {
+                print("onDisposed")
+            })
+            .disposed(by: appAssembly.disposeBag)
         appAssembly.navigationController.popToRootViewController(animated: true)
-        
         return true
     }
     

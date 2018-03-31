@@ -9,6 +9,7 @@
 import UIKit
 
 final class FieldView: UIView, NibLoadableView {
+    var type: FieldType? = nil
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var textField: UITextField!
 }

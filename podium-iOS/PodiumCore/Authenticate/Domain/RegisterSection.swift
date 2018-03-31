@@ -9,11 +9,12 @@
 import Foundation
 
 enum RegisterSection {
-    case field(type: fieldType)
-    case sports
+    case field(type: FieldType)
+    case sports(title: String)
+    case submit(title: String)
 }
 
-enum fieldType: String {
-    case alias = "alias"
-    case name = "name"
+enum FieldType: String {
+    case alias
+    case name
 }

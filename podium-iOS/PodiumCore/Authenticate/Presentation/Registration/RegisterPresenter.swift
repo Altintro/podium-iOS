@@ -6,7 +6,7 @@
 //  Copyright © 2018 Fernando Frances. All rights reserved.
 //
 
-import RxSwift
+import Foundation
 
 protocol RegisterView : class {
     var title: String? { get set }
@@ -17,4 +17,5 @@ protocol RegisterPresenter: class {
     weak var view: RegisterView? { get set }
     
     func didLoad()
+    func submit(withUserData data: [String:String])
 }

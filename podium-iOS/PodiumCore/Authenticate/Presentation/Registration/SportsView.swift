@@ -9,5 +9,6 @@
 import UIKit
 
 final class SportsView: UIView, NibLoadableView {
+    @IBOutlet weak var titleLabel: UILabel!
     
 }

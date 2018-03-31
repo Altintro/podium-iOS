@@ -12,6 +12,8 @@ internal enum Endpoint {
     case login (user: [String: String])
     case googleConnect(token: String)
     case emailConnect(email: String)
+    case emailRegister(user: [String: String])
+    case me
     case checkAlias(alias: String)
     case tournaments
     case users
@@ -51,6 +53,10 @@ private extension Endpoint {
             return .post
         case .emailConnect:
             return .post
+        case .emailRegister:
+            return .post
+        case .me:
+            return .get
         case .checkAlias:
             return .post
         case .users:
@@ -70,6 +76,10 @@ private extension Endpoint {
             return "users/googleConnect"
         case .emailConnect:
             return "users/emailConnect"
+        case .emailRegister:
+            return "users/emailRegister"
+        case .me:
+            return "users/me"
         case .checkAlias:
             return "users/checkAlias"
         case .users:
@@ -89,6 +99,10 @@ private extension Endpoint {
             return ["googleToken": token]
         case .emailConnect(let email):
             return ["email": email]
+        case .emailRegister:
+            return [:]
+         case .me:
+            return [:]
         case .checkAlias(let alias):
             return ["alias": alias]
         case .users:
@@ -107,6 +121,10 @@ private extension Endpoint {
         case .googleConnect:
             return [:]
         case .emailConnect:
+            return [:]
+        case .emailRegister(let user):
+            return user
+        case .me:
             return [:]
         case .checkAlias:
             return [:]
@@ -127,6 +145,10 @@ private extension Endpoint {
             return [:]
         case .emailConnect:
             return [:]
+        case .emailRegister:
+            return ["Content-Type": "application/json"]
+        case .me:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "x-access-token") ?? ""]
         case .checkAlias:
             return [:]
         case .users:

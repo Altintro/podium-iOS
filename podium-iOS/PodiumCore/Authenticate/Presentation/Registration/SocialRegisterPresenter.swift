@@ -20,4 +20,9 @@ final class SocialRegisterPresenter: RegisterPresenter {
     func didLoad() {
         
     }
+    
+    func submit(withUserData data: [String : String]) {
+        // update alias of user
+    }
+    
 }
