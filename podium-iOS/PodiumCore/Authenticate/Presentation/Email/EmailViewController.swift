@@ -56,7 +56,9 @@ class EmailViewController: UIViewController {
 }
 
 extension EmailViewController: EmailView {
-    
+    func pop() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
 
 

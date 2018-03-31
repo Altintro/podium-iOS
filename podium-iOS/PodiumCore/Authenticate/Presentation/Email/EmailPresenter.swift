@@ -10,18 +10,23 @@ import RxSwift
 
 protocol EmailView: class {
     var title: String? { get set }
+    func pop()
 }
 
 final class EmailPresenter {
     private let repository: AuthenticationRepositoryProtocol
     private let magicLinkNavigator: MagicLinkNavigator
+    private let registerNavigator: RegisterNavigator
     private let disposeBag = DisposeBag()
     
     weak var view: EmailView?
     
-    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator){
+    init(repository: AuthenticationRepositoryProtocol,
+         magicLinkNavigator: MagicLinkNavigator,
+         registerNavigator: RegisterNavigator){
         self.repository = repository
         self.magicLinkNavigator = magicLinkNavigator
+        self.registerNavigator = registerNavigator
     }
     
     func didLoad() {
@@ -35,11 +40,15 @@ final class EmailPresenter {
                 guard let `self` = self else {
                     return
                 }
-                print("Check email response:\(check)")
-                // Check if user exists or not with "check"
-                self.magicLinkNavigator.showMagicLinkViewController()
+                if (check.exists) {
+                    self.magicLinkNavigator.showMagicLinkViewController()
+                } else {
+                    self.registerNavigator.showRegisterViewController(registerType: .email,
+                                                                      email: email)
+                }
+                
                 }, onError: { error in
-                    print("Check email error:\(error)")
+                    self.view?.pop()
             }, onDisposed: { [weak self] in
                 print("onDisposed")
             })

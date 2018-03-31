@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum CompType : Int, Decodable {
+enum CompType : String, Decodable {
     
     case knockout
     case league

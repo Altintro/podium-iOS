@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Level : Int, Decodable {
+enum Level : String, Decodable {
     
     case novice
     case rookie

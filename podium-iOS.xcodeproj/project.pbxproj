@@ -25,6 +25,19 @@
 		E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */; };
 		E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */; };
 		E0384B86206BF38B00FFA71F /* MagicLinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */; };
+		E04E642F206EABBF00B7ADEE /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */; };
+		E04E6431206EAC1200B7ADEE /* RegisterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */; };
+		E04E6435206EB16100B7ADEE /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6434206EB16100B7ADEE /* FieldView.swift */; };
+		E04E6437206EB16C00B7ADEE /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6436206EB16C00B7ADEE /* FieldView.xib */; };
+		E04E6439206EB6C600B7ADEE /* SportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6438206EB6C600B7ADEE /* SportsView.xib */; };
+		E04E643B206EB6D400B7ADEE /* SportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E643A206EB6D400B7ADEE /* SportsView.swift */; };
+		E04E643D206EB71800B7ADEE /* RegisterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E643C206EB71800B7ADEE /* RegisterSection.swift */; };
+		E04E6441206EB8F800B7ADEE /* EmailRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */; };
+		E04E6443206EBA9B00B7ADEE /* SocialRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */; };
+		E04E6446206EBB5500B7ADEE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6444206EBB5500B7ADEE /* RegisterViewController.swift */; };
+		E04E6447206EBB5500B7ADEE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6445206EBB5500B7ADEE /* RegisterViewController.xib */; };
+		E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */; };
+		E04E644B206EC45500B7ADEE /* RegisterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E644A206EC45500B7ADEE /* RegisterType.swift */; };
 		E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */; };
 		E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */; };
 		E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */; };
@@ -33,6 +46,8 @@
 		E0852C94204E01A2002A4A81 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C93204E01A2002A4A81 /* Sport.swift */; };
 		E0852C96204E056E002A4A81 /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C95204E056E002A4A81 /* Gender.swift */; };
 		E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0852C9B204E06E3002A4A81 /* UserRanking.swift */; };
+		E08F0B5C206FB15800E6CDFE /* SubmitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F0B5B206FB15800E6CDFE /* SubmitView.swift */; };
+		E08F0B5E206FB16300E6CDFE /* SubmitView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08F0B5D206FB16300E6CDFE /* SubmitView.xib */; };
 		E0A52295205706970024D612 /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A52294205706970024D612 /* Facebook.swift */; };
 		E0AFB833205139EA000E07D4 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AFB832205139EA000E07D4 /* Modality.swift */; };
 		E0BAE4512064231C00AB6FEF /* CheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BAE4502064231C00AB6FEF /* CheckResponse.swift */; };
@@ -75,6 +90,19 @@
 		E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkNavigator.swift; sourceTree = "<group>"; };
 		E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkPresenter.swift; sourceTree = "<group>"; };
+		E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigator.swift; sourceTree = "<group>"; };
+		E04E6434206EB16100B7ADEE /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		E04E6436206EB16C00B7ADEE /* FieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
+		E04E6438206EB6C600B7ADEE /* SportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsView.xib; sourceTree = "<group>"; };
+		E04E643A206EB6D400B7ADEE /* SportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsView.swift; sourceTree = "<group>"; };
+		E04E643C206EB71800B7ADEE /* RegisterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSection.swift; sourceTree = "<group>"; };
+		E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterPresenter.swift; sourceTree = "<group>"; };
+		E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRegisterPresenter.swift; sourceTree = "<group>"; };
+		E04E6444206EBB5500B7ADEE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E04E6445206EBB5500B7ADEE /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = "podium-iOS/PodiumCore/Authenticate/Repositories/NibLoadableView.swift"; sourceTree = SOURCE_ROOT; };
+		E04E644A206EC45500B7ADEE /* RegisterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterType.swift; sourceTree = "<group>"; };
 		E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailNavigator.swift; sourceTree = "<group>"; };
 		E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AuthenticationPresenter+GoogleDelegates.swift"; sourceTree = "<group>"; };
 		E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
@@ -84,6 +112,8 @@
 		E0852C93204E01A2002A4A81 /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		E0852C95204E056E002A4A81 /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		E0852C9B204E06E3002A4A81 /* UserRanking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRanking.swift; sourceTree = "<group>"; };
+		E08F0B5B206FB15800E6CDFE /* SubmitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitView.swift; sourceTree = "<group>"; };
+		E08F0B5D206FB16300E6CDFE /* SubmitView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitView.xib; sourceTree = "<group>"; };
 		E0A52294205706970024D612 /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
 		E0AFB832205139EA000E07D4 /* Modality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
 		E0BAE4502064231C00AB6FEF /* CheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckResponse.swift; sourceTree = "<group>"; };
@@ -173,8 +203,51 @@
 			isa = PBXGroup;
 			children = (
 				E05107C0205DB872001836D4 /* Constants.swift */,
+				E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E08F0B5F206FCDDE00E6CDFE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */,
+				E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */,
+				E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */,
+				E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E08F0B60206FCDE900E6CDFE /* Email */ = {
+			isa = PBXGroup;
+			children = (
+				E0C278A720641A0700C17DD2 /* EmailPresenter.swift */,
+				E0C278A32064173100C17DD2 /* EmailViewController.swift */,
+				E0C278A42064173100C17DD2 /* EmailViewController.xib */,
+				E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */,
+				E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */,
+				E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */,
+			);
+			path = Email;
+			sourceTree = "<group>";
+		};
+		E08F0B61206FCE0300E6CDFE /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				E04E6444206EBB5500B7ADEE /* RegisterViewController.swift */,
+				E04E6445206EBB5500B7ADEE /* RegisterViewController.xib */,
+				E04E6434206EB16100B7ADEE /* FieldView.swift */,
+				E04E6436206EB16C00B7ADEE /* FieldView.xib */,
+				E04E643A206EB6D400B7ADEE /* SportsView.swift */,
+				E04E6438206EB6C600B7ADEE /* SportsView.xib */,
+				E08F0B5B206FB15800E6CDFE /* SubmitView.swift */,
+				E08F0B5D206FB16300E6CDFE /* SubmitView.xib */,
+				E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */,
+				E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */,
+				E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		E0D18F3B20599AD300F8BD80 /* Authenticate */ = {
@@ -202,6 +275,7 @@
 			children = (
 				E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */,
 				E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */,
+				E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -219,6 +293,8 @@
 			children = (
 				E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */,
 				E0BAE4502064231C00AB6FEF /* CheckResponse.swift */,
+				E04E643C206EB71800B7ADEE /* RegisterSection.swift */,
+				E04E644A206EC45500B7ADEE /* RegisterType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -226,16 +302,9 @@
 		E0D18F4020599B2800F8BD80 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */,
-				E04F5D9F2066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift */,
-				E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */,
-				E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */,
-				E0C278A720641A0700C17DD2 /* EmailPresenter.swift */,
-				E0C278A32064173100C17DD2 /* EmailViewController.swift */,
-				E0C278A42064173100C17DD2 /* EmailViewController.xib */,
-				E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */,
-				E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */,
-				E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */,
+				E08F0B5F206FCDDE00E6CDFE /* Authentication */,
+				E08F0B60206FCDE900E6CDFE /* Email */,
+				E08F0B61206FCE0300E6CDFE /* Registration */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -388,14 +457,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */,
+				E04E6439206EB6C600B7ADEE /* SportsView.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
 				E0384B80206BEE4F00FFA71F /* MagicLinkViewController.xib in Resources */,
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
+				E04E6437206EB16C00B7ADEE /* FieldView.xib in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
 				E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
 				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
+				E08F0B5E206FB16300E6CDFE /* SubmitView.xib in Resources */,
+				E04E6447206EBB5500B7ADEE /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,13 +552,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E04E6431206EAC1200B7ADEE /* RegisterNavigator.swift in Sources */,
 				E05107C1205DB872001836D4 /* Constants.swift in Sources */,
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
+				E04E642F206EABBF00B7ADEE /* RegisterPresenter.swift in Sources */,
 				E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
+				E04E6446206EBB5500B7ADEE /* RegisterViewController.swift in Sources */,
 				E02F5BE8204B088000531033 /* Tournament.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
@@ -494,10 +570,16 @@
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
+				E04E6441206EB8F800B7ADEE /* EmailRegisterPresenter.swift in Sources */,
+				E04E6443206EBA9B00B7ADEE /* SocialRegisterPresenter.swift in Sources */,
 				E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */,
+				E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
 				DB77C1AB204DD843005174FA /* Level.swift in Sources */,
+				E04E644B206EC45500B7ADEE /* RegisterType.swift in Sources */,
 				E0BAE4512064231C00AB6FEF /* CheckResponse.swift in Sources */,
+				E04E643D206EB71800B7ADEE /* RegisterSection.swift in Sources */,
+				E08F0B5C206FB15800E6CDFE /* SubmitView.swift in Sources */,
 				E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */,
 				E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
@@ -507,8 +589,10 @@
 				DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */,
 				E0384B86206BF38B00FFA71F /* MagicLinkPresenter.swift in Sources */,
 				E0DABA172048393D00AA3A77 /* WebServiceAssembly.swift in Sources */,
+				E04E6435206EB16100B7ADEE /* FieldView.swift in Sources */,
 				E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
+				E04E643B206EB6D400B7ADEE /* SportsView.swift in Sources */,
 				E0C278A22061949F00C17DD2 /* Google.swift in Sources */,
 				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
