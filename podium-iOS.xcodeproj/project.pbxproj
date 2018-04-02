@@ -20,7 +20,6 @@
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
 		DB78831D20669FC9002F6870 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78831C20669FC9002F6870 /* HomeAssembly.swift */; };
 		DB78831F2066A02C002F6870 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB78831E2066A02C002F6870 /* HomePresenter.swift */; };
-		DB7883232066A056002F6870 /* HomeViewControoller.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB7883222066A056002F6870 /* HomeViewControoller.xib */; };
 		DB87E9D82066C95000CCCE7A /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9D72066C95000CCCE7A /* HomeRepository.swift */; };
 		DB87E9DA2066C9A100CCCE7A /* HomeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB87E9D92066C9A100CCCE7A /* HomeResponse.swift */; };
 		DB87E9DC2066CEC500CCCE7A /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB87E9DB2066CEBB00CCCE7A /* AuthenticationViewController.xib */; };
@@ -84,7 +83,6 @@
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
 		DB78831C20669FC9002F6870 /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		DB78831E2066A02C002F6870 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		DB7883222066A056002F6870 /* HomeViewControoller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewControoller.xib; sourceTree = "<group>"; };
 		DB87E9D72066C95000CCCE7A /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
 		DB87E9D92066C9A100CCCE7A /* HomeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeResponse.swift; sourceTree = "<group>"; };
 		DB87E9DB2066CEBB00CCCE7A /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 			children = (
 				DB87E9E320685CB400CCCE7A /* Events */,
 				DB78831E2066A02C002F6870 /* HomePresenter.swift */,
-				DB7883222066A056002F6870 /* HomeViewControoller.xib */,
 				E0E73C672072754700CA8C41 /* HomeViewController.swift */,
 				E0E73C682072754700CA8C41 /* HomeViewController.xib */,
 			);
@@ -474,7 +471,6 @@
 				DB87E9E0206857B200CCCE7A /* StripCell.xib in Resources */,
 				DB87E9DE206857A000CCCE7A /* StripView.xib in Resources */,
 				E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */,
-				DB7883232066A056002F6870 /* HomeViewControoller.xib in Resources */,
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
