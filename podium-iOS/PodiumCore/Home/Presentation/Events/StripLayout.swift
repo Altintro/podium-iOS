@@ -1,5 +1,5 @@
 //
-//  EventsCollectionViewLayout.swift
+//  StripCollectionViewLayout.swift
 //  podium-iOS
 //
 //  Created by Tomás Ignacio Moyano on 3/26/18.
@@ -9,10 +9,10 @@
 
 import UIKit
 
-final class EventsCollectionViewLayout: UICollectionViewFlowLayout {
+final class StripLayout: UICollectionViewFlowLayout {
     
     private enum Constants {
-        static let itemSize = CGSize(width: 125, height: 125)
+        static let itemSize = CGSize(width: 125, height: 180)
         static let minimumLineSpacing: CGFloat = 16
         static let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
     }

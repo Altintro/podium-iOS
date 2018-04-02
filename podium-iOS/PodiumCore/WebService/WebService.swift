@@ -26,7 +26,7 @@ private struct Status: Decodable {
 
 final internal class WebService {
     private let session = URLSession(configuration: .default)
-    private let baseURL = URL(string: "https://api.winatpodium.com/apiv1/games")! // Server
+    private let baseURL = URL(string: "https://api.winatpodium.com/apiv1")! // Server
     //private let baseURL = URL(string: "http://localhost:3000/apiv1")! // Local
     private let decoder = JSONDecoder()
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum Modality : Int, Decodable {
+enum Modality : String, Decodable {
     
     case team
     case individual
