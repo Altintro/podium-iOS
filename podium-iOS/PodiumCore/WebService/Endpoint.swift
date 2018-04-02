@@ -15,9 +15,10 @@ internal enum Endpoint {
     case emailRegister(user: [String: String])
     case me
     case checkAlias(alias: String)
-    case tournaments
-    case users
-    case games
+    case featuredTournaments
+    case featuredGames
+    case featuredSports
+    case game(id: String)
 }
 
 internal extension Endpoint {
@@ -32,7 +33,7 @@ internal extension Endpoint {
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
-        if(request.httpMethod != "GET"){
+        if request.httpMethod != "GET" {
              request.httpBody = body
         }
         headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
@@ -61,11 +62,13 @@ private extension Endpoint {
             return .get
         case .checkAlias:
             return .post
-        case .users:
+        case .featuredTournaments:
             return .get
-        case .tournaments:
+        case .featuredGames:
             return .get
-        case .games:
+        case .featuredSports:
+            return .get
+        case .game:
             return .get
         }
     }
@@ -84,12 +87,14 @@ private extension Endpoint {
             return "users/me"
         case .checkAlias:
             return "users/checkAlias"
-        case .users:
-            return "users"
-        case .tournaments:
+        case .featuredTournaments:
             return "tournaments"
-        case .games:
+        case .featuredGames:
             return "games"
+        case .featuredSports:
+            return "sports"
+        case .game (let id):
+            return "games/detail/\(id)"
         }
     }
     
@@ -107,11 +112,13 @@ private extension Endpoint {
             return [:]
         case .checkAlias(let alias):
             return ["alias": alias]
-        case .users:
+        case .featuredTournaments:
             return [:]
-        case .tournaments:
+        case .featuredGames:
             return [:]
-        case .games:
+        case .featuredSports:
+            return [:]
+        case .game:
             return [:]
         }
     }
@@ -130,11 +137,13 @@ private extension Endpoint {
             return [:]
         case .checkAlias:
             return [:]
-        case .users:
+        case .featuredTournaments:
             return [:]
-        case .games:
+        case .featuredGames:
             return [:]
-        case .tournaments:
+        case .featuredSports:
+            return [:]
+        case .game:
             return [:]
         }
     }
@@ -153,11 +162,13 @@ private extension Endpoint {
             return ["x-access-token": UserDefaults.standard.string(forKey: "x-access-token") ?? ""]
         case .checkAlias:
             return [:]
-        case .users:
+        case .featuredTournaments:
             return [:]
-        case .games:
+        case .featuredGames:
             return [:]
-        case .tournaments:
+        case .featuredSports:
+            return [:]
+        case .game:
             return [:]
         }
     }

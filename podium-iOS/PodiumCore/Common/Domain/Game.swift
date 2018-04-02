@@ -9,18 +9,18 @@
 import Foundation
 
 struct Game : Decodable {
-
-    let id              : String
+    
+    let _id             : String
     let name            : String
-    let sport           : Sport
-    let description     : String
+    let sport           : Sport?
+    let description     : String?
     let tournament      : Tournament?
-    let participants    : [Team]
+    let participants    : [Team]?
     let wins            : Team?
     let loses           : Team?
-    let concluded       : Bool
+    let concluded       : Bool?
     let open            : Bool
-    let date            : String
+    let date            : String?
     let latitude        : Float?
     let longitude       : Float?
     let modality        : Modality

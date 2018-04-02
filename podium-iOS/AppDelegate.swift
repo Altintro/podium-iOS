@@ -17,9 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
+        let initialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
+        let authenticationViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
         appAssembly.window.rootViewController = appAssembly.navigationController
         appAssembly.navigationController.pushViewController(initialViewController, animated: false)
+        
+        //Dummy flow
+        appAssembly.navigationController.pushViewController(authenticationViewController, animated: false)
+        
         appAssembly.window.makeKeyAndVisible()
     
         configureFirebase()
@@ -41,9 +46,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().me()
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: { user in
-                    print(user)
-                    // Navigation Controller pops to root view controller, and reloads to user relative content
+                onNext: {  [weak self] user in
+                    guard let `self` = self else {
+                        return
+                    }
+                    self.appAssembly.navigationController.popToRootViewController(animated: true)
                 }, onError: { error in
                     print(error)
                 }, onDisposed: {
