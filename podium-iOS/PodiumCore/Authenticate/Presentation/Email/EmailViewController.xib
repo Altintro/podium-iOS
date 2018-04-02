@@ -42,9 +42,8 @@
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnb-RJ-2ym">
                             <rect key="frame" x="45" y="303" width="285" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Continue with email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-GL-Scs">
-                                    <rect key="frame" x="35" y="18" width="215" height="19"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-GL-Scs">
+                                    <rect key="frame" x="66" y="18" width="153" height="19"/>
                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -53,6 +52,8 @@
                             <color key="backgroundColor" white="0.97265625" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="F3T-vA-JQE"/>
+                                <constraint firstItem="IwZ-GL-Scs" firstAttribute="centerX" secondItem="Nnb-RJ-2ym" secondAttribute="centerX" id="aGx-q0-TYh"/>
+                                <constraint firstItem="IwZ-GL-Scs" firstAttribute="centerY" secondItem="Nnb-RJ-2ym" secondAttribute="centerY" id="c4o-ok-Zk8"/>
                             </constraints>
                         </view>
                     </subviews>
