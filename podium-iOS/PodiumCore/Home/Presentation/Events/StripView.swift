@@ -1,8 +1,8 @@
 //
-//  SportsView.swift
+//  EventView.swift
 //  podium-iOS
 //
-//  Created by Tomás Ignacio Moyano on 3/28/18.
+//  Created by Tomás Ignacio Moyano on 3/26/18.
 //  Copyright © 2018 Fernando Frances. All rights reserved.
 //
 
@@ -10,34 +10,34 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class SportsView: UIView, NibLoadableView {
+final class StripView: UIView, NibLoadableView {
     
-    @IBOutlet weak var eventTypeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private enum Constants {
-        static let height: CGFloat = 200
+        static let height: CGFloat = 220
     }
     
     var title: String {
-        get { return eventTypeLabel.text ?? "" }
-        set { eventTypeLabel.text = newValue.uppercased() }
+        get { return titleLabel.text ?? "" }
+        set { titleLabel.text = newValue.uppercased() }
     }
     
-    var presenter: SportsPresenter?
+    var presenter: StripPresenter?
     
-    var items: [Sport] {
+    var items: [StripItem] {
         get { return _items.value }
         set { _items.value = newValue }
     }
     
-    var itemSelected: ControlEvent<Sport> {
-        return collectionView.rx.modelSelected(Sport.self)
+    var itemSelected: ControlEvent<StripItem> {
+        return collectionView.rx.modelSelected(StripItem.self)
     }
     
     let disposeBag = DisposeBag()
     
-    private let _items = Variable<[Sport]>([])
+    private let _items = Variable<[StripItem]>([])
     
     // MARK: - Overrides
     
@@ -45,13 +45,13 @@ final class SportsView: UIView, NibLoadableView {
         super.awakeFromNib()
         
         // Register the cell
-        collectionView.register(EventCell.self)
+        collectionView.register(StripCell.self)
         
         // Bind the items to the collection view data source
         _items.asObservable()
             .bind(to: collectionView.rx.items) { [weak self] collectionView, index, item in
-                let cell = collectionView.dequeueReusableCell(EventCell.self, for: index)
-                self?.presenter?.present(sport: item, in: cell)
+                let cell = collectionView.dequeueReusableCell(StripCell.self, for: index)
+                self?.presenter?.present(item: item, in: cell)
                 
                 return cell
             }

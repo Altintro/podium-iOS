@@ -10,7 +10,7 @@ import Foundation
 
 struct Sport: Decodable {
     
-    let id                  : String 
+    let _id                 : String
     let name                : String
     let image               : String
     let description         : String

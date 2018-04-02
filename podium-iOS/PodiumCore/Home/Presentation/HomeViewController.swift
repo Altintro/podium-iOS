@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  podium-iOS
 //
-//  Created by Tomás Ignacio Moyano on 3/24/18.
+//  Created by Fernando Frances on 02/04/2018.
 //  Copyright © 2018 Fernando Frances. All rights reserved.
 //
 
@@ -11,20 +11,17 @@ import UIKit
 class HomeViewController: UIViewController {
     
     private let presenter: HomePresenter
-    private let eventsPresenter: EventsPresenter
-    private let sportsPresenter: SportsPresenter
+    private let stripPresenter: StripPresenter
     
     @IBOutlet weak var stackView: UIStackView!
     
     init(presenter: HomePresenter,
-        eventsPresenter: EventsPresenter,
-        sportsPresenter: SportsPresenter) {
+         stripPresenter: StripPresenter) {
         
         self.presenter = presenter
-        self.eventsPresenter = eventsPresenter
-        self.sportsPresenter = sportsPresenter
+        self.stripPresenter = stripPresenter
         
-        super.init(nibName: "Home", bundle: Bundle(for: type(of: self)))
+        super.init(nibName: "HomeViewController", bundle: Bundle(for: type(of: self)))
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -41,26 +38,31 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeView {
     
-    func update(with sports: [Sport], categoryTitle: String) {
-       
-        let sportsView = SportsView.instantiate()
-        sportsView.presenter = sportsPresenter
-        sportsView.title = categoryTitle
-        sportsView.items = sports
-        
-        stackView.addArrangedSubview(sportsView)
-    }
-    
-    
-    func update(with games: [Game], categoryTitle:String) {
-        
-        let eventsView = EventView.instantiate()
-        eventsView.presenter = eventsPresenter
-        eventsView.title = categoryTitle
-        eventsView.items = games
-        
-        stackView.addArrangedSubview(eventsView)
-        
+    func update(with sections: [HomeSection]) {
+        stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        sections.forEach { addView(for: $0 )}
     }
 }
+
+extension HomeViewController {
+    func addView(for section: HomeSection) {
+        let view: UIView
+        
+        switch section {
+        case .strip(let title, let items):
+            view = strip(withTitle: title, items: items)
+        }
+        stackView.addArrangedSubview(view)
+    }
+    
+    func strip(withTitle title: String, items: [StripItem]) -> UIView {
+        let stripView = StripView.instantiate()
+        stripView.presenter = stripPresenter
+        stripView.title = title
+        stripView.items = items
+        
+        return stripView
+    }
+}
+
 

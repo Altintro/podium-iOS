@@ -9,6 +9,10 @@
 import Foundation
 
 
-struct GamesResponse: Decodable {
+struct GameResponse: Decodable {
     let result: [Game]
+}
+
+struct SportResponse: Decodable {
+    let result: [Sport]
 }

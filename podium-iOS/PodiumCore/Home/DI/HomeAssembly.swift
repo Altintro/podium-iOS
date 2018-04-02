@@ -18,19 +18,15 @@ final public class HomeAssembly {
     }
     
     public func viewController() -> UIViewController {
-        return HomeViewController(presenter: presenter(), eventsPresenter: eventsPresenter(), sportsPresenter: sportsPresenter())
+        return HomeViewController(presenter: presenter(), stripPresenter: stripPresenter())
     }
     
     func presenter() -> HomePresenter {
         return HomePresenter(repository: homeRepository())
     }
     
-    func eventsPresenter() -> EventsPresenter {
-        return EventsPresenter()
-    }
-    
-    func sportsPresenter() -> SportsPresenter {
-        return SportsPresenter()
+    func stripPresenter() -> StripPresenter {
+        return StripPresenter()
     }
     
     func homeRepository() -> HomeRepositoryProtocol {
