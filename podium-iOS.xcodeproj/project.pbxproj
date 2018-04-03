@@ -14,7 +14,7 @@
 		DB77C1A9204DD837005174FA /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A8204DD837005174FA /* Game.swift */; };
 		DB77C1AB204DD843005174FA /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AA204DD843005174FA /* Level.swift */; };
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
-		DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB91B35E205B05E800B229BE /* GoogleService-Info.plist */; };
+		DBD632982073FD8500A1CC26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
@@ -96,7 +96,7 @@
 		DB77C1A8204DD837005174FA /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		DB77C1AA204DD843005174FA /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
-		DB91B35E205B05E800B229BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
@@ -430,9 +430,9 @@
 			children = (
 				E07DA8E920697B5A002E9A04 /* podium-iOS.entitlements */,
 				E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */,
+				DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */,
 				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
-				DB91B35E205B05E800B229BE /* GoogleService-Info.plist */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
 				E0DABA052047FF0A00AA3A77 /* Info.plist */,
 				E0DABA0B204838BD00AA3A77 /* PodiumCore */,
@@ -564,10 +564,10 @@
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
 				E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */,
+				DBD632982073FD8500A1CC26 /* GoogleService-Info.plist in Resources */,
 				E0604FED2072A3FE00CCFFFD /* StripCell.xib in Resources */,
 				E0604FE72072A3D500CCFFFD /* StripView.xib in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
-				DB91B35F205B05ED00B229BE /* GoogleService-Info.plist in Resources */,
 				E08F0B5E206FB16300E6CDFE /* SubmitView.xib in Resources */,
 				E04E6447206EBB5500B7ADEE /* RegisterViewController.xib in Resources */,
 				E0604FF52072A42D00CCFFFD /* HomeViewController.xib in Resources */,
