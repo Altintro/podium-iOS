@@ -35,7 +35,11 @@ internal extension Endpoint {
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
         if request.httpMethod != "GET" {
+<<<<<<< HEAD
+            request.httpBody = body
+=======
              request.httpBody = body
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
         }
         headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         return request

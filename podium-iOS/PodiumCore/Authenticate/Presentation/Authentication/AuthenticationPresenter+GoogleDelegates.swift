@@ -22,7 +22,6 @@ extension AuthenticationPresenter: GIDSignInDelegate {
                     guard let `self` = self else {
                         return
                     }
-                    print(registerResponse.auth)
                     print("Google Authentication Success")
                     }, onError: { error in
                     print("Google Authentication Error")
@@ -45,7 +44,7 @@ extension AuthenticationPresenter:  GIDSignInUIDelegate {
     }
     
     func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
-        //
+        // 
     }
     
     func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {

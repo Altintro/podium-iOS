@@ -2,11 +2,23 @@
 //  HomePresenter.swift
 //  podium-iOS
 //
+<<<<<<< HEAD
+=======
 //  Created by Fernando Frances on 02/04/2018.
 //  Copyright © 2018 Fernando Frances. All rights reserved.
 //
 
 import Foundation
+
+//
+//  HomePresenter.swift
+//  podium-iOS
+//
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
+//  Created by Tomás Ignacio Moyano on 3/24/18.
+//  Copyright © 2018 Fernando Frances. All rights reserved.
+//
+
 import UIKit
 import RxSwift
 
@@ -41,9 +53,15 @@ private extension HomePresenter {
     func loadSports() -> [Sport] {
         
         let futbol = Sport(_id: "1", name: "Fubtol", image: "nada", description: "Deporte con 2 arcos y una pelota", ranking: nil, rules: "Un referi", popularity: 9, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+<<<<<<< HEAD
+
+        let tennis = Sport(_id: "2", name: "Tennis", image: "nada", description: "Raqueta y red", ranking: nil, rules: "Hay que pasar la pelota del otro la de la red", popularity: 7, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
+
+=======
         
         let tennis = Sport(_id: "2", name: "Tennis", image: "nada", description: "Raqueta y red", ranking: nil, rules: "Hay que pasar la pelota del otro la de la red", popularity: 7, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
         
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
         let pingPong = Sport(_id: "3", name: "Ping Pong", image: "nada", description: "Deporte con dos paletas y una pequeña red", ranking: nil, rules: "Hay que pasar la pelota en del otro lado de la red en la mesa pequeña", popularity: 4, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
         
         return [futbol,tennis, pingPong]
@@ -55,8 +73,13 @@ private extension HomePresenter {
         
         Observable.combineLatest(featuredGames,featuredSports) { games, sports in
             return (games,sports)
+<<<<<<< HEAD
+        }
+        .observeOn(MainScheduler.instance)
+=======
             }
             .observeOn(MainScheduler.instance)
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
             .subscribe(onNext: { [weak self] games, sports in
                 guard let `self` = self else {
                     return
@@ -65,10 +88,33 @@ private extension HomePresenter {
                 self.view?.update(with: sections)
                 }, onError: { error in
                     print("Error getting featured games/sports: \(error)")
+<<<<<<< HEAD
+                }, onDisposed: { [weak self] in
+                    print("onDisposed")
+            })
+            .disposed(by: disposeBag)
+        
+        // Combine sports and games
+//        repository.featuredGames()
+//            .map { [weak self] response in
+//                self?.homeSections(games: response.result,sports: (self?.loadSports())!) ?? []
+//            }
+//            .observeOn(MainScheduler.instance)
+//            .subscribe(onNext: {[weak self] homeSections in
+//                    print(homeSections)
+//                    self?.view?.update(with: homeSections)
+//                }, onError: { error in
+//                    print("Error downloading featured games, \(error)")
+//                }, onDisposed: { [weak self] in
+//                    print("onDisposed")
+//            })
+//            .disposed(by: disposeBag)
+=======
             }, onDisposed: { [weak self] in
                 print("onDisposed")
             })
             .disposed(by: disposeBag)
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
     }
     
     func homeSections(games: [Game], sports: [Sport]) -> [HomeSection] {

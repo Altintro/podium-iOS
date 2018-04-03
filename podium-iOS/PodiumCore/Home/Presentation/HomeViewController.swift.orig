@@ -30,8 +30,12 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+<<<<<<< HEAD
+        
+=======
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
         presenter.view = self
         presenter.didLoad()
     }
@@ -46,6 +50,10 @@ extension HomeViewController: HomeView {
 }
 
 extension HomeViewController {
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
     func addView(for section: HomeSection) {
         let view: UIView
         
@@ -65,3 +73,8 @@ extension HomeViewController {
         return stripView
     }
 }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3

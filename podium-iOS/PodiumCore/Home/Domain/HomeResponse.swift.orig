@@ -1,5 +1,9 @@
 //
+<<<<<<< HEAD
+//  GamesResponse.swift
+=======
 //  HomeResponse.swift
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
 //  podium-iOS
 //
 //  Created by Tomás Ignacio Moyano on 3/24/18.
@@ -16,7 +20,10 @@ struct GameResponse: Decodable {
 struct SportResponse: Decodable {
     let result: [Sport]
 }
+<<<<<<< HEAD
+=======
 
 struct HomeResponse<T: Decodable>: Decodable {
     let result: [T]
 }
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3

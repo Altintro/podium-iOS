@@ -56,11 +56,9 @@ class EmailViewController: UIViewController {
 }
 
 extension EmailViewController: EmailView {
-    
-    func showNext(userAlreadyExists: Bool) {
-        
+    func pop() {
+        self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 

@@ -10,13 +10,13 @@ import Foundation
 
 struct User: Decodable {
     
-    let id: String
-    let name: String?
+    let _id: String
+    let name: String
     let alias: String
     let email: String
-    let profilePic: String?
-    let gender: String
-    let birthdate: String
+    let profilePic: String
+    let gender: String?
+    let birthdate: String?
     let latitude: Float?
     let longitude: Float?
     let interests: [Sport]?
@@ -30,10 +30,13 @@ struct User: Decodable {
     let gamesWon: [Game]?
     let gamesUpcoming: [Game]?
     let ranking  : [UserRanking]?
-    let fb: Facebook
-    let google: Google
-    let hasPassword: Bool
-    let mergedWithFB: Bool
+    let fb: Facebook?
+    let google: Google?
+    let hasPassword: Bool?
+    let mergedWithFB: Bool?
+    let mergedWithGoogle: Bool?
 }
+
+
 
 

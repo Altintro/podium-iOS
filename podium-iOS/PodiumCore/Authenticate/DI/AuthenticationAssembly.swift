@@ -38,15 +38,57 @@ final public class AuthenticationAssembbly {
     }
     
     func emailPresenter() -> EmailPresenter {
-        return EmailPresenter(repository: authenticationRepository())
+        return EmailPresenter(repository: authenticationRepository(),
+                              magicLinkNavigator: magicLinkNavigator(),
+                              registerNavigator: registerNavigator())
     }
+    
+    func magicLinkNavigator() -> MagicLinkNavigator {
+        return MagicLinkNavigator(navigationController: navigationController,
+                                  viewControllerProvider: self)
+    }
+    
+    func magicLinkPresenter() -> MagicLinkPresenter {
+        return MagicLinkPresenter()
+    }
+    
+    func registerNavigator() -> RegisterNavigator {
+        return RegisterNavigator(navigationController: navigationController,
+                                 viewControllerProvider: self)
+    }
+    
+    func emailRegisterPresenter() -> RegisterPresenter {
+        return EmailRegisterPresenter(repository: authenticationRepository(),
+                                      magicLinkNavigator: magicLinkNavigator())
+    }
+    
+    func socialRegisterPresenter() -> RegisterPresenter {
+        return SocialRegisterPresenter(repository: authenticationRepository())
+    }
+    
     
 }
 
-extension AuthenticationAssembbly: EmailViewControllerProvider {
+extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+    
+    func registerViewController(registerType: RegisterType, email: String) -> UIViewController {
+        let presenter : RegisterPresenter
+        switch registerType {
+        case .email:
+            presenter = emailRegisterPresenter()
+        case .social:
+            presenter = socialRegisterPresenter()
+        }
+        
+        return RegisterViewController(presenter: presenter, email: email)
+    }
+    
     func emailViewController() -> UIViewController {
         return EmailViewController(presenter: emailPresenter())
     }
     
+    func magicLinkViewController() -> UIViewController {
+        return MagicLinkViewController(presenter: magicLinkPresenter())
+    }
     
 }

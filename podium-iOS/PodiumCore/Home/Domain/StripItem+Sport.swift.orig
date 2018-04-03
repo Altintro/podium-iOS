@@ -15,4 +15,7 @@ extension StripItem {
         image = sport.image
     }
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3

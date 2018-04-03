@@ -1,0 +1,32 @@
+//
+//  Game.swift
+//  podium-iOS
+//
+//  Created by Tomás Ignacio Moyano on 3/5/18.
+//  Copyright © 2018 Fernando Frances. All rights reserved.
+//
+
+import Foundation
+
+struct Game : Decodable {
+<<<<<<< HEAD
+
+=======
+    
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
+    let _id             : String
+    let name            : String
+    let sport           : Sport?
+    let description     : String?
+    let tournament      : Tournament?
+    let participants    : [Team]?
+    let wins            : Team?
+    let loses           : Team?
+    let concluded       : Bool?
+    let open            : Bool
+    let date            : String?
+    let latitude        : Float?
+    let longitude       : Float?
+    let modality        : Modality
+    let levelAverage    : Level?
+}

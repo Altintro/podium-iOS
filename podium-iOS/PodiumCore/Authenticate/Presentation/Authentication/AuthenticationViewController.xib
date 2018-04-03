@@ -12,9 +12,6 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
-        <array key="aqua.ttf">
-            <string>AquaGrotesque</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthenticationViewController" customModule="podium_iOS" customModuleProvider="target">
@@ -111,14 +108,7 @@
                         <constraint firstItem="Mug-z8-MDR" firstAttribute="leading" secondItem="y2s-Gm-89D" secondAttribute="leading" constant="15" id="z4I-Dg-qmZ"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign up or sign in to continue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-z5-SRm">
-                    <rect key="frame" x="103" y="42" width="256" height="80"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="AquaGrotesque" family="Aqua Grotesque" pointSize="19"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
                     <rect key="frame" x="224" y="327" width="106" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="sign out google"/>
@@ -126,12 +116,22 @@
                         <action selector="dummySignOut:" destination="-1" eventType="touchUpInside" id="d3d-pm-Yz8"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up or sign in to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-z5-SRm">
+                    <rect key="frame" x="45" y="70" width="285" height="51.5"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Yf-B9-dkY"/>
+                <constraint firstItem="pH5-z5-SRm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="13W-Zb-PD2"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="5oI-fP-g6q"/>
+                <constraint firstItem="pH5-z5-SRm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="A56-Yz-nZG"/>
+                <constraint firstItem="pH5-z5-SRm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JhL-kZ-kdz"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="KUA-kg-Mte"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pH5-z5-SRm" secondAttribute="trailing" constant="45" id="O5L-R2-Jds"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="top" secondItem="y2s-Gm-89D" secondAttribute="bottom" constant="25" id="RU7-d1-x1D"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S8v-o2-2S1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dD-11-Osg" secondAttribute="trailing" constant="45" id="T8I-OH-r0V"/>

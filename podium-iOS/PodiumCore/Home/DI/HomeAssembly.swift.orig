@@ -22,15 +22,26 @@ final public class HomeAssembly {
     }
     
     func presenter() -> HomePresenter {
+<<<<<<< HEAD
+        return HomePresenter(repository: homeRepository())
+=======
         return HomePresenter(repository: repository())
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
     }
     
     func stripPresenter() -> StripPresenter {
         return StripPresenter()
     }
     
+<<<<<<< HEAD
+    func homeRepository() -> HomeRepositoryProtocol {
+        return HomeRespository(webService: webServiceAssembly.webService)
+    }
+}
+=======
     func repository() -> HomeRepositoryProtocol {
         return HomeRespository(webService: webServiceAssembly.webService)
     }
 }
 
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
