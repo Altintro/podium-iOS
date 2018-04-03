@@ -9,7 +9,11 @@
 import Foundation
 
 struct Game : Decodable {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
     let _id             : String
     let name            : String
     let sport           : Sport?
