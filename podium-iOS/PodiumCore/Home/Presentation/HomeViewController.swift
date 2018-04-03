@@ -45,6 +45,7 @@ extension HomeViewController: HomeView {
 }
 
 extension HomeViewController {
+    
     func addView(for section: HomeSection) {
         let view: UIView
         
