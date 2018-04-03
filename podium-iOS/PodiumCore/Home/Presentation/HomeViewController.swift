@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         self.presenter = presenter
         self.stripPresenter = stripPresenter
         
-        super.init(nibName: "HomeViewController", bundle: Bundle(for: type(of: self)))
+        super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
     required init?(coder aDecoder: NSCoder) {

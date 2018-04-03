@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let authenticationViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
         appAssembly.window.rootViewController = appAssembly.navigationController
         appAssembly.navigationController.pushViewController(initialViewController, animated: false)
+        appAssembly.navigationController.pushViewController(authenticationViewController, animated: false)
         
         appAssembly.window.makeKeyAndVisible()
     

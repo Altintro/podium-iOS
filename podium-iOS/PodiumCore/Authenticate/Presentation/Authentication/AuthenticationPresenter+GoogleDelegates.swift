@@ -22,6 +22,10 @@ extension AuthenticationPresenter: GIDSignInDelegate {
                     guard let `self` = self else {
                         return
                     }
+                    if registerResponse.auth {
+                        UserDefaults.standard.set(registerResponse.token, forKey:"x-access-token")
+                        self.view?.pop()
+                    }
                     print("Google Authentication Success")
                     }, onError: { error in
                     print("Google Authentication Error")
