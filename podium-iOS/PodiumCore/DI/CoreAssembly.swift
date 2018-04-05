@@ -9,15 +9,15 @@
 import UIKit
 
 final public class CoreAssembly {
+    
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
-    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly, navigationController: navigationController)
+    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly)
+    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, tabBarController: tabBarController)
     
-    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly)
+    private let tabBarController: UITabBarController
     
-    private let navigationController: UINavigationController
-    
-    public init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    public init(tabBarController: UITabBarController) {
+        self.tabBarController = tabBarController
     }
 }

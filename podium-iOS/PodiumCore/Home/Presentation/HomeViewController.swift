@@ -42,6 +42,11 @@ extension HomeViewController: HomeView {
     func update(with sections: [HomeSection]) {
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         sections.forEach { addView(for: $0 )}
+        
+        //TODO: should receive a reference of the Authentication view controller to present it when need it
+//        let appAssembly = AppAssembly()
+//        let authenticationViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
+//        self.tabBarController?.present(authenticationViewController, animated: true, completion: nil)
     }
 }
 

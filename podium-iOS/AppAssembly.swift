@@ -11,10 +11,9 @@ import RxSwift
 
 final class AppAssembly {
     private(set) lazy var window = UIWindow(frame: UIScreen.main.bounds)
-    private(set) lazy var navigationController = UINavigationController()
-    private(set) lazy var coreAssembly = CoreAssembly(navigationController: navigationController)
+    private(set) lazy var tabBarController = MainTabBarViewController()
+    private(set) lazy var coreAssembly = CoreAssembly(tabBarController: tabBarController)
     private(set) lazy var disposeBag = DisposeBag()
-
 }
 
 

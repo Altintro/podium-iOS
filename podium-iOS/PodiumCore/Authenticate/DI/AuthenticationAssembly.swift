@@ -11,12 +11,10 @@ import UIKit
 final public class AuthenticationAssembbly {
     
     private let webServiceAssembly: WebServiceAssembly
-    private let navigationController: UINavigationController
+    private let navigationController = UINavigationController ()
     
-    init(webServiceAssembly: WebServiceAssembly,
-         navigationController: UINavigationController){
+    init(webServiceAssembly: WebServiceAssembly){
         self.webServiceAssembly = webServiceAssembly
-        self.navigationController = navigationController
     }
     
     public func viewController() -> UIViewController {
