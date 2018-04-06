@@ -10,6 +10,7 @@ import RxSwift
 
 protocol MagicLinkView: class {
     var title: String? { get set }
+    func pop()
 }
 
 final class MagicLinkPresenter {

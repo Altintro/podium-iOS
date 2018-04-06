@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmailViewController" customModule="podium_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="3cj-Ef-iP4" id="qqT-Rx-MqJ"/>
                 <outlet property="checkEmalButton" destination="Nnb-RJ-2ym" id="Mgf-WN-zwE"/>
                 <outlet property="emailField" destination="qFJ-5t-AhF" id="1ue-1a-2Ue"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -69,16 +70,28 @@
                         <constraint firstItem="Nnb-RJ-2ym" firstAttribute="centerX" secondItem="pmN-go-dt1" secondAttribute="centerX" id="dRd-B7-Q5P"/>
                     </constraints>
                 </view>
+                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowback" translatesAutoresizingMaskIntoConstraints="NO" id="3cj-Ef-iP4">
+                    <rect key="frame" x="15" y="30" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="pHa-T7-25A"/>
+                        <constraint firstAttribute="width" constant="20" id="rZd-Q0-EQy"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="pmN-go-dt1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="1VC-7d-J6W"/>
+                <constraint firstItem="3cj-Ef-iP4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="6hD-Qs-YfJ"/>
                 <constraint firstAttribute="trailing" secondItem="pmN-go-dt1" secondAttribute="trailing" id="FF1-QU-zQj"/>
                 <constraint firstItem="pmN-go-dt1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ysz-ji-iuM"/>
                 <constraint firstItem="pmN-go-dt1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pXp-dS-ynN"/>
+                <constraint firstItem="3cj-Ef-iP4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="rEy-Kn-iW7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="arrowback" width="43" height="73"/>
+    </resources>
 </document>

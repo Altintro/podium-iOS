@@ -11,7 +11,7 @@ import GoogleSignIn
 
 protocol AuthenticationView: class {
     var title: String? { get set }
-    func pop()
+    func pop(toRoot: Bool)
 }
 
 final class AuthenticationPresenter: NSObject {

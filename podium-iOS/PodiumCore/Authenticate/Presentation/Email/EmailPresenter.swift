@@ -36,11 +36,11 @@ final class EmailPresenter {
     func didTapCheckEmail(email: String) {
         repository.emailConnect(email: email)
         .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] check in
+            .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
                     return
                 }
-                if (check.exists) {
+                if response.auth {
                     self.magicLinkNavigator.showMagicLinkViewController()
                 } else {
                     self.registerNavigator.showRegisterViewController(registerType: .email,

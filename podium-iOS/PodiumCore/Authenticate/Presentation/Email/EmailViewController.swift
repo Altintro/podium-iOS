@@ -15,6 +15,7 @@ protocol EmailViewControllerProvider: class {
 class EmailViewController: UIViewController {
 
     // Mark: Outlets
+    @IBOutlet weak var backButton: UIImageView!
     @IBOutlet weak var checkEmalButton: UIView!
     @IBOutlet weak var emailField: UITextField!
     
@@ -48,15 +49,18 @@ class EmailViewController: UIViewController {
         checkEmalButton.layer.borderColor = UIColor.darkGray.cgColor
         checkEmalButton.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                     action: #selector(checkEmailAndContinue(tap:))))
+        backButton.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                               action: #selector(pop)))
     }
     
     @objc func checkEmailAndContinue(tap: UITapGestureRecognizer) {
             presenter.didTapCheckEmail(email: emailField.text!)
     }
+
 }
 
 extension EmailViewController: EmailView {
-    func pop() {
+    @objc func pop() {
         self.navigationController?.popViewController(animated: true)
     }
 }

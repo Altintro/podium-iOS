@@ -10,7 +10,7 @@ import RxSwift
 
 protocol AuthenticationRepositoryProtocol {
     func googleConnect(token: String) -> Observable<RegisterResponse>
-    func emailConnect(email: String) -> Observable<CheckResponse>
+    func emailConnect(email: String) -> Observable<RegisterResponse>
     func emailRegister(user: [String:String]) -> Observable<RegisterResponse>
     func me() -> Observable<User>
     func checkAlias(alias: String) -> Observable<CheckResponse>
@@ -28,8 +28,8 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
         return webService.load(_type: RegisterResponse.self, from: .googleConnect(token: token))
     }
     
-    func emailConnect(email: String) -> Observable<CheckResponse> {
-        return webService.load(_type: CheckResponse.self, from: .emailConnect(email: email))
+    func emailConnect(email: String) -> Observable<RegisterResponse> {
+        return webService.load(_type: RegisterResponse.self, from: .emailConnect(email: email))
     }
     
     func emailRegister(user: [String:String]) -> Observable<RegisterResponse> {

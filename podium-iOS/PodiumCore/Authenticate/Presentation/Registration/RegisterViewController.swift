@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     
     // MARK: - Outlets
 
+    @IBOutlet weak var backButton: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     
     // MARK: - Properties
@@ -41,11 +42,21 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
+        configureViews()
+    }
+    
+    func configureViews() {
+        backButton.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                               action: #selector(pop)))
     }
     
 }
 
 extension RegisterViewController: RegisterView {
+    @objc func pop() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func update(with sections: [RegisterSection]) {
         sections.forEach { addView(for: $0) }
     }
