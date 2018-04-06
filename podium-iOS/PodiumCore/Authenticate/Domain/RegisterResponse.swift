@@ -10,5 +10,5 @@ import Foundation
 
 struct RegisterResponse: Decodable {
     let auth: Bool
-    let token: String
+    let token: String?
 }

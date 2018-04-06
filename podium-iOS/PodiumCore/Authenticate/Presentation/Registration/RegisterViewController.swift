@@ -12,7 +12,7 @@ protocol RegisterViewControllerProvider: class {
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController
 }
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, CustomBackButtonView {
     
     // MARK: - Outlets
 
@@ -41,8 +41,8 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
+        configureBackButton()
     }
-    
 }
 
 extension RegisterViewController: RegisterView {

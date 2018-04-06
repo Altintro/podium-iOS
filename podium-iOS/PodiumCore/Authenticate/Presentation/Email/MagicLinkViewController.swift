@@ -12,9 +12,13 @@ protocol MagicLinkViewControllerProvider: class {
     func magicLinkViewController() -> UIViewController
 }
 
-class MagicLinkViewController: UIViewController {
-
+class MagicLinkViewController: UIViewController, CustomBackButtonView {
+    
+    // Mark: Properties
+    
     private let presenter: MagicLinkPresenter
+    
+    // Mark: Initialization
     
     init(presenter: MagicLinkPresenter){
         self.presenter = presenter
@@ -30,10 +34,10 @@ class MagicLinkViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
+        configureBackButton()
     }
-
 }
 
 extension MagicLinkViewController: MagicLinkView {
-    // Protocol stubs
+
 }

@@ -84,8 +84,12 @@ class AuthenticationViewController: UIViewController {
 }
 
 extension AuthenticationViewController: AuthenticationView {
-    func pop() {
-        self.navigationController?.popToRootViewController(animated: true)
+    func pop(toRoot: Bool) {
+        if toRoot {
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

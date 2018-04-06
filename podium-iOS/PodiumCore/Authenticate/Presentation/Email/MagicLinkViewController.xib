@@ -12,6 +12,9 @@
         <array key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MagicLinkViewController" customModule="podium_iOS" customModuleProvider="target">
@@ -26,7 +29,7 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check your inbox!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uO-OY-V8L">
                     <rect key="frame" x="45" y="70" width="285" height="26"/>
-                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="21"/>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>

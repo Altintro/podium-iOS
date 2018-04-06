@@ -10,7 +10,6 @@ import RxSwift
 
 protocol EmailView: class {
     var title: String? { get set }
-    func pop()
 }
 
 final class EmailPresenter {
@@ -36,11 +35,11 @@ final class EmailPresenter {
     func didTapCheckEmail(email: String) {
         repository.emailConnect(email: email)
         .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] check in
+            .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
                     return
                 }
-                if (check.exists) {
+                if response.auth {
                     self.magicLinkNavigator.showMagicLinkViewController()
                 } else {
                     self.registerNavigator.showRegisterViewController(registerType: .email,
@@ -48,8 +47,8 @@ final class EmailPresenter {
                 }
                 
                 }, onError: { error in
-                    self.view?.pop()
-            }, onDisposed: { [weak self] in
+                    print(error)
+                }, onDisposed: { [weak self] in
                 print("onDisposed")
             })
         .disposed(by: disposeBag)

@@ -27,11 +27,13 @@ final class EmailRegisterPresenter: RegisterPresenter {
     func submit(withUserData data: [String : String]) {
         repository.emailRegister(user: data)
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] registerResponse in
+            .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
                     return
                 }
-                self.magicLinkNavigator.showMagicLinkViewController()
+                if response.auth {
+                    self.magicLinkNavigator.showMagicLinkViewController()
+                }
                 }, onError: { error in
                     print("Email register error: \(error)")
                 }, onDisposed: { [weak self] in
