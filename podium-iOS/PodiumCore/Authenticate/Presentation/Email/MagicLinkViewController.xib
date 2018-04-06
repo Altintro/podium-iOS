@@ -19,7 +19,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MagicLinkViewController" customModule="podium_iOS" customModuleProvider="target">
             <connections>
-                <outlet property="backButton" destination="cU7-2z-qft" id="sL8-cZ-oeX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,13 +39,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowback" translatesAutoresizingMaskIntoConstraints="NO" id="cU7-2z-qft">
-                    <rect key="frame" x="15" y="30" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="20" id="Lu7-Zc-ngP"/>
-                        <constraint firstAttribute="height" constant="20" id="tue-wy-gEq"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -58,14 +50,9 @@
                 <constraint firstItem="8uO-OY-V8L" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WeB-XO-1dw"/>
                 <constraint firstItem="8uO-OY-V8L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="ama-wg-ksV"/>
                 <constraint firstItem="5nV-vu-hmP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="fzc-pl-qtV"/>
-                <constraint firstItem="cU7-2z-qft" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="z9g-Zh-SjD"/>
-                <constraint firstItem="cU7-2z-qft" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="zp7-ll-IMW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="arrowback" width="43" height="73"/>
-    </resources>
 </document>

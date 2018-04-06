@@ -10,7 +10,6 @@ import RxSwift
 
 protocol EmailView: class {
     var title: String? { get set }
-    func pop()
 }
 
 final class EmailPresenter {
@@ -48,8 +47,8 @@ final class EmailPresenter {
                 }
                 
                 }, onError: { error in
-                    self.view?.pop()
-            }, onDisposed: { [weak self] in
+                    print(error)
+                }, onDisposed: { [weak self] in
                 print("onDisposed")
             })
         .disposed(by: disposeBag)

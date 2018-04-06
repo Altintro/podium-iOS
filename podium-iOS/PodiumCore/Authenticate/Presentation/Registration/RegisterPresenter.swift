@@ -11,7 +11,6 @@ import Foundation
 protocol RegisterView : class {
     var title: String? { get set }
     func update(with sections: [RegisterSection])
-    func pop()
 }
 
 protocol RegisterPresenter: class {

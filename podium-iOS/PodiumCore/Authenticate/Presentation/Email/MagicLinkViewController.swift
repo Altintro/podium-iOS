@@ -12,11 +12,7 @@ protocol MagicLinkViewControllerProvider: class {
     func magicLinkViewController() -> UIViewController
 }
 
-class MagicLinkViewController: UIViewController {
-    
-    // Mark: Outlets
-    
-    @IBOutlet weak var backButton: UIImageView!
+class MagicLinkViewController: UIViewController, CustomBackButtonView {
     
     // Mark: Properties
     
@@ -38,19 +34,10 @@ class MagicLinkViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
-        configureViews()
+        configureBackButton()
     }
-    
-    func configureViews() {
-        backButton.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                               action: #selector(pop)))
-    }
-    
 }
 
 extension MagicLinkViewController: MagicLinkView {
-    
-    @objc func pop() {
-        navigationController?.popViewController(animated: true)
-    }
+
 }

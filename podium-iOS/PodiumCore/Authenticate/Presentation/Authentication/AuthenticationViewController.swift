@@ -91,9 +91,5 @@ extension AuthenticationViewController: AuthenticationView {
             self.navigationController?.popViewController(animated: true)
         }
     }
-    
-    func pop() {
-        
-    }
 }
 
