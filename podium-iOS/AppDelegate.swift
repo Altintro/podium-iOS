@@ -17,14 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
-        let authenticationViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
-        appAssembly.window.rootViewController = appAssembly.navigationController
-        appAssembly.navigationController.pushViewController(initialViewController, animated: false)
-        appAssembly.navigationController.pushViewController(authenticationViewController, animated: false)
-        
+        appAssembly.window.rootViewController = appAssembly.mainTabBarController
         appAssembly.window.makeKeyAndVisible()
-    
         configureFirebase()
 
         return true
@@ -48,14 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     guard let `self` = self else {
                         return
                     }
-                    self.appAssembly.navigationController.popToRootViewController(animated: true)
+                    //TODO: UPDATE THIS WITH TABBAR CONTROLLER
+                    //self.appAssembly.navigationController.popToRootViewController(animated: true)
                 }, onError: { error in
                     print(error)
                 }, onDisposed: {
                 print("onDisposed")
             })
             .disposed(by: appAssembly.disposeBag)
-        appAssembly.navigationController.popToRootViewController(animated: true)
+        //TODO: UPDATE THIS WITH TABBAR CONTROLLER
+        //appAssembly.navigationController.popToRootViewController(animated: true)
         return true
     }
     
