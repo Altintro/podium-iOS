@@ -10,30 +10,28 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    //private let theViewControllers: [UIViewController]
-    private let coreAssembly: CoreAssembly
+    var tabBarItems: [UITabBarItem]
     
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        let homeVC = coreAssembly.homeAssembly.viewController()
-        let downloadsVC = UIViewController()
-        downloadsVC.view.backgroundColor = UIColor.blue
-        let historyVC = UIViewController()
-        historyVC.view.backgroundColor = UIColor.cyan
+    init() {
 
-        homeVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named:"home_btn"), selectedImage: UIImage(named:"home_btn"))
-        downloadsVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named:"create_btn"), selectedImage: UIImage(named:"create_btn"))
-        historyVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named:"profile_btn"), selectedImage: UIImage(named:"profile_btn"))
-
-        let controllers = [homeVC, downloadsVC, historyVC]
-        self.viewControllers = controllers
+        let homeIcon = UITabBarItem(title: nil, image: UIImage(named:"home_btn"), selectedImage: UIImage(named:"home_btn"))
+        let createIcon = UITabBarItem(title: nil, image: UIImage(named:"create_btn"), selectedImage: UIImage(named:"create_btn"))
+        let profileIcon = UITabBarItem(title: nil, image: UIImage(named:"profile_btn"), selectedImage: UIImage(named:"profile_btn"))
+        
+        tabBarItems = [homeIcon, createIcon, profileIcon]
+        
+        super.init(nibName: nil, bundle: nil)
     }
     
-    init(coreAssembly: CoreAssembly) {
-        self.coreAssembly = coreAssembly
-        super.init(nibName: nil, bundle: nil)
+    override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
+        
+        var count = 0
+        for vc in viewControllers! {
+            vc.tabBarItem = tabBarItems[count]
+            count += 1
+        }
+        
+        super.setViewControllers(viewControllers, animated: animated)
     }
     
     required init?(coder aDecoder: NSCoder) {

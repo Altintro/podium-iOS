@@ -9,12 +9,23 @@
 import UIKit
 
 final public class CoreAssembly {
-    
+
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
-    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly)
+    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly, tabBarController: tabBarController)
     
-    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly)
+    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, authenticationAssembly: authenticationAssembbly, tabBarController: tabBarController)
     
-    public init() {}
+    var tabBarController = MainTabBarController()
+    
+    init () {
+        
+        let homeVC = homeAssembly.viewController()
+        let createVC = UIViewController()
+        createVC.view.backgroundColor = .blue
+        let profileVC = UIViewController()
+        profileVC.view.backgroundColor = .red
+
+        tabBarController.setViewControllers([homeVC, createVC, profileVC], animated: true)
+    }
 }

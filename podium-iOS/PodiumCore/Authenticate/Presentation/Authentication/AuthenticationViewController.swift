@@ -10,6 +10,11 @@ import UIKit
 import RxSwift
 import GoogleSignIn
 
+
+protocol AuthenticationViewControllerProvider: class {
+    func authenticationViewController() -> UIViewController
+}
+
 class AuthenticationViewController: UIViewController {
     
     // MARK: Outlets
@@ -74,6 +79,10 @@ class AuthenticationViewController: UIViewController {
     
     @objc func email(tap: UITapGestureRecognizer) {
         presenter.emailConnect()
+    }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        presenter.dismiss()
     }
     
     // DUMMY: To sign in and out with same google email

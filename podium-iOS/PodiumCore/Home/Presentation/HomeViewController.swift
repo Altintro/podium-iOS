@@ -46,6 +46,7 @@ extension HomeViewController: HomeView {
 }
 
 extension HomeViewController {
+    
     func addView(for section: HomeSection) {
         let view: UIView
         
@@ -61,6 +62,12 @@ extension HomeViewController {
         stripView.presenter = stripPresenter
         stripView.title = title
         stripView.items = items
+        
+        stripView.itemSelected
+        .subscribe(onNext: {[weak self] item in
+            self?.presenter.gameTouched()
+        })
+        .disposed(by: stripView.disposeBag)
         
         return stripView
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01EE305F207A262E0012ADD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE305E207A262E0012ADD7 /* MainTabBarController.swift */; };
+		01EE3062207A32D80012ADD7 /* AuthenticationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */; };
 		B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */; };
 		DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A2204DD16A005174FA /* Emblem.swift */; };
 		DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A4204DD7F8005174FA /* CompType.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		01EE305E207A262E0012ADD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNavigator.swift; sourceTree = "<group>"; };
 		330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podium_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -186,6 +188,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01EE3060207A32B80012ADD7 /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+				01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */,
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
 		12383E012ABCEB5B191E49AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +259,7 @@
 		E0604FD22072A2F800CCFFFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				01EE3060207A32B80012ADD7 /* Navigators */,
 				E0604FD62072A31700CCFFFD /* Presentation */,
 				E0604FD52072A30D00CCFFFD /* DI */,
 				E0604FD42072A30800CCFFFD /* Domain */,
@@ -681,6 +692,7 @@
 				E0604FEB2072A3EF00CCFFFD /* StripCell.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
+				01EE3062207A32D80012ADD7 /* AuthenticationNavigator.swift in Sources */,
 				E0604FDA2072A34C00CCFFFD /* HomeResponse.swift in Sources */,
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,

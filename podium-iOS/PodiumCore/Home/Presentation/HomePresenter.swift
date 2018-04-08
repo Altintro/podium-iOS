@@ -15,23 +15,30 @@ protocol HomeView: class {
     var title: String? { get set }
     
     func update(with sections: [HomeSection])
+    
 }
 
 final class HomePresenter {
     
     private let repository: HomeRepositoryProtocol
+    private let authenticationNavigator: AuthenticationNavigator
     private let disposeBag = DisposeBag()
     
     weak var view: HomeView?
     
-    init(repository: HomeRepositoryProtocol) {
+    init(repository: HomeRepositoryProtocol, authenticationNavigator: AuthenticationNavigator) {
         self.repository = repository
+        self.authenticationNavigator = authenticationNavigator
     }
     
     func didLoad() {
         
         view?.title = NSLocalizedString("", comment: "")
         loadContents()
+    }
+    
+    func gameTouched() {
+        authenticationNavigator.showAuthenticationViewController()
     }
 }
 
@@ -63,7 +70,6 @@ private extension HomePresenter {
         
         let sections = self.homeSections(games: games, sports: sports)
         self.view?.update(with: sections)
-        
         /*let featuredGames = repository.featuredGames().map { $0.result }
          let featuredSports = repository.featuredSports().map { $0.result }
          

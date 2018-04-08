@@ -17,13 +17,17 @@ protocol AuthenticationView: class {
 final class AuthenticationPresenter: NSObject {
     let repository: AuthenticationRepositoryProtocol
     private let emailNavigator: EmailNavigator
+    private let tabBarController: UITabBarController
+    
     let disposeBag = DisposeBag()
     
     weak var view: AuthenticationView?
     
-    init(repository: AuthenticationRepositoryProtocol, emailNavigator: EmailNavigator){
+    init(repository: AuthenticationRepositoryProtocol, emailNavigator: EmailNavigator,
+         tabBarController: UITabBarController){
         self.repository = repository
         self.emailNavigator = emailNavigator
+        self.tabBarController = tabBarController
     }
     
     func didLoad() {
@@ -38,6 +42,10 @@ final class AuthenticationPresenter: NSObject {
     
     func emailConnect() {
         emailNavigator.showEmailViewController()
+    }
+    
+    func dismiss() {
+        tabBarController.dismiss(animated: true, completion: nil)
     }
     
 }
