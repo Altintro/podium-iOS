@@ -17,7 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        appAssembly.window.rootViewController = appAssembly.tabBarController
+        let tabBarController = MainTabBarViewController(appAssembly: appAssembly)
+        appAssembly.window.rootViewController = tabBarController
         appAssembly.window.makeKeyAndVisible()
     
         configureFirebase()

@@ -11,24 +11,24 @@ import UIKit
 final public class HomeAssembly {
     
     private let webServiceAssembly: WebServiceAssembly
-    private let tabBarController: UITabBarController
+    //private let tabBarController: UITabBarController
     
     //Only for the case that the authentication is shown from home, this needs a navigationViewController
     private let navigationController = UINavigationController ()
 
-    init(webServiceAssembly: WebServiceAssembly, tabBarController: UITabBarController) {
+    init(webServiceAssembly: WebServiceAssembly) {
         
         self.webServiceAssembly = webServiceAssembly
-        self.tabBarController = tabBarController
+        //self.tabBarController = tabBarController
     }
     
     public func viewController() -> UIViewController {
         return HomeViewController(presenter: presenter(), stripPresenter: stripPresenter())
     }
     
-    func authenticationNavigator() -> AuthenticationNavigator {
+    /*func authenticationNavigator() -> AuthenticationNavigator {
         return AuthenticationNavigator(tabBarController: tabBarController, viewControllerProvider: self)
-    }
+    }*/
     
     func presenter() -> HomePresenter {
         return HomePresenter(repository: repository())
