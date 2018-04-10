@@ -11,15 +11,17 @@ import UIKit
 final public class AuthenticationAssembbly {
     
     private let webServiceAssembly: WebServiceAssembly
-    private let navigationController: UINavigationController
+    private let tabBarController: UITabBarController
+    
+    private(set) lazy var navigationController = UINavigationController()
     
     init(webServiceAssembly: WebServiceAssembly,
-         navigationController: UINavigationController){
+         tabBarController: UITabBarController){
         self.webServiceAssembly = webServiceAssembly
-        self.navigationController = navigationController
+        self.tabBarController = tabBarController
     }
     
-    public func viewController() -> UIViewController {
+    func viewController() -> UIViewController {
         return AuthenticationViewController(presenter: authenticationPresenter())
     }
     
@@ -30,6 +32,10 @@ final public class AuthenticationAssembbly {
     
     func authenticationRepository() -> AuthenticationRepositoryProtocol {
         return AuthenticationRepository(webService: webServiceAssembly.webService)
+    }
+   
+    func authenticationNavigator() -> AuthenticationNavigator {
+        return AuthenticationNavigator(viewControllerProvider: self, tabBarController: tabBarController, navigationController: navigationController)
     }
     
     func emailNavigator() -> EmailNavigator {
@@ -69,7 +75,11 @@ final public class AuthenticationAssembbly {
     
 }
 
-extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+extension AuthenticationAssembbly: AuthenticationViewControllerProvider, EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+    
+    func authenticationViewController() -> UIViewController {
+        return viewController()
+    }
     
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController {
         let presenter : RegisterPresenter

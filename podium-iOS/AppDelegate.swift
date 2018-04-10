@@ -17,12 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let initialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
-        let authenticationViewController = appAssembly.coreAssembly.authenticationAssembbly.viewController()
-        appAssembly.window.rootViewController = appAssembly.navigationController
-        appAssembly.navigationController.pushViewController(initialViewController, animated: false)
-        appAssembly.navigationController.pushViewController(authenticationViewController, animated: false)
+        let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
+        appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
         
+        let profileInitialViewController = UIViewController()
+        profileInitialViewController.view?.backgroundColor = .blue
+        appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
+        
+        let createInitialViewController = UIViewController()
+        createInitialViewController.view?.backgroundColor = .green
+        appAssembly.createNavigationController.pushViewController(createInitialViewController,animated: false)
+        
+        appAssembly.tabBarController.setViewControllers([
+            appAssembly.homeNavigationController,
+            appAssembly.createNavigationController,
+            appAssembly.profileNavigationController],
+                                    animated: true)
+        
+        
+        appAssembly.window.rootViewController = appAssembly.tabBarController
         appAssembly.window.makeKeyAndVisible()
     
         configureFirebase()
@@ -48,14 +61,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     guard let `self` = self else {
                         return
                     }
-                    self.appAssembly.navigationController.popToRootViewController(animated: true)
+                    //self.appAssembly.navigationController.popToRootViewController(animated: true)
                 }, onError: { error in
                     print(error)
                 }, onDisposed: {
                 print("onDisposed")
             })
             .disposed(by: appAssembly.disposeBag)
-        appAssembly.navigationController.popToRootViewController(animated: true)
         return true
     }
     

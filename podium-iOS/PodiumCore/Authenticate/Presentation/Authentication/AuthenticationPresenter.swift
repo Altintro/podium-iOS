@@ -11,7 +11,6 @@ import GoogleSignIn
 
 protocol AuthenticationView: class {
     var title: String? { get set }
-    func pop(toRoot: Bool)
 }
 
 final class AuthenticationPresenter: NSObject {
@@ -39,5 +38,4 @@ final class AuthenticationPresenter: NSObject {
     func emailConnect() {
         emailNavigator.showEmailViewController()
     }
-    
 }

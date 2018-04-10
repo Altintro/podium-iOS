@@ -13,19 +13,20 @@ import RxSwift
 protocol HomeView: class {
     
     var title: String? { get set }
-    
     func update(with sections: [HomeSection])
 }
 
 final class HomePresenter {
     
     private let repository: HomeRepositoryProtocol
+    private let authenticationNavigator: AuthenticationNavigator
     private let disposeBag = DisposeBag()
     
     weak var view: HomeView?
     
-    init(repository: HomeRepositoryProtocol) {
+    init(repository: HomeRepositoryProtocol, authenticationNavigator: AuthenticationNavigator) {
         self.repository = repository
+        self.authenticationNavigator = authenticationNavigator
     }
     
     func didLoad() {
@@ -33,21 +34,14 @@ final class HomePresenter {
         view?.title = NSLocalizedString("Home", comment: "")
         loadContents()
     }
+    
+    func gameTapped() {
+        // Si el usuario esta registrado, muestro detalle, si no, muestro authentication
+        authenticationNavigator.showAuthenticationViewController()
+    }
 }
 
 private extension HomePresenter {
-    
-    
-    func loadSports() -> [Sport] {
-        
-        let futbol = Sport(_id: "1", name: "Fubtol", image: "nada", description: "Deporte con 2 arcos y una pelota", ranking: nil, rules: "Un referi", popularity: 9, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
-        
-        let tennis = Sport(_id: "2", name: "Tennis", image: "nada", description: "Raqueta y red", ranking: nil, rules: "Hay que pasar la pelota del otro la de la red", popularity: 7, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
-        
-        let pingPong = Sport(_id: "3", name: "Ping Pong", image: "nada", description: "Deporte con dos paletas y una pequeña red", ranking: nil, rules: "Hay que pasar la pelota en del otro lado de la red en la mesa pequeña", popularity: 4, activeTournaments: nil, openTournaments: nil, activeGames: nil, openGames: nil)
-        
-        return [futbol,tennis, pingPong]
-    }
     
     func loadContents() {
         let featuredGames = repository.featuredGames().map { $0.result }
@@ -75,7 +69,6 @@ private extension HomePresenter {
         var homeSections: [HomeSection] = []
         let gameItems = games.map { StripItem(game: $0) }
         homeSections.append(.strip(title: NSLocalizedString("Featured Games", comment: ""), items: gameItems))
-        //Pass sports too in this function 👆
         let sportItems = sports.map { StripItem(sport: $0) }
         homeSections.append(.strip(title: NSLocalizedString("Popular Sports", comment: ""), items: sportItems))
         return homeSections

@@ -11,10 +11,12 @@ import UIKit
 final public class HomeAssembly {
     
     private let webServiceAssembly: WebServiceAssembly
+    private let authenticationAssembly: AuthenticationAssembbly
     
-    init(webServiceAssembly: WebServiceAssembly) {
-        
+    init(webServiceAssembly: WebServiceAssembly,
+         authenticationAssembly: AuthenticationAssembbly) {
         self.webServiceAssembly = webServiceAssembly
+        self.authenticationAssembly = authenticationAssembly
     }
     
     public func viewController() -> UIViewController {
@@ -22,7 +24,7 @@ final public class HomeAssembly {
     }
     
     func presenter() -> HomePresenter {
-        return HomePresenter(repository: repository())
+        return HomePresenter(repository: repository(), authenticationNavigator: authenticationAssembly.authenticationNavigator())
     }
     
     func stripPresenter() -> StripPresenter {
@@ -32,5 +34,7 @@ final public class HomeAssembly {
     func repository() -> HomeRepositoryProtocol {
         return HomeRespository(webService: webServiceAssembly.webService)
     }
+    
 }
+
 

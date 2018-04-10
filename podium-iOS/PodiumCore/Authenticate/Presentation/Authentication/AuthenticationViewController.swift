@@ -10,6 +10,11 @@ import UIKit
 import RxSwift
 import GoogleSignIn
 
+
+protocol AuthenticationViewControllerProvider: class {
+    func authenticationViewController() -> UIViewController
+}
+
 class AuthenticationViewController: UIViewController {
     
     // MARK: Outlets
@@ -84,12 +89,5 @@ class AuthenticationViewController: UIViewController {
 }
 
 extension AuthenticationViewController: AuthenticationView {
-    func pop(toRoot: Bool) {
-        if toRoot {
-            self.navigationController?.popToRootViewController(animated: true)
-        } else {
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
 }
 
