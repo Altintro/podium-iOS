@@ -8,3 +8,11 @@
 
 import UIKit
 
+enum Constants {
+    case primaryColor(UIColor)
+    case secondaryColor(UIColor)
+    case backgroundColor(UIColor)
+}
+
+
+

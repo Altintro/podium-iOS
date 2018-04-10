@@ -18,9 +18,9 @@ final class StripCell: UICollectionViewCell, ReusableView, NibLoadableView {
     private(set) var disposeBag = DisposeBag()
     
     override func awakeFromNib() {
-        self.layer.cornerRadius = 5.0
-//        self.layer.borderWidth = 1.0
-//        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.layer.cornerRadius = 5
+//      self.layer.borderWidth = 1.0
+//      self.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     override func prepareForReuse() {
