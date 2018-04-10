@@ -81,10 +81,6 @@ class AuthenticationViewController: UIViewController {
         presenter.emailConnect()
     }
     
-    @IBAction func dismiss(_ sender: Any) {
-        presenter.dismiss()
-    }
-    
     // DUMMY: To sign in and out with same google email
     @IBAction func dummySignOut(_ sender: Any) {
         GIDSignIn.sharedInstance().signOut()
@@ -93,8 +89,5 @@ class AuthenticationViewController: UIViewController {
 }
 
 extension AuthenticationViewController: AuthenticationView {
-    func pop() {
-        self.navigationController?.popToRootViewController(animated: true)
-    }
 }
 

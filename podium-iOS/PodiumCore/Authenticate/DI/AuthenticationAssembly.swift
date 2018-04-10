@@ -13,27 +13,29 @@ final public class AuthenticationAssembbly {
     private let webServiceAssembly: WebServiceAssembly
     private let tabBarController: UITabBarController
     
-    let navigationController =  UINavigationController()
+    private(set) lazy var navigationController = UINavigationController()
     
     init(webServiceAssembly: WebServiceAssembly,
          tabBarController: UITabBarController){
         self.webServiceAssembly = webServiceAssembly
         self.tabBarController = tabBarController
-        navigationController.viewControllers = [viewController()]
     }
     
-    public func viewController() -> UIViewController {
+    func viewController() -> UIViewController {
         return AuthenticationViewController(presenter: authenticationPresenter())
     }
     
     func authenticationPresenter() -> AuthenticationPresenter {
         return AuthenticationPresenter(repository: authenticationRepository(),
-                                       emailNavigator: emailNavigator(),
-                                       tabBarController: tabBarController)
+                                       emailNavigator: emailNavigator())
     }
     
     func authenticationRepository() -> AuthenticationRepositoryProtocol {
         return AuthenticationRepository(webService: webServiceAssembly.webService)
+    }
+   
+    func authenticationNavigator() -> AuthenticationNavigator {
+        return AuthenticationNavigator(viewControllerProvider: self, tabBarController: tabBarController, navigationController: navigationController)
     }
     
     func emailNavigator() -> EmailNavigator {
@@ -73,7 +75,11 @@ final public class AuthenticationAssembbly {
     
 }
 
-extension AuthenticationAssembbly: EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+extension AuthenticationAssembbly: AuthenticationViewControllerProvider, EmailViewControllerProvider, MagicLinkViewControllerProvider, RegisterViewControllerProvider {
+    
+    func authenticationViewController() -> UIViewController {
+        return viewController()
+    }
     
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController {
         let presenter : RegisterPresenter

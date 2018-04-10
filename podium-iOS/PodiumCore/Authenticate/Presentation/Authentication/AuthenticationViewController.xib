@@ -122,19 +122,8 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wq6-JS-S72">
-                    <rect key="frame" x="332" y="24" width="24" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="24" id="atc-fI-eh7"/>
-                        <constraint firstAttribute="width" constant="24" id="jbE-90-br0"/>
-                    </constraints>
-                    <state key="normal" image="btn_close"/>
-                    <connections>
-                        <action selector="dismiss:" destination="-1" eventType="touchUpInside" id="QIg-sT-QKd"/>
-                    </connections>
-                </button>
             </subviews>
-            <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Yf-B9-dkY"/>
                 <constraint firstItem="pH5-z5-SRm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="13W-Zb-PD2"/>
@@ -142,13 +131,11 @@
                 <constraint firstItem="pH5-z5-SRm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="A56-Yz-nZG"/>
                 <constraint firstItem="pH5-z5-SRm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JhL-kZ-kdz"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="KUA-kg-Mte"/>
-                <constraint firstItem="wq6-JS-S72" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="KzW-Cu-e5U"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pH5-z5-SRm" secondAttribute="trailing" constant="45" id="O5L-R2-Jds"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="top" secondItem="y2s-Gm-89D" secondAttribute="bottom" constant="25" id="RU7-d1-x1D"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S8v-o2-2S1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dD-11-Osg" secondAttribute="trailing" constant="45" id="T8I-OH-r0V"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZsL-hj-2bh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wq6-JS-S72" secondAttribute="trailing" constant="19" id="aFg-F7-wi1"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gRd-DL-mEP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h00-1z-9Ch" secondAttribute="trailing" constant="45" id="iVD-4y-3Wo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dD-11-Osg" secondAttribute="bottom" constant="90" id="mI7-Je-LQa"/>
@@ -160,7 +147,6 @@
         </view>
     </objects>
     <resources>
-        <image name="btn_close" width="24" height="24"/>
         <image name="fb" width="2000" height="2000"/>
         <image name="google" width="1000" height="1000"/>
     </resources>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01EE305F207A262E0012ADD7 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE305E207A262E0012ADD7 /* MainTabBarController.swift */; };
-		01EE3062207A32D80012ADD7 /* AuthenticationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */; };
 		B6159A4723B2693FC89DBF5D /* Pods_podium_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */; };
 		DB77C1A3204DD16A005174FA /* Emblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A2204DD16A005174FA /* Emblem.swift */; };
 		DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1A4204DD7F8005174FA /* CompType.swift */; };
@@ -22,6 +21,7 @@
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
 		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
 		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
+		E0322527207CAACD00A4A848 /* AuthenticationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0322526207CAACD00A4A848 /* AuthenticationNavigator.swift */; };
 		E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */; };
 		E0384B80206BEE4F00FFA71F /* MagicLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */; };
 		E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */; };
@@ -90,7 +90,6 @@
 
 /* Begin PBXFileReference section */
 		01EE305E207A262E0012ADD7 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNavigator.swift; sourceTree = "<group>"; };
 		330AE4A877133DD04E23D7F2 /* Pods-podium-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4277B36EA87CF5DC6C9CDCC9 /* Pods_podium_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_podium_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D1F2F434B5F4DE02778B06 /* Pods-podium-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podium-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-podium-iOS/Pods-podium-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
+		E0322526207CAACD00A4A848 /* AuthenticationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNavigator.swift; sourceTree = "<group>"; };
 		E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkViewController.swift; sourceTree = "<group>"; };
 		E0384B7E206BEE4F00FFA71F /* MagicLinkViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MagicLinkViewController.xib; sourceTree = "<group>"; };
 		E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -188,14 +188,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01EE3060207A32B80012ADD7 /* Navigators */ = {
-			isa = PBXGroup;
-			children = (
-				01EE3061207A32D80012ADD7 /* AuthenticationNavigator.swift */,
-			);
-			path = Navigators;
-			sourceTree = "<group>";
-		};
 		12383E012ABCEB5B191E49AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +240,7 @@
 		E02F5BE2204B068600531033 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				01EE305E207A262E0012ADD7 /* MainTabBarController.swift */,
 				E05107C0205DB872001836D4 /* Constants.swift */,
 				E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */,
 				E0604FF62072A62100CCFFFD /* ReusableView.swift */,
@@ -259,7 +252,6 @@
 		E0604FD22072A2F800CCFFFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				01EE3060207A32B80012ADD7 /* Navigators */,
 				E0604FD62072A31700CCFFFD /* Presentation */,
 				E0604FD52072A30D00CCFFFD /* DI */,
 				E0604FD42072A30800CCFFFD /* Domain */,
@@ -387,6 +379,7 @@
 				E04F5D9D206586EE00E9C987 /* EmailNavigator.swift */,
 				E0384B83206BF34700FFA71F /* MagicLinkNavigator.swift */,
 				E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */,
+				E0322526207CAACD00A4A848 /* AuthenticationNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -446,7 +439,6 @@
 				DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */,
 				E02F5BDE204B026D00531033 /* AppAssembly.swift */,
 				E0DABA002047FF0A00AA3A77 /* Assets.xcassets */,
-				01EE305E207A262E0012ADD7 /* MainTabBarController.swift */,
 				E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */,
 				E0DABA052047FF0A00AA3A77 /* Info.plist */,
 				E0DABA0B204838BD00AA3A77 /* PodiumCore */,
@@ -692,7 +684,7 @@
 				E0604FEB2072A3EF00CCFFFD /* StripCell.swift in Sources */,
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
-				01EE3062207A32D80012ADD7 /* AuthenticationNavigator.swift in Sources */,
+				E0322527207CAACD00A4A848 /* AuthenticationNavigator.swift in Sources */,
 				E0604FDA2072A34C00CCFFFD /* HomeResponse.swift in Sources */,
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,

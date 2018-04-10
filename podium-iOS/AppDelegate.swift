@@ -17,7 +17,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        appAssembly.window.rootViewController = appAssembly.coreAssembly.tabBarController
+        let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
+        appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
+        
+        let profileInitialViewController = UIViewController()
+        profileInitialViewController.view?.backgroundColor = .blue
+        appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
+        
+        let createInitialViewController = UIViewController()
+        createInitialViewController.view?.backgroundColor = .green
+        appAssembly.createNavigationController.pushViewController(createInitialViewController,animated: false)
+        
+        appAssembly.tabBarController.setViewControllers([
+            appAssembly.homeNavigationController,
+            appAssembly.createNavigationController,
+            appAssembly.profileNavigationController],
+                                    animated: true)
+        
+        
+        appAssembly.window.rootViewController = appAssembly.tabBarController
         appAssembly.window.makeKeyAndVisible()
     
         configureFirebase()
@@ -43,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     guard let `self` = self else {
                         return
                     }
-                    //TODO: UPDATE THIS WITH TABBAR CONTROLLER
                     //self.appAssembly.navigationController.popToRootViewController(animated: true)
                 }, onError: { error in
                     print(error)
@@ -51,8 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("onDisposed")
             })
             .disposed(by: appAssembly.disposeBag)
-        //TODO: UPDATE THIS WITH TABBAR CONTROLLER
-        //appAssembly.navigationController.popToRootViewController(animated: true)
         return true
     }
     

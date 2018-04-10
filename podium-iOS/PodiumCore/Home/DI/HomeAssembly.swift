@@ -12,15 +12,11 @@ final public class HomeAssembly {
     
     private let webServiceAssembly: WebServiceAssembly
     private let authenticationAssembly: AuthenticationAssembbly
-    private let tabBarController: UITabBarController
     
     init(webServiceAssembly: WebServiceAssembly,
-         authenticationAssembly: AuthenticationAssembbly,
-         tabBarController: UITabBarController) {
-        
+         authenticationAssembly: AuthenticationAssembbly) {
         self.webServiceAssembly = webServiceAssembly
         self.authenticationAssembly = authenticationAssembly
-        self.tabBarController = tabBarController
     }
     
     public func viewController() -> UIViewController {
@@ -28,7 +24,7 @@ final public class HomeAssembly {
     }
     
     func presenter() -> HomePresenter {
-        return HomePresenter(repository: repository(), authenticationNavigator: authenticationNavigator())
+        return HomePresenter(repository: repository(), authenticationNavigator: authenticationAssembly.authenticationNavigator())
     }
     
     func stripPresenter() -> StripPresenter {
@@ -39,17 +35,6 @@ final public class HomeAssembly {
         return HomeRespository(webService: webServiceAssembly.webService)
     }
     
-    //Authentication from home
-    
-    func authenticationNavigator() -> AuthenticationNavigator {
-        return AuthenticationNavigator(viewControllerProvider: self, tabBarController: tabBarController)
-    }
 }
 
-extension HomeAssembly: AuthenticationViewControllerProvider {
-    
-    func authenticationViewController() -> UIViewController {
-        return authenticationAssembly.navigationController
-    }
-}
 

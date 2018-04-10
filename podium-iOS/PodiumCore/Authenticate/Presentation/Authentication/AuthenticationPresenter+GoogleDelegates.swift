@@ -24,7 +24,6 @@ extension AuthenticationPresenter: GIDSignInDelegate {
                     }
                     if registerResponse.auth {
                         UserDefaults.standard.set(registerResponse.token, forKey:"x-access-token")
-                        self.view?.pop()
                     }
                     print("Google Authentication Success")
                     }, onError: { error in

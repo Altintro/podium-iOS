@@ -14,18 +14,11 @@ final public class CoreAssembly {
     
     public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly, tabBarController: tabBarController)
     
-    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, authenticationAssembly: authenticationAssembbly, tabBarController: tabBarController)
+    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, authenticationAssembly: authenticationAssembbly)
     
-    var tabBarController = MainTabBarController()
+    private let tabBarController: UITabBarController
     
-    init () {
-        
-        let homeVC = homeAssembly.viewController()
-        let createVC = UIViewController()
-        createVC.view.backgroundColor = .blue
-        let profileVC = UIViewController()
-        profileVC.view.backgroundColor = .red
-
-        tabBarController.setViewControllers([homeVC, createVC, profileVC], animated: true)
+    public init(tabBarController: UITabBarController){
+        self.tabBarController = tabBarController
     }
 }
