@@ -65,7 +65,7 @@ extension HomeViewController {
         
         stripView.itemSelected
         .subscribe(onNext: {[weak self] item in
-            self?.presenter.gameTouched()
+            self?.presenter.gameTapped()
         })
         .disposed(by: stripView.disposeBag)
         
