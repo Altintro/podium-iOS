@@ -12,7 +12,7 @@ protocol EmailViewControllerProvider: class {
     func emailViewController() -> UIViewController
 }
 
-class EmailViewController: UIViewController, CustomNavigationButtons {
+class EmailViewController: UIViewController, CustomNavigationButtonsView {
 
     // Mark: Outlets
     @IBOutlet weak var checkEmalButton: UIView!

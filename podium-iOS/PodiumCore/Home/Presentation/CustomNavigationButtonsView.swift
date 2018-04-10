@@ -8,12 +8,12 @@
 
 import UIKit
 
-protocol CustomNavigationButtons {
+protocol CustomNavigationButtonsView {
     func configureBackButton()
     func configureCloseButton()
 }
 
-extension CustomNavigationButtons where Self: UIViewController {
+extension CustomNavigationButtonsView where Self: UIViewController {
     func configureBackButton() {
         let backButton = UIButton()
         backButton.imageView?.contentMode = .scaleAspectFit

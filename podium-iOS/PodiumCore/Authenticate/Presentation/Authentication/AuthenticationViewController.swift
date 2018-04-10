@@ -15,7 +15,7 @@ protocol AuthenticationViewControllerProvider: class {
     func authenticationViewController() -> UIViewController
 }
 
-class AuthenticationViewController: UIViewController, CustomNavigationButtons {
+class AuthenticationViewController: UIViewController, CustomNavigationButtonsView {
     
     // MARK: Outlets
     @IBOutlet weak var googleButton: UIView!
