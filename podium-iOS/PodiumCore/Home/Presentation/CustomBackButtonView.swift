@@ -8,11 +8,12 @@
 
 import UIKit
 
-protocol CustomBackButtonView {
+protocol CustomNavigationButtons {
     func configureBackButton()
+    func configureCloseButton()
 }
 
-extension CustomBackButtonView where Self: UIViewController {
+extension CustomNavigationButtons where Self: UIViewController {
     func configureBackButton() {
         let backButton = UIButton()
         backButton.imageView?.contentMode = .scaleAspectFit
@@ -33,12 +34,37 @@ extension CustomBackButtonView where Self: UIViewController {
         
         backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
     }
+    
+    func configureCloseButton() {
+        let closeButton = UIButton()
+        closeButton.imageView?.contentMode = .scaleAspectFit
+        closeButton.setImage(#imageLiteral(resourceName: "cross"), for: .normal)
+        
+        self.view.addSubview(closeButton)
+        
+        var constraints = [NSLayoutConstraint(item: closeButton, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: 15)]
+        constraints.append(NSLayoutConstraint(item: closeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20))
+        constraints.append(NSLayoutConstraint(item: closeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 20))
+        constraints.append(NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 60))
+        
+        self.view.addConstraints(constraints)
+        
+        
+        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
+        
+    }
 }
 
 extension UIViewController {
     @objc func backButtonPressed()  {
         if let parentVC = self.parent as? UINavigationController {
             parentVC.popViewController(animated: true)
+        }
+    }
+    
+    @objc func closeButtonPressed() {
+        if let parentVC = self.parent as? UINavigationController {
+            parentVC.dismiss(animated: true, completion: nil)
         }
     }
 }

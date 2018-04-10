@@ -12,7 +12,7 @@ protocol RegisterViewControllerProvider: class {
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController
 }
 
-class RegisterViewController: UIViewController, CustomBackButtonView {
+class RegisterViewController: UIViewController, CustomNavigationButtons {
     
     // MARK: - Outlets
 

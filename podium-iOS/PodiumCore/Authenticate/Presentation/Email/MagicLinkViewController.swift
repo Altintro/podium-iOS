@@ -12,7 +12,7 @@ protocol MagicLinkViewControllerProvider: class {
     func magicLinkViewController() -> UIViewController
 }
 
-class MagicLinkViewController: UIViewController, CustomBackButtonView {
+class MagicLinkViewController: UIViewController, CustomNavigationButtons {
     
     // Mark: Properties
     

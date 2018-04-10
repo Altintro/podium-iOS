@@ -15,7 +15,7 @@ protocol AuthenticationViewControllerProvider: class {
     func authenticationViewController() -> UIViewController
 }
 
-class AuthenticationViewController: UIViewController {
+class AuthenticationViewController: UIViewController, CustomNavigationButtons {
     
     // MARK: Outlets
     @IBOutlet weak var googleButton: UIView!
@@ -42,6 +42,7 @@ class AuthenticationViewController: UIViewController {
         super.viewDidLoad()
         presenter.view = self
         presenter.didLoad()
+        configureCloseButton()
         configureGoogle()
         configureFaceBook()
         configureViews()
@@ -89,5 +90,8 @@ class AuthenticationViewController: UIViewController {
 }
 
 extension AuthenticationViewController: AuthenticationView {
+    func dismiss() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
 }
 
