@@ -12,3 +12,9 @@ struct RegisterResponse: Decodable {
     let auth: Bool
     let token: String?
 }
+
+struct TokenResponse: Decodable {
+    let auth: Bool
+    let accessToken: String?
+    let refreshToken: String?
+}

@@ -80,7 +80,7 @@
 		E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */; };
 		E0D18F4A20599F4800F8BD80 /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */; };
 		E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */; };
-		E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */; };
+		E0D18F4E2059AE0C00F8BD80 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D18F4D2059AE0C00F8BD80 /* AuthenticationResponse.swift */; };
 		E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */; };
 		E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA002047FF0A00AA3A77 /* Assets.xcassets */; };
 		E0DABA042047FF0A00AA3A77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0DABA022047FF0A00AA3A77 /* LaunchScreen.storyboard */; };
@@ -166,7 +166,7 @@
 		E0D18F4720599F4800F8BD80 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E0D18F4820599F4800F8BD80 /* AuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		E0D18F4B20599F5F00F8BD80 /* AuthenticationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationPresenter.swift; sourceTree = "<group>"; };
-		E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
+		E0D18F4D2059AE0C00F8BD80 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		E0DAB9F62047FF0A00AA3A77 /* podium-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "podium-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAB9F92047FF0A00AA3A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0DABA002047FF0A00AA3A77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 		E0D18F3F20599B2000F8BD80 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				E0D18F4D2059AE0C00F8BD80 /* RegisterResponse.swift */,
+				E0D18F4D2059AE0C00F8BD80 /* AuthenticationResponse.swift */,
 				E04E643C206EB71800B7ADEE /* RegisterSection.swift */,
 				E04E644A206EC45500B7ADEE /* RegisterType.swift */,
 				E04ACEB520778BE00073A66A /* CheckResponse.swift */,
@@ -706,7 +706,7 @@
 				E0604FF72072A62100CCFFFD /* ReusableView.swift in Sources */,
 				E08F0B5C206FB15800E6CDFE /* SubmitView.swift in Sources */,
 				E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */,
-				E0D18F4E2059AE0C00F8BD80 /* RegisterResponse.swift in Sources */,
+				E0D18F4E2059AE0C00F8BD80 /* AuthenticationResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
 				E04ACEB42076705B0073A66A /* CustomNavigationButtonsView.swift in Sources */,

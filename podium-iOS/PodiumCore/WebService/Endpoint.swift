@@ -13,7 +13,9 @@ internal enum Endpoint {
     case googleConnect(token: String)
     case emailConnect(email: String)
     case emailRegister(user: [String: String])
-    case me
+    case tokens
+    case refreshToken
+    case revokeTokens
     case checkAlias(alias: String)
     case featuredTournaments
     case featuredGames
@@ -59,8 +61,12 @@ private extension Endpoint {
             return .post
         case .emailRegister:
             return .post
-        case .me:
+        case .tokens:
             return .get
+        case .refreshToken:
+            return .post
+        case .revokeTokens:
+            return .post
         case .checkAlias:
             return .post
         case .featuredTournaments:
@@ -84,8 +90,12 @@ private extension Endpoint {
             return "users/emailConnect"
         case .emailRegister:
             return "users/emailRegister"
-        case .me:
-            return "users/me"
+        case .tokens:
+            return "users/tokens"
+        case .refreshToken:
+            return "users/refreshToken"
+        case .revokeTokens:
+            return "users/revokeTokens"
         case .checkAlias:
             return "users/checkAlias"
         case .featuredTournaments:
@@ -109,7 +119,11 @@ private extension Endpoint {
             return ["email": email]
         case .emailRegister:
             return [:]
-         case .me:
+        case .tokens:
+            return [:]
+        case .refreshToken:
+            return [:]
+        case .revokeTokens:
             return [:]
         case .checkAlias(let alias):
             return ["alias": alias]
@@ -134,7 +148,11 @@ private extension Endpoint {
             return [:]
         case .emailRegister(let user):
             return user
-        case .me:
+        case .tokens:
+            return [:]
+        case .refreshToken:
+            return [:]
+        case .revokeTokens:
             return [:]
         case .checkAlias:
             return [:]
@@ -159,8 +177,12 @@ private extension Endpoint {
             return [:]
         case .emailRegister:
             return ["Content-Type": "application/json"]
-        case .me:
-            return ["x-access-token": UserDefaults.standard.string(forKey: "x-access-token") ?? ""]
+        case .tokens:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
+        case .refreshToken:
+            return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
+        case .revokeTokens:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .checkAlias:
             return [:]
         case .featuredTournaments:

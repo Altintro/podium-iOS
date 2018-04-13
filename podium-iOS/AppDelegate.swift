@@ -53,16 +53,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         comps?.queryItems?.forEach { queryParams[$0.name] = $0.value }
         
         let token = queryParams["token"]
-        UserDefaults.standard.set(token, forKey:"x-access-token")
+        UserDefaults.standard.set(token, forKey:"access-token")
         // ☝🏼this token should expire shortly, the me() request should return another valid token, then save it 👇🏽
-        appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().me()
+        appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().tokens()
             .observeOn(MainScheduler.instance)
             .subscribe(
-                onNext: {  [weak self] user in
+                onNext: {  [weak self] response in
                     guard let `self` = self else {
                         return
                     }
-                    self.appAssembly.coreAssembly.authenticationAssembbly.navigationController.dismiss(animated: true, completion: nil)
+                    if(response.auth){
+                        UserDefaults.standard.set(response.accessToken, forKey: "access-token")
+                        UserDefaults.standard.set(response.refreshToken, forKey: "refresh-token")
+                        self.appAssembly.coreAssembly.authenticationAssembbly.navigationController.dismiss(animated: true, completion: nil)
+                    }
                 }, onError: { error in
                     print(error)
                 }, onDisposed: {
