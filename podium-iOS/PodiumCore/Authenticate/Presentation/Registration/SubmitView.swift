@@ -13,8 +13,13 @@ final class SubmitView: UIView, NibLoadableView {
     @IBOutlet weak var submitButton: UIButton!
     
     override func awakeFromNib() {
-        submitButton.layer.borderWidth = 1.0
-        submitButton.layer.cornerRadius = 5.0
-        submitButton.layer.borderColor = UIColor.darkGray.cgColor
+        configureViews()
+    }
+}
+
+private extension SubmitView {
+    func configureViews() {
+        submitButton.layer.cornerRadius = 5
+        submitButton.addShadow()
     }
 }

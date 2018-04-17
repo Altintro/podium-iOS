@@ -42,7 +42,9 @@ extension CustomNavigationButtonsView where Self: UIViewController {
         
         self.view.addSubview(closeButton)
         
-        var constraints = [NSLayoutConstraint(item: closeButton, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: 15)]
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        var constraints = [NSLayoutConstraint(item: closeButton, attribute: .right, relatedBy: .equal, toItem: self.view, attribute: .right, multiplier: 1, constant: -25)]
         constraints.append(NSLayoutConstraint(item: closeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 20))
         constraints.append(NSLayoutConstraint(item: closeButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 0, constant: 20))
         constraints.append(NSLayoutConstraint(item: closeButton, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .top, multiplier: 1, constant: 60))

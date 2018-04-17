@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import GoogleSignIn
+import FacebookLogin
+import FacebookCore
 
 
 protocol AuthenticationViewControllerProvider: class {
@@ -44,7 +46,6 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
         presenter.didLoad()
         configureCloseButton()
         configureGoogle()
-        configureFaceBook()
         configureViews()
     }
     
@@ -55,9 +56,8 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
             facebookButton: #selector(facebook(tap:)),
             emailButton: #selector(email(tap:))]
         signUpbuttons.forEach {
-            $0.layer.borderWidth = 1.0
             $0.layer.cornerRadius = 5.0
-            $0.layer.borderColor = UIColor.darkGray.cgColor
+            $0.addShadow()
             $0.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                             action: $1))}
     }
@@ -66,16 +66,24 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
         GIDSignIn.sharedInstance().uiDelegate = presenter
     }
     
-    private func configureFaceBook() {
-        // Configure FB Delegates or others
-    }
-    
     @objc func google(tap: UITapGestureRecognizer) {
         GIDSignIn.sharedInstance().signIn()
     }
     
     @objc func facebook(tap: UITapGestureRecognizer) {
-        // Facebook Sign up
+        let loginManager = LoginManager()
+
+        loginManager.logIn(readPermissions: [.publicProfile, .email, .userBirthday], viewController: self) { loginResult in
+            switch loginResult {
+            case .failed(let err):
+                print(err)
+            case .cancelled:
+                print("User cancelled facebook login")
+            case .success(_, _, let token):
+                self.presenter.facebookConnect(token: token.authenticationToken)
+            }
+        }
+        
     }
     
     @objc func email(tap: UITapGestureRecognizer) {

@@ -44,9 +44,8 @@ class EmailViewController: UIViewController, CustomNavigationButtonsView {
     
     private func configureViews() {
         emailField.becomeFirstResponder()
-        checkEmalButton.layer.borderWidth = 1.0
-        checkEmalButton.layer.cornerRadius = 5.0
-        checkEmalButton.layer.borderColor = UIColor.darkGray.cgColor
+        checkEmalButton.layer.cornerRadius = 5
+        checkEmalButton.addShadow()
         let tap = UITapGestureRecognizer(target: self, action:#selector(checkEmailAndContinue(tap:)))
         checkEmalButton.addGestureRecognizer(tap)
     }

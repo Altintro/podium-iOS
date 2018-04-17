@@ -11,7 +11,7 @@ import Foundation
 extension StripItem {
     init(game: Game) {
         title = game.name
-        metadata = game.modality.rawValue
+        metadata = game.sport?.name ?? ""
         image = game.sport?.image ?? ""
     }
 }

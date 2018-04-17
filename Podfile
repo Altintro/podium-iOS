@@ -6,7 +6,10 @@ target 'podium-iOS' do
     pod 'RxCocoa',    '~> 4.0'
     pod 'Firebase/Core'
     pod 'GoogleSignIn'
-    pod 'FBSDKLoginKit'
+    pod 'FacebookCore'
+    pod 'FacebookLogin'
+    pod 'FacebookShare'
+    pod 'Kingfisher', '~> 4.0'
 end
 
 

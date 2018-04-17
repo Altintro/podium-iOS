@@ -39,4 +39,24 @@ final class AuthenticationPresenter: NSObject {
     func emailConnect() {
         emailNavigator.showEmailViewController()
     }
+    
+    func facebookConnect(token: String) {
+        repository.facebookConnect(token: token)
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[weak self] authResponse in
+                guard let `self` = self else {
+                    return
+                }
+                if authResponse.auth {
+                    UserDefaults.standard.set(authResponse.accessToken, forKey:"x-access-token")
+                    UserDefaults.standard.set(authResponse.refreshToken,forKey:"x-refresh-token")
+                    self.view?.dismiss()
+                }
+                }, onError: { error in
+                    print(error)
+                }, onDisposed: { [weak self] in
+                    print("onDisposed")
+            })
+            .disposed(by: disposeBag)
+    }
 }

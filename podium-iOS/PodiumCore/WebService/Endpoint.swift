@@ -11,11 +11,11 @@ import Foundation
 internal enum Endpoint {
     case login (user: [String: String])
     case googleConnect(token: String)
+    case facebookConnect(token: String)
     case emailConnect(email: String)
     case emailRegister(user: [String: String])
     case tokens
     case refreshToken
-    case revokeTokens
     case checkAlias(alias: String)
     case featuredTournaments
     case featuredGames
@@ -57,6 +57,8 @@ private extension Endpoint {
             return .post
         case .googleConnect:
             return .post
+        case .facebookConnect:
+            return .post
         case .emailConnect:
             return .post
         case .emailRegister:
@@ -64,8 +66,6 @@ private extension Endpoint {
         case .tokens:
             return .get
         case .refreshToken:
-            return .post
-        case .revokeTokens:
             return .post
         case .checkAlias:
             return .post
@@ -86,6 +86,8 @@ private extension Endpoint {
             return "users/login"
         case .googleConnect:
             return "users/googleConnect"
+        case .facebookConnect:
+            return "users/facebookConnect"
         case .emailConnect:
             return "users/emailConnect"
         case .emailRegister:
@@ -94,8 +96,6 @@ private extension Endpoint {
             return "users/tokens"
         case .refreshToken:
             return "users/refreshToken"
-        case .revokeTokens:
-            return "users/revokeTokens"
         case .checkAlias:
             return "users/checkAlias"
         case .featuredTournaments:
@@ -115,6 +115,8 @@ private extension Endpoint {
             return [:]
         case .googleConnect(let token):
             return ["googleToken": token]
+        case .facebookConnect(let token):
+            return ["fbToken": token]
         case .emailConnect(let email):
             return ["email": email]
         case .emailRegister:
@@ -122,8 +124,6 @@ private extension Endpoint {
         case .tokens:
             return [:]
         case .refreshToken:
-            return [:]
-        case .revokeTokens:
             return [:]
         case .checkAlias(let alias):
             return ["alias": alias]
@@ -144,6 +144,8 @@ private extension Endpoint {
             return user
         case .googleConnect:
             return [:]
+        case .facebookConnect:
+            return [:]
         case .emailConnect:
             return [:]
         case .emailRegister(let user):
@@ -151,8 +153,6 @@ private extension Endpoint {
         case .tokens:
             return [:]
         case .refreshToken:
-            return [:]
-        case .revokeTokens:
             return [:]
         case .checkAlias:
             return [:]
@@ -173,6 +173,8 @@ private extension Endpoint {
             return ["Content-Type": "application/json"]
         case .googleConnect:
             return [:]
+        case .facebookConnect:
+            return [:]
         case .emailConnect:
             return [:]
         case .emailRegister:
@@ -181,8 +183,6 @@ private extension Endpoint {
             return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .refreshToken:
             return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
-        case .revokeTokens:
-            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .checkAlias:
             return [:]
         case .featuredTournaments:

@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct RegisterResponse: Decodable {
+struct AuthenticationResponse: Decodable {
     let auth: Bool
-    let token: String?
-}
-
-struct TokenResponse: Decodable {
-    let auth: Bool
+    let type: SignInType?
     let accessToken: String?
     let refreshToken: String?
+}
+
+enum SignInType: String, Decodable {
+    case signin
+    case signup
 }

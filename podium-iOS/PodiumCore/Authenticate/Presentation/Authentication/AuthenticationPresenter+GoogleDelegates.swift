@@ -18,12 +18,13 @@ extension AuthenticationPresenter: GIDSignInDelegate {
         } else {
             repository.googleConnect(token: user.authentication.idToken)
                 .observeOn(MainScheduler.instance)
-                .subscribe(onNext: {[weak self] registerResponse in
+                .subscribe(onNext: {[weak self] authResponse in
                     guard let `self` = self else {
                         return
                     }
-                    if registerResponse.auth {
-                        UserDefaults.standard.set(registerResponse.token, forKey:"x-access-token")
+                    if authResponse.auth {
+                        UserDefaults.standard.set(authResponse.accessToken, forKey:"x-access-token")
+                        UserDefaults.standard.set(authResponse.refreshToken,forKey:"x-refresh-token")
                         self.view?.dismiss()
                     }
                     print("Google Authentication Success")

@@ -14,11 +14,12 @@ class MainTabBarController: UITabBarController {
     
     init() {
 
-        let homeIcon = UITabBarItem(title: nil, image: UIImage(named:"home_btn"), selectedImage: UIImage(named:"home_btn"))
-        let createIcon = UITabBarItem(title: nil, image: UIImage(named:"create_btn"), selectedImage: UIImage(named:"create_btn"))
-        let profileIcon = UITabBarItem(title: nil, image: UIImage(named:"profile_btn"), selectedImage: UIImage(named:"profile_btn"))
+        let homeIcon = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "home_btn"), selectedImage: #imageLiteral(resourceName: "home_btn"))
+        let createIcon = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "create_btn"), selectedImage: #imageLiteral(resourceName: "create_btn"))
+        let profileIcon = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profile_btn"), selectedImage: #imageLiteral(resourceName: "profile_btn"))
         
         tabBarItems = [homeIcon, createIcon, profileIcon]
+        tabBarItems.forEach { $0.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)}
         
         super.init(nibName: nil, bundle: nil)
     }
