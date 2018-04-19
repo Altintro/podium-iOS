@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxGesture
+import RxSwift
 
 protocol EmailViewControllerProvider: class {
     func emailViewController() -> UIViewController
@@ -21,6 +23,7 @@ class EmailViewController: UIViewController, CustomNavigationButtonsView {
     // Mark: Properties
     
     private let presenter: EmailPresenter
+    private let disposeBag = DisposeBag()
     
     // Mark: Initialization
     
@@ -40,20 +43,24 @@ class EmailViewController: UIViewController, CustomNavigationButtonsView {
         presenter.didLoad()
         configureBackButton()
         configureViews()
+        configureGestures()
     }
     
     private func configureViews() {
         emailField.becomeFirstResponder()
         checkEmalButton.layer.cornerRadius = 5
         checkEmalButton.addShadow()
-        let tap = UITapGestureRecognizer(target: self, action:#selector(checkEmailAndContinue(tap:)))
-        checkEmalButton.addGestureRecognizer(tap)
     }
     
-    @objc func checkEmailAndContinue(tap: UITapGestureRecognizer) {
-            presenter.didTapCheckEmail(email: emailField.text!)
+    private func configureGestures() {
+        checkEmalButton.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.presenter
+                    .didTapCheckEmail(email: self.emailField.text!)
+            })
+            .disposed(by: disposeBag)
     }
-
 }
 
 extension EmailViewController: EmailView {

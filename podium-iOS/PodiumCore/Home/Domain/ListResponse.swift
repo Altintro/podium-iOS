@@ -8,15 +8,6 @@
 
 import Foundation
 
-
-struct GameResponse: Decodable {
-    let result: [Game]
-}
-
-struct SportResponse: Decodable {
-    let result: [Sport]
-}
-
-struct HomeResponse<T: Decodable>: Decodable {
+struct ListResponse<T: Decodable>: Decodable {
     let result: [T]
 }

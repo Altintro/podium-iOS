@@ -22,6 +22,23 @@ final class EmailRegisterPresenter: RegisterPresenter {
     
     func didLoad() {
         self.view?.update(with: self.registerSections())
+        loadSports()
+    }
+    
+    func loadSports() {
+        repository.sports()
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[weak self] response in
+                guard let `self` = self else {
+                    return
+                }
+                self.view?.updateSection(with: response.result)
+                }, onError: { error in
+                    print("Email downloading sports")
+                }, onDisposed: { [weak self] in
+                    print("onDisposed")
+                })
+            .disposed(by: disposeBag)
     }
     
     func submit(withUserData data: [String : String]) {
@@ -46,9 +63,8 @@ final class EmailRegisterPresenter: RegisterPresenter {
         let registerSections : [RegisterSection] = [
             .field(type: .name),
             .field(type: .alias),
-//          .sports(title: NSLocalizedString("What sports do you practice?", comment: "")),
+            .sports(title: NSLocalizedString("What sports do you practice?", comment: ""), items:[]),
             .submit(title: "Sign up!")
-            
         ]
         return registerSections
     }

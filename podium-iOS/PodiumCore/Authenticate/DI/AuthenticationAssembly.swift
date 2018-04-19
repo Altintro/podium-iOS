@@ -72,6 +72,10 @@ final public class AuthenticationAssembbly {
         return SocialRegisterPresenter(repository: authenticationRepository())
     }
     
+    func sportsPresenter() -> SportsPresenter {
+        return SportsPresenter()
+    }
+    
     
 }
 
@@ -89,8 +93,9 @@ extension AuthenticationAssembbly: AuthenticationViewControllerProvider, EmailVi
         case .social:
             presenter = socialRegisterPresenter()
         }
-        
-        return RegisterViewController(presenter: presenter, email: email)
+        return RegisterViewController(presenter: presenter,
+                                      sportsPresenter: sportsPresenter(),
+                                      email: email)
     }
     
     func emailViewController() -> UIViewController {

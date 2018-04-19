@@ -10,7 +10,7 @@ import Foundation
 
 enum RegisterSection {
     case field(type: FieldType)
-    case sports(title: String)
+    case sports(title: String, items: [Sport])
     case submit(title: String)
 }
 

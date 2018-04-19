@@ -111,7 +111,7 @@
                         <constraint firstItem="Mug-z8-MDR" firstAttribute="leading" secondItem="y2s-Gm-89D" secondAttribute="leading" constant="15" id="z4I-Dg-qmZ"/>
                     </constraints>
                 </view>
-                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQp-rR-rlg">
                     <rect key="frame" x="224" y="327" width="106" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="sign out google"/>
@@ -120,7 +120,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign up or sign in to continue" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH5-z5-SRm">
-                    <rect key="frame" x="45" y="70" width="285" height="51.5"/>
+                    <rect key="frame" x="60" y="70" width="255" height="51.5"/>
                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -129,19 +129,19 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Yf-B9-dkY"/>
-                <constraint firstItem="pH5-z5-SRm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="13W-Zb-PD2"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="5oI-fP-g6q"/>
                 <constraint firstItem="pH5-z5-SRm" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="A56-Yz-nZG"/>
                 <constraint firstItem="pH5-z5-SRm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="JhL-kZ-kdz"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="KUA-kg-Mte"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pH5-z5-SRm" secondAttribute="trailing" constant="45" id="O5L-R2-Jds"/>
                 <constraint firstItem="4dD-11-Osg" firstAttribute="top" secondItem="y2s-Gm-89D" secondAttribute="bottom" constant="25" id="RU7-d1-x1D"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="S8v-o2-2S1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4dD-11-Osg" secondAttribute="trailing" constant="45" id="T8I-OH-r0V"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZsL-hj-2bh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pH5-z5-SRm" secondAttribute="trailing" constant="60" id="dBG-Cb-sJ0"/>
                 <constraint firstItem="h00-1z-9Ch" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gRd-DL-mEP"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="h00-1z-9Ch" secondAttribute="trailing" constant="45" id="iVD-4y-3Wo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="4dD-11-Osg" secondAttribute="bottom" constant="90" id="mI7-Je-LQa"/>
+                <constraint firstItem="pH5-z5-SRm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="60" id="tOF-5g-oHO"/>
                 <constraint firstItem="y2s-Gm-89D" firstAttribute="top" secondItem="h00-1z-9Ch" secondAttribute="bottom" constant="25" id="v5f-cY-oTa"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="y2s-Gm-89D" secondAttribute="trailing" constant="45" id="ygI-Yk-5do"/>
             </constraints>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxGesture
+import RxSwift
 
 protocol RegisterViewControllerProvider: class {
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController
@@ -21,12 +23,15 @@ class RegisterViewController: UIViewController, CustomNavigationButtonsView {
     // MARK: - Properties
     
     private let presenter: RegisterPresenter
+    private let sportsPresenter: SportsPresenter
+    private let disposeBag = DisposeBag()
     private let email: String
     
     // MARK: - Initialization
     
-    init(presenter: RegisterPresenter, email: String) {
+    init(presenter: RegisterPresenter, sportsPresenter: SportsPresenter, email: String) {
         self.presenter = presenter
+        self.sportsPresenter = sportsPresenter
         self.email = email
         
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
@@ -49,6 +54,15 @@ extension RegisterViewController: RegisterView {
     func update(with sections: [RegisterSection]) {
         sections.forEach { addView(for: $0) }
     }
+    
+    func updateSection(with sports: [Sport]) {
+        stackView.arrangedSubviews.forEach {
+            if ($0.isKind(of: SportsView.self)){
+                let sportsView = $0 as! SportsView
+                sportsView.items = sports
+            }
+        }
+    }
 }
 
 private extension RegisterViewController {
@@ -58,8 +72,8 @@ private extension RegisterViewController {
         switch section {
         case .field(let type):
             view = fieldView(withType: type)
-        case .sports(let title):
-            view = sportsView(withTitle: title)
+        case .sports(let title, let items):
+            view = sportsView(withTitle: title, items: items)
         case .submit(let title):
             view = submitView(withTitle: title)
         }
@@ -75,21 +89,33 @@ private extension RegisterViewController {
         return field
     }
     
-    func sportsView(withTitle title: String) -> UIView {
-        let sports = SportsView.instantiate()
-        sports.titleLabel.text = title
+    func sportsView(withTitle title: String, items: [Sport]) -> UIView {
+        let sportsView = SportsView.instantiate()
+        sportsView.presenter = sportsPresenter
+        sportsView.title = title
+        sportsView.items = items
+        sportsView.itemSelected
+            .subscribe(onNext: {[weak self] item in
+               print("sport selected")
+            })
+            .disposed(by: sportsView.disposeBag)
         
-        return sports
+        return sportsView
     }
     
     func submitView(withTitle title: String) -> UIView {
         let submit = SubmitView.instantiate()
         submit.submitButton.setTitle(title, for: .normal)
-        submit.submitButton.addTarget(self, action: #selector(self.submit), for: .touchDown)
+        submit.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.submit()
+            })
+            .disposed(by: disposeBag)
         return submit
     }
     
-    @objc func submit () {
+    private func submit () {
         var userData = [String: String]()
         stackView.arrangedSubviews.forEach {
             if($0 .isKind(of: FieldView.self)){

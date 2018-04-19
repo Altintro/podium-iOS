@@ -19,7 +19,7 @@ internal enum Endpoint {
     case checkAlias(alias: String)
     case featuredTournaments
     case featuredGames
-    case featuredSports
+    case sports
     case game(id: String)
 }
 
@@ -73,7 +73,7 @@ private extension Endpoint {
             return .get
         case .featuredGames:
             return .get
-        case .featuredSports:
+        case .sports:
             return .get
         case .game:
             return .get
@@ -102,7 +102,7 @@ private extension Endpoint {
             return "tournaments"
         case .featuredGames:
             return "games"
-        case .featuredSports:
+        case .sports:
             return "sports"
         case .game (let id):
             return "games/detail/\(id)"
@@ -131,7 +131,7 @@ private extension Endpoint {
             return [:]
         case .featuredGames:
             return [:]
-        case .featuredSports:
+        case .sports:
             return [:]
         case .game:
             return [:]
@@ -160,7 +160,7 @@ private extension Endpoint {
             return [:]
         case .featuredGames:
             return [:]
-        case .featuredSports:
+        case .sports:
             return [:]
         case .game:
             return [:]
@@ -189,7 +189,7 @@ private extension Endpoint {
             return [:]
         case .featuredGames:
             return [:]
-        case .featuredSports:
+        case .sports:
             return [:]
         case .game:
             return [:]

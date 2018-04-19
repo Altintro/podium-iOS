@@ -10,8 +10,8 @@ import RxSwift
 
 protocol HomeRepositoryProtocol {
     
-    func featuredGames() -> Observable<HomeResponse<Game>>
-    func featuredSports() -> Observable<HomeResponse<Sport>>
+    func featuredGames() -> Observable<ListResponse<Game>>
+    func featuredSports() -> Observable<ListResponse<Sport>>
 }
 
 final class HomeRespository: HomeRepositoryProtocol {
@@ -22,12 +22,12 @@ final class HomeRespository: HomeRepositoryProtocol {
         self.webService = webService
     }
     
-    func featuredGames() -> Observable<HomeResponse<Game>> {
-        return webService.load(_type: HomeResponse<Game>.self, from: .featuredGames)
+    func featuredGames() -> Observable<ListResponse<Game>> {
+        return webService.load(_type: ListResponse<Game>.self, from: .featuredGames)
     }
     
-    func featuredSports() -> Observable<HomeResponse<Sport>> {
-        return webService.load(_type: HomeResponse<Sport>.self, from: .featuredSports)
+    func featuredSports() -> Observable<ListResponse<Sport>> {
+        return webService.load(_type: ListResponse<Sport>.self, from: .sports)
     }
 }
 

@@ -15,6 +15,7 @@ protocol AuthenticationRepositoryProtocol {
     func emailRegister(user: [String:String]) -> Observable<AuthenticationResponse>
     func tokens() -> Observable<AuthenticationResponse>
     func checkAlias(alias: String) -> Observable<CheckResponse>
+    func sports() -> Observable<ListResponse<Sport>>
 }
 
 final class AuthenticationRepository: AuthenticationRepositoryProtocol {
@@ -47,6 +48,10 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
     
     func checkAlias(alias: String) -> Observable<CheckResponse> {
         return webService.load(_type: CheckResponse.self, from: .checkAlias(alias: alias))
+    }
+    
+    func sports() -> Observable<ListResponse<Sport>> {
+        return webService.load(_type: ListResponse<Sport>.self, from: .sports)
     }
 }
 

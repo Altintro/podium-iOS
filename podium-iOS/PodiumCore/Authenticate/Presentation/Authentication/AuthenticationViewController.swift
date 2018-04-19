@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxGesture
 import GoogleSignIn
 import FacebookLogin
 import FacebookCore
@@ -27,6 +28,7 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
     // MARK: Properties
     
     private let presenter: AuthenticationPresenter
+    private let disposeBag = DisposeBag()
     
     // MARK: Initialization
     
@@ -47,32 +49,48 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
         configureCloseButton()
         configureGoogle()
         configureViews()
+        configureGestures()
     }
     
     private func configureViews() {
         self.navigationController?.isNavigationBarHidden = true
-        let signUpbuttons = [
-            googleButton: #selector(self.google(tap:)),
-            facebookButton: #selector(facebook(tap:)),
-            emailButton: #selector(email(tap:))]
+        let signUpbuttons = [ googleButton, facebookButton, emailButton ]
         signUpbuttons.forEach {
-            $0.layer.cornerRadius = 5.0
-            $0.addShadow()
-            $0.addGestureRecognizer(UITapGestureRecognizer(target: self,
-                                                            action: $1))}
+            $0?.layer.cornerRadius = 5.0
+            $0?.addShadow()
+        }
     }
     
     private func configureGoogle() {
         GIDSignIn.sharedInstance().uiDelegate = presenter
     }
     
-    @objc func google(tap: UITapGestureRecognizer) {
-        GIDSignIn.sharedInstance().signIn()
+    private func configureGestures() {
+        googleButton.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                GIDSignIn.sharedInstance().signIn()
+            })
+            .disposed(by: disposeBag)
+        
+        facebookButton.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.facebookSignIn()
+            })
+            .disposed(by: disposeBag)
+        
+        emailButton.rx.tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { _ in
+                self.presenter.emailConnect()
+            })
+            .disposed(by: disposeBag)
     }
     
-    @objc func facebook(tap: UITapGestureRecognizer) {
+    private func facebookSignIn() {
         let loginManager = LoginManager()
-
+        
         loginManager.logIn(readPermissions: [.publicProfile, .email, .userBirthday], viewController: self) { loginResult in
             switch loginResult {
             case .failed(let err):
@@ -83,11 +101,6 @@ class AuthenticationViewController: UIViewController, CustomNavigationButtonsVie
                 self.presenter.facebookConnect(token: token.authenticationToken)
             }
         }
-        
-    }
-    
-    @objc func email(tap: UITapGestureRecognizer) {
-        presenter.emailConnect()
     }
     
     // DUMMY: To sign in and out with same google email
