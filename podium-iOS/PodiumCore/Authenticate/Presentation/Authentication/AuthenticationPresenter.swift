@@ -17,13 +17,15 @@ protocol AuthenticationView: class {
 final class AuthenticationPresenter: NSObject {
     let repository: AuthenticationRepositoryProtocol
     private let emailNavigator: EmailNavigator
+    private let registerNavigator: RegisterNavigator
     let disposeBag = DisposeBag()
     
     weak var view: AuthenticationView?
     
-    init(repository: AuthenticationRepositoryProtocol, emailNavigator: EmailNavigator){
+    init(repository: AuthenticationRepositoryProtocol, emailNavigator: EmailNavigator, registerNavigator: RegisterNavigator){
         self.repository = repository
         self.emailNavigator = emailNavigator
+        self.registerNavigator = registerNavigator
     }
     
     func didLoad() {
@@ -47,16 +49,27 @@ final class AuthenticationPresenter: NSObject {
                 guard let `self` = self else {
                     return
                 }
-                if authResponse.auth {
-                    UserDefaults.standard.set(authResponse.accessToken, forKey:"x-access-token")
-                    UserDefaults.standard.set(authResponse.refreshToken,forKey:"x-refresh-token")
-                    self.view?.dismiss()
-                }
+                self.onSocialAuthenticationResponse(response: authResponse)
                 }, onError: { error in
                     print(error)
                 }, onDisposed: { [weak self] in
                     print("onDisposed")
             })
             .disposed(by: disposeBag)
+    }
+    
+    func onSocialAuthenticationResponse(response: AuthenticationResponse) {
+        if response.auth {
+            UserDefaults.standard.set(response.accessToken, forKey:"access-token")
+            UserDefaults.standard.set(response.refreshToken,forKey:"refresh-token")
+            switch response.type {
+            case .signin?:
+                self.view?.dismiss()
+            case .signup?:
+                registerNavigator.showRegisterViewController(registerType: .social, email: "")
+            case .none:
+                self.view?.dismiss()
+            }
+        }
     }
 }

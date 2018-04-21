@@ -51,16 +51,15 @@ extension HomeViewController {
         let view: UIView
         
         switch section {
-        case .strip(let title, let items):
-            view = strip(withTitle: title, items: items)
+        case .strip(let items):
+            view = strip(items: items)
         }
         stackView.addArrangedSubview(view)
     }
     
-    func strip(withTitle title: String, items: [StripItem]) -> UIView {
+    func strip(items: [StripItem]) -> UIView {
         let stripView = StripView.instantiate()
         stripView.presenter = stripPresenter
-        stripView.title = title
         stripView.items = items
         
         stripView.itemSelected

@@ -44,18 +44,13 @@ final class HomePresenter {
 private extension HomePresenter {
     
     func loadContents() {
-        let featuredGames = repository.featuredGames().map { $0.result }
-        let featuredSports = repository.featuredSports().map { $0.result }
-        
-        Observable.combineLatest(featuredGames,featuredSports) { games, sports in
-            return (games,sports)
-            }
+        repository.featuredGames()
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: { [weak self] games, sports in
+            .subscribe(onNext: { [weak self] games in
                 guard let `self` = self else {
                     return
                 }
-                let sections = self.homeSections(games: games, sports: sports)
+                let sections = self.homeSections(games: games.result)
                 self.view?.update(with: sections)
                 }, onError: { error in
                     print("Error getting featured games/sports: \(error)")
@@ -65,12 +60,10 @@ private extension HomePresenter {
             .disposed(by: disposeBag)
     }
     
-    func homeSections(games: [Game], sports: [Sport]) -> [HomeSection] {
+    func homeSections(games: [Game]) -> [HomeSection] {
         var homeSections: [HomeSection] = []
         let gameItems = games.map { StripItem(game: $0) }
-        homeSections.append(.strip(title: NSLocalizedString("Featured Games", comment: ""), items: gameItems))
-        let sportItems = sports.map { StripItem(sport: $0) }
-        homeSections.append(.strip(title: NSLocalizedString("Popular Sports", comment: ""), items: sportItems))
+        homeSections.append(.strip(items: gameItems))
         return homeSections
     }
     

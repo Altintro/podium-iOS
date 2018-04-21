@@ -15,6 +15,6 @@ struct StripItem {
 }
 
 enum HomeSection {
-    case strip(title: String, items: [StripItem])
+    case strip(items: [StripItem])
 }
 

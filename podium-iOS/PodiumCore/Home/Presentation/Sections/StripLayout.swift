@@ -12,9 +12,10 @@ import UIKit
 final class StripLayout: UICollectionViewFlowLayout {
     
     private enum Constants {
-        static let itemSize = CGSize(width: 125, height: 180)
+        static let itemSize = CGSize(width: UIScreen.main.bounds.width/2 - 25, height:180)
         static let minimumLineSpacing: CGFloat = 16
-        static let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        static let minimumInterItemSpacing: CGFloat = 16
+        static let sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
     override func prepare() {
@@ -25,9 +26,10 @@ final class StripLayout: UICollectionViewFlowLayout {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.scrollsToTop = false
         
-        scrollDirection = .horizontal
+        scrollDirection = .vertical
         itemSize = Constants.itemSize
         minimumLineSpacing = Constants.minimumLineSpacing
+        minimumInteritemSpacing = Constants.minimumInterItemSpacing
         sectionInset = Constants.sectionInset
     }
     

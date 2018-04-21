@@ -13,7 +13,8 @@ internal enum Endpoint {
     case googleConnect(token: String)
     case facebookConnect(token: String)
     case emailConnect(email: String)
-    case emailRegister(user: [String: String])
+    case emailRegister(user: [String: String], sports: String)
+    case socialRegister(alias: String, sports: String)
     case tokens
     case refreshToken
     case checkAlias(alias: String)
@@ -63,6 +64,8 @@ private extension Endpoint {
             return .post
         case .emailRegister:
             return .post
+        case .socialRegister:
+            return .post
         case .tokens:
             return .get
         case .refreshToken:
@@ -92,6 +95,8 @@ private extension Endpoint {
             return "users/emailConnect"
         case .emailRegister:
             return "users/emailRegister"
+        case .socialRegister:
+            return "users/socialRegister"
         case .tokens:
             return "users/tokens"
         case .refreshToken:
@@ -119,8 +124,12 @@ private extension Endpoint {
             return ["fbToken": token]
         case .emailConnect(let email):
             return ["email": email]
-        case .emailRegister:
-            return [:]
+        case .emailRegister(_, let sports):
+            return ["sports":sports]
+        case .socialRegister(let alias, let sports):
+            var query = ["alias": alias]
+            if !sports.isEmpty { query["sports"] = sports }
+            return query
         case .tokens:
             return [:]
         case .refreshToken:
@@ -148,8 +157,10 @@ private extension Endpoint {
             return [:]
         case .emailConnect:
             return [:]
-        case .emailRegister(let user):
-            return user
+        case .emailRegister(let data, _):
+            return data
+        case .socialRegister:
+            return [:]
         case .tokens:
             return [:]
         case .refreshToken:
@@ -179,6 +190,8 @@ private extension Endpoint {
             return [:]
         case .emailRegister:
             return ["Content-Type": "application/json"]
+        case .socialRegister:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .tokens:
             return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .refreshToken:

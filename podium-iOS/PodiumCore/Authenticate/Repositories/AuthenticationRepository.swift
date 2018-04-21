@@ -12,7 +12,8 @@ protocol AuthenticationRepositoryProtocol {
     func googleConnect(token: String) -> Observable<AuthenticationResponse>
     func facebookConnect(token: String) -> Observable<AuthenticationResponse>
     func emailConnect(email: String) -> Observable<AuthenticationResponse>
-    func emailRegister(user: [String:String]) -> Observable<AuthenticationResponse>
+    func emailRegister(user: [String:String], sports: String) -> Observable<AuthenticationResponse>
+    func socialRegister(alias: String, sports: String) -> Observable<AuthenticationResponse>
     func tokens() -> Observable<AuthenticationResponse>
     func checkAlias(alias: String) -> Observable<CheckResponse>
     func sports() -> Observable<ListResponse<Sport>>
@@ -38,8 +39,12 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
         return webService.load(_type: AuthenticationResponse.self, from: .emailConnect(email: email))
     }
     
-    func emailRegister(user: [String:String]) -> Observable<AuthenticationResponse> {
-        return webService.load(_type: AuthenticationResponse.self, from: .emailRegister(user: user))
+    func emailRegister(user: [String:String], sports: String) -> Observable<AuthenticationResponse> {
+        return webService.load(_type: AuthenticationResponse.self, from: .emailRegister(user: user, sports: sports))
+    }
+    
+    func socialRegister(alias: String, sports: String) -> Observable<AuthenticationResponse> {
+        return webService.load(_type: AuthenticationResponse.self, from: .socialRegister(alias: alias, sports: sports))
     }
     
     func tokens() -> Observable<AuthenticationResponse> {

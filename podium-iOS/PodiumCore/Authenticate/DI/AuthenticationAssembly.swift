@@ -27,7 +27,8 @@ final public class AuthenticationAssembbly {
     
     func authenticationPresenter() -> AuthenticationPresenter {
         return AuthenticationPresenter(repository: authenticationRepository(),
-                                       emailNavigator: emailNavigator())
+                                       emailNavigator: emailNavigator(),
+                                       registerNavigator: registerNavigator())
     }
     
     func authenticationRepository() -> AuthenticationRepositoryProtocol {
@@ -63,13 +64,10 @@ final public class AuthenticationAssembbly {
                                  viewControllerProvider: self)
     }
     
-    func emailRegisterPresenter() -> RegisterPresenter {
-        return EmailRegisterPresenter(repository: authenticationRepository(),
-                                      magicLinkNavigator: magicLinkNavigator())
-    }
-    
-    func socialRegisterPresenter() -> RegisterPresenter {
-        return SocialRegisterPresenter(repository: authenticationRepository())
+    func registerPresenter(type: RegisterType) -> RegisterPresenter {
+        return RegisterPresenter(repository: authenticationRepository(),
+                                 magicLinkNavigator: magicLinkNavigator(),
+                                 type: type)
     }
     
     func sportsPresenter() -> SportsPresenter {
@@ -87,12 +85,7 @@ extension AuthenticationAssembbly: AuthenticationViewControllerProvider, EmailVi
     
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController {
         let presenter : RegisterPresenter
-        switch registerType {
-        case .email:
-            presenter = emailRegisterPresenter()
-        case .social:
-            presenter = socialRegisterPresenter()
-        }
+        presenter = registerPresenter(type: registerType)
         return RegisterViewController(presenter: presenter,
                                       sportsPresenter: sportsPresenter(),
                                       email: email)

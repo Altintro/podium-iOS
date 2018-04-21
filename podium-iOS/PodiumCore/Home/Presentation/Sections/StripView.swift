@@ -12,16 +12,10 @@ import RxCocoa
 
 final class StripView: UIView, NibLoadableView {
     
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
     private enum Constants {
-        static let height: CGFloat = 220
-    }
-    
-    var title: String {
-        get { return titleLabel.text ?? "" }
-        set { titleLabel.text = newValue }
+        static let height: CGFloat = UIScreen.main.bounds.height 
     }
     
     var presenter: StripPresenter?

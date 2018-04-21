@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol CustomNavigationButtonsView {
     func configureBackButton()
@@ -31,8 +32,11 @@ extension CustomNavigationButtonsView where Self: UIViewController {
         
         self.view.addConstraints(constraints)
         
-        
-        backButton.addTarget(self, action: #selector(backButtonPressed), for: .touchUpInside)
+        backButton.rx.tap.bind {
+            if let parentVC = self.parent as? UINavigationController {
+                parentVC.popViewController(animated: true)
+            }
+        }
     }
     
     func configureCloseButton() {
@@ -51,22 +55,10 @@ extension CustomNavigationButtonsView where Self: UIViewController {
         
         self.view.addConstraints(constraints)
         
-        
-        closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
-        
-    }
-}
-
-extension UIViewController {
-    @objc func backButtonPressed()  {
-        if let parentVC = self.parent as? UINavigationController {
-            parentVC.popViewController(animated: true)
-        }
-    }
-    
-    @objc func closeButtonPressed() {
-        if let parentVC = self.parent as? UINavigationController {
-            parentVC.dismiss(animated: true, completion: nil)
+        closeButton.rx.tap.bind {
+            if let parentVC = self.parent as? UINavigationController {
+                parentVC.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RxGesture
 import RxSwift
 
 protocol RegisterViewControllerProvider: class {
@@ -25,14 +24,15 @@ class RegisterViewController: UIViewController, CustomNavigationButtonsView {
     private let presenter: RegisterPresenter
     private let sportsPresenter: SportsPresenter
     private let disposeBag = DisposeBag()
-    private let email: String
+    private let email: String?
+    private var selectedSports = [String]()
     
     // MARK: - Initialization
     
-    init(presenter: RegisterPresenter, sportsPresenter: SportsPresenter, email: String) {
+    init(presenter: RegisterPresenter, sportsPresenter: SportsPresenter, email: String?) {
         self.presenter = presenter
         self.sportsPresenter = sportsPresenter
-        self.email = email
+        self.email = email ?? ""
         
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
@@ -62,6 +62,10 @@ extension RegisterViewController: RegisterView {
                 sportsView.items = sports
             }
         }
+    }
+    
+    func dismissAll() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -96,7 +100,11 @@ private extension RegisterViewController {
         sportsView.items = items
         sportsView.itemSelected
             .subscribe(onNext: {[weak self] item in
-               print("sport selected")
+                let index = sportsView.items.index(where: { (sport) -> Bool in
+                    sport.name == item.name
+                })
+                sportsView.items.remove(at: index!)
+                self?.selectedSports.append(item.name.lowercased())
             })
             .disposed(by: sportsView.disposeBag)
         
@@ -106,12 +114,9 @@ private extension RegisterViewController {
     func submitView(withTitle title: String) -> UIView {
         let submit = SubmitView.instantiate()
         submit.submitButton.setTitle(title, for: .normal)
-        submit.rx.tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { _ in
-                self.submit()
-            })
-            .disposed(by: disposeBag)
+        submit.submitButton.rx.tap.bind {
+            self.submit()
+        }
         return submit
     }
     
@@ -122,7 +127,7 @@ private extension RegisterViewController {
                 userData[(($0 as! FieldView).type?.rawValue)!] = ($0 as! FieldView).textField.text
             }
         }
-        userData["email"] = self.email
-        presenter.submit(withUserData: userData)
+        userData["email"] = email
+        presenter.submit(withUserData: userData, sports:selectedSports.joined(separator: ","))
     }
 }

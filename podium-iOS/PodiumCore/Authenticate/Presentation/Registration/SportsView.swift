@@ -15,7 +15,7 @@ final class SportsView: UIView, NibLoadableView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private enum Constants {
-        static let height: CGFloat = 150
+        static let height: CGFloat = 130
     }
     
     var title: String {

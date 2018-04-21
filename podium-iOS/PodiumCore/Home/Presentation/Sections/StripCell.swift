@@ -27,7 +27,6 @@ final class StripCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        // Set images to nil when reusing (Try out this!)
         background.subviews.forEach {
             if($0.isKind(of: UIImageView.self)) {
                 let iv = $0 as! UIImageView
