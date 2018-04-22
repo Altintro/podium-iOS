@@ -7,7 +7,8 @@
 //
 
 import Foundation
-enum Gender : Int, Decodable {
+
+enum Gender : String, Decodable {
     
     case male
     case female

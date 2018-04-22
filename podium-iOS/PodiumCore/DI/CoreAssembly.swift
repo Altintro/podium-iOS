@@ -9,19 +9,16 @@
 import UIKit
 
 final public class CoreAssembly {
+
     private(set) lazy var webServiceAssembly = WebServiceAssembly()
     
-    private let navigationController: UINavigationController
+    public private(set) lazy var authenticationAssembbly = AuthenticationAssembbly(webServiceAssembly: webServiceAssembly, tabBarController: tabBarController)
     
-    public func dummyViewController() -> UIViewController {
-        let vc = UIViewController()
-        vc.view = UIView(frame: UIScreen.main.bounds)
-        vc.view.backgroundColor = UIColor.blue
-        return vc
-        
-    }
+    public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, authenticationAssembly: authenticationAssembbly)
     
-    public init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    private let tabBarController: UITabBarController
+    
+    public init(tabBarController: UITabBarController){
+        self.tabBarController = tabBarController
     }
 }

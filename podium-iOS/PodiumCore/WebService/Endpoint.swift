@@ -9,14 +9,23 @@
 import Foundation
 
 internal enum Endpoint {
-    case register (user: [String: String])
     case login (user: [String: String])
-    case tournaments (query: String)
-    case users (query: String)
-    case games (query: String)
+    case googleConnect(token: String)
+    case facebookConnect(token: String)
+    case emailConnect(email: String)
+    case emailRegister(user: [String: String], sports: String)
+    case socialRegister(alias: String, sports: String)
+    case tokens
+    case refreshToken
+    case checkAlias(alias: String)
+    case featuredTournaments
+    case featuredGames
+    case sports
+    case game(id: String)
 }
 
 internal extension Endpoint {
+    
     func request(with baseURL: URL)-> URLRequest {
         let url = baseURL.appendingPathComponent(path)
         
@@ -26,11 +35,12 @@ internal extension Endpoint {
         let body = try! JSONSerialization.data(withJSONObject: self.body,
                                           options: .prettyPrinted)
         
-        
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
-        request.httpBody = body
-        
+        if request.httpMethod != "GET" {
+             request.httpBody = body
+        }
+        headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         return request
     }
 }
@@ -44,60 +54,157 @@ private enum HTTPMethod: String {
 private extension Endpoint {
     var method: HTTPMethod {
         switch self {
-        case .register:
-            return .post
         case .login:
             return .post
-        case .users:
+        case .googleConnect:
+            return .post
+        case .facebookConnect:
+            return .post
+        case .emailConnect:
+            return .post
+        case .emailRegister:
+            return .post
+        case .socialRegister:
+            return .post
+        case .tokens:
             return .get
-        case .tournaments:
+        case .refreshToken:
+            return .post
+        case .checkAlias:
+            return .post
+        case .featuredTournaments:
             return .get
-        case .games:
+        case .featuredGames:
+            return .get
+        case .sports:
+            return .get
+        case .game:
             return .get
         }
     }
     
     var path: String {
         switch self {
-        case .register:
-            return "auth/register"
         case .login:
-            return "auth/login"
-        case .users:
-            return "users"
-        case .tournaments:
+            return "users/login"
+        case .googleConnect:
+            return "users/googleConnect"
+        case .facebookConnect:
+            return "users/facebookConnect"
+        case .emailConnect:
+            return "users/emailConnect"
+        case .emailRegister:
+            return "users/emailRegister"
+        case .socialRegister:
+            return "users/socialRegister"
+        case .tokens:
+            return "users/tokens"
+        case .refreshToken:
+            return "users/refreshToken"
+        case .checkAlias:
+            return "users/checkAlias"
+        case .featuredTournaments:
             return "tournaments"
-        case .games:
+        case .featuredGames:
             return "games"
+        case .sports:
+            return "sports"
+        case .game (let id):
+            return "games/detail/\(id)"
         }
     }
     
     var parameters: [String:String] {
         switch self {
-        case .register:
-            return [:]
         case .login:
             return [:]
-        case .users(let query):
-            return ["query": query]
-        case .tournaments(let query):
-            return ["query": query]
-        case .games(let query):
-            return ["query": query]
+        case .googleConnect(let token):
+            return ["googleToken": token]
+        case .facebookConnect(let token):
+            return ["fbToken": token]
+        case .emailConnect(let email):
+            return ["email": email]
+        case .emailRegister(_, let sports):
+            return ["sports":sports]
+        case .socialRegister(let alias, let sports):
+            var query = ["alias": alias]
+            if !sports.isEmpty { query["sports"] = sports }
+            return query
+        case .tokens:
+            return [:]
+        case .refreshToken:
+            return [:]
+        case .checkAlias(let alias):
+            return ["alias": alias]
+        case .featuredTournaments:
+            return [:]
+        case .featuredGames:
+            return [:]
+        case .sports:
+            return [:]
+        case .game:
+            return [:]
         }
     }
     
     var body: [String: String] {
         switch self {
-        case .register(let user):
-            return user
         case .login(let user):
             return user
-        case .users:
+        case .googleConnect:
             return [:]
-        case .games:
+        case .facebookConnect:
             return [:]
-        case .tournaments:
+        case .emailConnect:
+            return [:]
+        case .emailRegister(let data, _):
+            return data
+        case .socialRegister:
+            return [:]
+        case .tokens:
+            return [:]
+        case .refreshToken:
+            return [:]
+        case .checkAlias:
+            return [:]
+        case .featuredTournaments:
+            return [:]
+        case .featuredGames:
+            return [:]
+        case .sports:
+            return [:]
+        case .game:
+            return [:]
+        }
+    }
+    
+    var headers: [String: String] {
+        switch self {
+        case .login:
+            return ["Content-Type": "application/json"]
+        case .googleConnect:
+            return [:]
+        case .facebookConnect:
+            return [:]
+        case .emailConnect:
+            return [:]
+        case .emailRegister:
+            return ["Content-Type": "application/json"]
+        case .socialRegister:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
+        case .tokens:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
+        case .refreshToken:
+            return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
+        case .checkAlias:
+            return [:]
+        case .featuredTournaments:
+            return [:]
+        case .featuredGames:
+            return [:]
+        case .sports:
+            return [:]
+        case .game:
             return [:]
         }
     }

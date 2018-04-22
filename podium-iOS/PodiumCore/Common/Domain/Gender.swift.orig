@@ -1,0 +1,18 @@
+//
+//  Gender.swift
+//  podium-iOS
+//
+//  Created by Fernando Frances on 06/03/2018.
+//  Copyright © 2018 Fernando Frances. All rights reserved.
+//
+
+import Foundation
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94b2e540e419fd2b1173dbed4cb590682d75efc3
+enum Gender : String, Decodable {
+    
+    case male
+    case female
+}
