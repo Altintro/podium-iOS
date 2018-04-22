@@ -20,16 +20,28 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="70" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xmx-7B-wNs">
-                    <rect key="frame" x="0.0" y="170" width="375" height="70"/>
-                </stackView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dzp-UK-wdc">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="70" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xmx-7B-wNs">
+                            <rect key="frame" x="0.0" y="60" width="375" height="70"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Xmx-7B-wNs" secondAttribute="trailing" id="0Tg-Lf-Mhr"/>
+                        <constraint firstItem="Xmx-7B-wNs" firstAttribute="width" secondItem="Dzp-UK-wdc" secondAttribute="width" id="Ath-3l-OVd"/>
+                        <constraint firstItem="Xmx-7B-wNs" firstAttribute="top" secondItem="Dzp-UK-wdc" secondAttribute="top" constant="60" id="JrZ-zd-KIO"/>
+                        <constraint firstItem="Xmx-7B-wNs" firstAttribute="leading" secondItem="Dzp-UK-wdc" secondAttribute="leading" id="RuU-xi-YMA"/>
+                        <constraint firstAttribute="bottom" secondItem="Xmx-7B-wNs" secondAttribute="bottom" constant="517" id="ini-9y-83H"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Xmx-7B-wNs" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Jdr-jH-GPp"/>
-                <constraint firstItem="Xmx-7B-wNs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LtA-m6-tdr"/>
-                <constraint firstItem="Xmx-7B-wNs" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="150" id="qJK-pc-wgQ"/>
-                <constraint firstItem="Xmx-7B-wNs" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wIj-tG-Kha"/>
+                <constraint firstItem="Dzp-UK-wdc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Eod-cv-ddS"/>
+                <constraint firstItem="Dzp-UK-wdc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Ila-9r-X9k"/>
+                <constraint firstItem="Dzp-UK-wdc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="hxk-Ix-y9V"/>
+                <constraint firstItem="Dzp-UK-wdc" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="jYT-dn-Q59"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="53.5"/>
