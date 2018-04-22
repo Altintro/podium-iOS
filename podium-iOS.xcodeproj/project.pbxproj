@@ -33,14 +33,12 @@
 		E0384B86206BF38B00FFA71F /* MagicLinkPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */; };
 		E04ACEB42076705B0073A66A /* CustomNavigationButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ACEB32076705B0073A66A /* CustomNavigationButtonsView.swift */; };
 		E04ACEB620778BE00073A66A /* CheckResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04ACEB520778BE00073A66A /* CheckResponse.swift */; };
-		E04E642F206EABBF00B7ADEE /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */; };
 		E04E6431206EAC1200B7ADEE /* RegisterNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */; };
 		E04E6435206EB16100B7ADEE /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6434206EB16100B7ADEE /* FieldView.swift */; };
 		E04E6437206EB16C00B7ADEE /* FieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6436206EB16C00B7ADEE /* FieldView.xib */; };
 		E04E6439206EB6C600B7ADEE /* SportsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6438206EB6C600B7ADEE /* SportsView.xib */; };
 		E04E643D206EB71800B7ADEE /* RegisterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E643C206EB71800B7ADEE /* RegisterSection.swift */; };
-		E04E6441206EB8F800B7ADEE /* EmailRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */; };
-		E04E6443206EBA9B00B7ADEE /* SocialRegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */; };
+		E04E6441206EB8F800B7ADEE /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6440206EB8F800B7ADEE /* RegisterPresenter.swift */; };
 		E04E6446206EBB5500B7ADEE /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6444206EBB5500B7ADEE /* RegisterViewController.swift */; };
 		E04E6447206EBB5500B7ADEE /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04E6445206EBB5500B7ADEE /* RegisterViewController.xib */; };
 		E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */; };
@@ -54,7 +52,6 @@
 		E0604FDA2072A34C00CCFFFD /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FD92072A34C00CCFFFD /* ListResponse.swift */; };
 		E0604FDC2072A35500CCFFFD /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FDB2072A35500CCFFFD /* HomeSection.swift */; };
 		E0604FDE2072A36400CCFFFD /* StripItem+Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FDD2072A36400CCFFFD /* StripItem+Game.swift */; };
-		E0604FE02072A36E00CCFFFD /* StripItem+Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FDF2072A36E00CCFFFD /* StripItem+Sport.swift */; };
 		E0604FE22072A38200CCFFFD /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FE12072A38200CCFFFD /* HomeAssembly.swift */; };
 		E0604FE52072A3CA00CCFFFD /* StripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0604FE42072A3CA00CCFFFD /* StripView.swift */; };
 		E0604FE72072A3D500CCFFFD /* StripView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0604FE62072A3D500CCFFFD /* StripView.xib */; };
@@ -126,14 +123,12 @@
 		E0384B85206BF38B00FFA71F /* MagicLinkPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkPresenter.swift; sourceTree = "<group>"; };
 		E04ACEB32076705B0073A66A /* CustomNavigationButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CustomNavigationButtonsView.swift; path = "podium-iOS/PodiumCore/Home/Presentation/CustomNavigationButtonsView.swift"; sourceTree = SOURCE_ROOT; };
 		E04ACEB520778BE00073A66A /* CheckResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckResponse.swift; sourceTree = "<group>"; };
-		E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		E04E6430206EAC1200B7ADEE /* RegisterNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNavigator.swift; sourceTree = "<group>"; };
 		E04E6434206EB16100B7ADEE /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
 		E04E6436206EB16C00B7ADEE /* FieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldView.xib; sourceTree = "<group>"; };
 		E04E6438206EB6C600B7ADEE /* SportsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportsView.xib; sourceTree = "<group>"; };
 		E04E643C206EB71800B7ADEE /* RegisterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSection.swift; sourceTree = "<group>"; };
-		E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailRegisterPresenter.swift; sourceTree = "<group>"; };
-		E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialRegisterPresenter.swift; sourceTree = "<group>"; };
+		E04E6440206EB8F800B7ADEE /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
 		E04E6444206EBB5500B7ADEE /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E04E6445206EBB5500B7ADEE /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		E04E6448206EC0F400B7ADEE /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = "podium-iOS/PodiumCore/Authenticate/Repositories/NibLoadableView.swift"; sourceTree = SOURCE_ROOT; };
@@ -147,7 +142,6 @@
 		E0604FD92072A34C00CCFFFD /* ListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
 		E0604FDB2072A35500CCFFFD /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
 		E0604FDD2072A36400CCFFFD /* StripItem+Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StripItem+Game.swift"; sourceTree = "<group>"; };
-		E0604FDF2072A36E00CCFFFD /* StripItem+Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StripItem+Sport.swift"; sourceTree = "<group>"; };
 		E0604FE12072A38200CCFFFD /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
 		E0604FE42072A3CA00CCFFFD /* StripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripView.swift; sourceTree = "<group>"; };
 		E0604FE62072A3D500CCFFFD /* StripView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StripView.xib; sourceTree = "<group>"; };
@@ -305,7 +299,6 @@
 				E0604FD92072A34C00CCFFFD /* ListResponse.swift */,
 				E0604FDB2072A35500CCFFFD /* HomeSection.swift */,
 				E0604FDD2072A36400CCFFFD /* StripItem+Game.swift */,
-				E0604FDF2072A36E00CCFFFD /* StripItem+Sport.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -381,9 +374,7 @@
 				E0EFB26A2087A57F00A3E76B /* SportCell.xib */,
 				E08F0B5B206FB15800E6CDFE /* SubmitView.swift */,
 				E08F0B5D206FB16300E6CDFE /* SubmitView.xib */,
-				E04E642E206EABBF00B7ADEE /* RegisterPresenter.swift */,
-				E04E6440206EB8F800B7ADEE /* EmailRegisterPresenter.swift */,
-				E04E6442206EBA9B00B7ADEE /* SocialRegisterPresenter.swift */,
+				E04E6440206EB8F800B7ADEE /* RegisterPresenter.swift */,
 			);
 			path = Registration;
 			sourceTree = "<group>";
@@ -718,7 +709,6 @@
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
 				E0604FEF2072A40900CCFFFD /* StripPresenter.swift in Sources */,
 				E0EFB24B208782D300A3E76B /* SportsLayout.swift in Sources */,
-				E04E642F206EABBF00B7ADEE /* RegisterPresenter.swift in Sources */,
 				E030086620867C71007C9F8F /* UIView+Shadow.swift in Sources */,
 				E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
@@ -745,8 +735,7 @@
 				E0604FE92072A3E400CCFFFD /* StripLayout.swift in Sources */,
 				E04ACEB620778BE00073A66A /* CheckResponse.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
-				E04E6441206EB8F800B7ADEE /* EmailRegisterPresenter.swift in Sources */,
-				E04E6443206EBA9B00B7ADEE /* SocialRegisterPresenter.swift in Sources */,
+				E04E6441206EB8F800B7ADEE /* RegisterPresenter.swift in Sources */,
 				E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */,
 				E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */,
 				E0DAB9FA2047FF0A00AA3A77 /* AppDelegate.swift in Sources */,
@@ -772,7 +761,6 @@
 				E0D18F4620599C1000F8BD80 /* AuthenticationRepository.swift in Sources */,
 				E02F5BE6204B06A100531033 /* User.swift in Sources */,
 				E0C278A22061949F00C17DD2 /* Google.swift in Sources */,
-				E0604FE02072A36E00CCFFFD /* StripItem+Sport.swift in Sources */,
 				E0A52295205706970024D612 /* Facebook.swift in Sources */,
 				E0852C9C204E06E3002A4A81 /* UserRanking.swift in Sources */,
 				E0852C96204E056E002A4A81 /* Gender.swift in Sources */,
