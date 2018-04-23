@@ -20,32 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC2-gd-BrW">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-1R-tv7">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="208" id="qEN-3W-ITQ"/>
-                            </constraints>
-                        </stackView>
-                    </subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DhH-1R-tv7">
+                    <rect key="frame" x="0.0" y="20" width="375" height="208"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="DhH-1R-tv7" secondAttribute="trailing" id="0Ne-2B-FjH"/>
-                        <constraint firstItem="DhH-1R-tv7" firstAttribute="width" secondItem="tC2-gd-BrW" secondAttribute="width" id="7Cs-kd-cbj"/>
-                        <constraint firstAttribute="bottom" secondItem="DhH-1R-tv7" secondAttribute="bottom" constant="439" id="Ep3-6S-WUf"/>
-                        <constraint firstItem="DhH-1R-tv7" firstAttribute="top" secondItem="tC2-gd-BrW" secondAttribute="top" id="fal-Yt-tKO"/>
-                        <constraint firstItem="DhH-1R-tv7" firstAttribute="leading" secondItem="tC2-gd-BrW" secondAttribute="leading" id="huW-JG-Qza"/>
-                        <constraint firstItem="DhH-1R-tv7" firstAttribute="centerX" secondItem="tC2-gd-BrW" secondAttribute="centerX" id="sSC-Xw-BXa"/>
+                        <constraint firstAttribute="height" constant="208" id="qEN-3W-ITQ"/>
                     </constraints>
-                </scrollView>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="tC2-gd-BrW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="I2Z-w4-gBI"/>
-                <constraint firstItem="tC2-gd-BrW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Qaz-9a-9fH"/>
-                <constraint firstItem="tC2-gd-BrW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ock-Yz-BUj"/>
-                <constraint firstItem="tC2-gd-BrW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="pj5-NS-i44"/>
+                <constraint firstItem="DhH-1R-tv7" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4I6-UD-BjK"/>
+                <constraint firstItem="DhH-1R-tv7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ANj-Kz-mdX"/>
+                <constraint firstItem="DhH-1R-tv7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KAz-Dc-zrE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>

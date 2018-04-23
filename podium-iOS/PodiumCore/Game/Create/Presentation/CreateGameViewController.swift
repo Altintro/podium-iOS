@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CreateSectionDelegate: NSObjectProtocol {
-    func showNext()
+    func showNext(current: CreateGameSection)
 }
 
 class CreateGameViewController: UIViewController {
@@ -54,6 +54,7 @@ class CreateGameViewController: UIViewController {
         
         self.addChildViewController(pageController)
         
+        sectionTitle.text = NSLocalizedString("Choose a sport for the game", comment: "")
     }
 
 }
@@ -64,8 +65,24 @@ extension CreateGameViewController: CreateGameView {
 }
 
 extension CreateGameViewController: CreateSectionDelegate {
-    func showNext() {
-        let nextViewController = InvitesViewController(presenter: invitesPresenter)
-        pageController.setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+    func showNext(current: CreateGameSection) {
+        var nextViewController: UIViewController?
+        switch current  {
+        case .sport:
+            nextViewController = InvitesViewController(presenter: invitesPresenter)
+            sectionTitle.text = NSLocalizedString("Invite others to play!", comment: "")
+        case .invite:
+            nextViewController = nil
+        case .details:
+            nextViewController = nil
+        case .modality:
+            nextViewController = nil
+        case .when:
+            nextViewController = nil
+        case .where:
+            nextViewController = nil
+        }
+        pageController.setViewControllers([nextViewController!], direction: .forward, animated: true, completion: nil)
+
     }
 }

@@ -13,8 +13,11 @@ import RxCocoa
 class InvitesViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var continueButton: UIButton!
     
     private let presenter: InvitesPresenter
+    
+    weak var delegate: CreateSectionDelegate?
     
     var items: [User] {
         get { return _items.value}
@@ -42,6 +45,7 @@ class InvitesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        configureViews()
         presenter.view = self
         presenter.didLoad()
     }
@@ -55,14 +59,12 @@ extension InvitesViewController: InvitesView {
 
 extension InvitesViewController {
     enum Constants {
-        static let separatorInset = UIEdgeInsets(top: 0 , left: 32, bottom: 0, right: 0)
         static let rowHeight: CGFloat = 80
     }
     
     func configureTableView() {
         tableView.register(UserCell.self)
-        
-        tableView.separatorInset = Constants.separatorInset
+        tableView.separatorStyle = .none
         tableView.rowHeight = Constants.rowHeight
         
         _items.asObservable()
@@ -73,5 +75,13 @@ extension InvitesViewController {
                 return cell
             }
             .disposed(by: disposeBag)
+    }
+    
+    func configureViews() {
+        continueButton.layer.cornerRadius = 5
+        continueButton.addShadow()
+        continueButton.rx.tap.bind {
+            self.delegate?.showNext(current: .invite)
+        }
     }
 }
