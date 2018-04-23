@@ -7,36 +7,65 @@
 //
 
 import Foundation
+import UIKit
 
 final public class CreateGameAssembly {
     
     private let webServiceAssembly: WebServiceAssembly
+    private let tabBarController: UITabBarController
     
-    init(webServiceAssembly: WebServiceAssembly){
+    init(webServiceAssembly: WebServiceAssembly, tabBarController: UITabBarController){
         self.webServiceAssembly = webServiceAssembly
+        self.tabBarController = tabBarController
     }
     
-    func viewController() -> CreateGameViewController {
-        return CreateGameViewController(presenter: presenter(), chooseSportPresenter: chooseSportPresenter(), sportsPresenter: sportsPresenter(), invitesPresenter: invitesPresenter())
+    private func viewController() -> CreateGameViewController {
+        return CreateGameViewController(presenter: presenter(),
+                                        chooseSportPresenter: chooseSportPresenter(),
+                                        sportsPresenter: sportsPresenter(),
+                                        invitesPresenter: invitesPresenter(),
+                                        chooseMetadataPresenter: chooseMetadataPresenter(),
+                                        finishPresenter: finishPresenter())
     }
 
-    func presenter() -> CreateGamePresenter {
+    private func presenter() -> CreateGamePresenter {
         return CreateGamePresenter(repository: repository())
     }
     
-    func chooseSportPresenter() -> ChooseSportPresenter {
+    private func chooseSportPresenter() -> ChooseSportPresenter {
         return ChooseSportPresenter(repository: repository())
     }
     
-    func sportsPresenter() -> SportsPresenter {
+    private func sportsPresenter() -> SportsPresenter {
         return SportsPresenter()
     }
     
-    func invitesPresenter() -> InvitesPresenter {
+    private func invitesPresenter() -> InvitesPresenter {
         return InvitesPresenter(repository: repository())
     }
     
-    func repository() -> CreateGameRepository {
+    private func chooseMetadataPresenter() -> ChooseMetadataPresenter {
+        return ChooseMetadataPresenter()
+    }
+    
+    private func finishPresenter() -> FinishPresenter {
+        return FinishPresenter()
+    }
+    
+    private func repository() -> CreateGameRepository {
         return CreateGameRepository(webService: webServiceAssembly.webService)
     }
+    
+    func navigator() -> CreateGameNavigator {
+        return CreateGameNavigator(viewControllerProvider: self,
+                                   tabBarController: tabBarController)
+    }
+}
+
+extension CreateGameAssembly: CreateGameViewControllerProvider {
+    func createGameViewController() -> UIViewController {
+        return viewController()
+    }
+    
+    
 }

@@ -15,9 +15,9 @@ class InvitesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var continueButton: UIButton!
     
-    private let presenter: InvitesPresenter
+    private var invites = [String]()
     
-    weak var delegate: CreateSectionDelegate?
+    let presenter: InvitesPresenter
     
     var items: [User] {
         get { return _items.value}
@@ -75,13 +75,24 @@ extension InvitesViewController {
                 return cell
             }
             .disposed(by: disposeBag)
+        tableView.rx
+            .modelSelected(User.self)
+            .subscribe(onNext: { [weak self] user in
+                let index = self?.items.index(where: { (item) -> Bool in
+                    item.name == user.name
+                })
+                self?.invites.append(user.alias)
+                self?.items.remove(at: index!)
+            })
+            .disposed(by: disposeBag)
     }
     
     func configureViews() {
         continueButton.layer.cornerRadius = 5
         continueButton.addShadow()
         continueButton.rx.tap.bind {
-            self.delegate?.showNext(current: .invite)
+            let data: [String: String] = ["invites":self.invites.joined(separator: ",")]
+            self.presenter.showNext(data: data)
         }
     }
 }

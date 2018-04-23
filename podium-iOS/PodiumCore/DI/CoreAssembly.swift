@@ -16,7 +16,7 @@ final public class CoreAssembly {
     
     public private(set) lazy var homeAssembly = HomeAssembly(webServiceAssembly: webServiceAssembly, authenticationAssembly: authenticationAssembbly)
     
-    public private(set) lazy var createGameAssembly = CreateGameAssembly(webServiceAssembly: webServiceAssembly)
+    public private(set) lazy var createGameAssembly = CreateGameAssembly(webServiceAssembly: webServiceAssembly, tabBarController: tabBarController)
     
     private let tabBarController: UITabBarController
     

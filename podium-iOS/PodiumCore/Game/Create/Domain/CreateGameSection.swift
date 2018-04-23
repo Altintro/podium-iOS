@@ -10,9 +10,6 @@ import Foundation
 
 enum CreateGameSection {
     case sport
-    case modality
-    case `where`
-    case when
-    case details
+    case metadata
     case invite
 }

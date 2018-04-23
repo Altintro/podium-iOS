@@ -13,7 +13,7 @@ class ChooseSportViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     
     // MARK: Properties
-    private let presenter: ChooseSportPresenter
+    let presenter: ChooseSportPresenter
     private let sportsPresenter: SportsPresenter
     
     weak var delegate: CreateSectionDelegate?
@@ -53,7 +53,7 @@ extension ChooseSportViewController {
         sportsView.items = items
         sportsView.itemSelected
             .subscribe(onNext: {[weak self] item in
-                self?.delegate?.showNext(current: .sport)
+                self?.presenter.showNext(data: ["sport": item.name.lowercased()])
             })
             .disposed(by: sportsView.disposeBag)
         

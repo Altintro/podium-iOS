@@ -20,6 +20,7 @@ final class InvitesPresenter {
     private let disposeBag = DisposeBag()
     
     weak var view: InvitesView?
+    weak var delegate: CreateSectionDelegate?
     
     init(repository: CreateGameRepository){
         self.repository = repository
@@ -48,5 +49,9 @@ final class InvitesPresenter {
     func present(item: User, in cell: UserCell){
         cell.thumbnail.kf.setImage(with: URL(string:item.profilePic))
         cell.title.text = item.name
+    }
+    
+    func showNext(data: [String: String]){
+        delegate?.showNext(current: .invite, data: data)
     }
 }

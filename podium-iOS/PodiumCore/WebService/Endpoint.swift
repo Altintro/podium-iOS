@@ -34,7 +34,8 @@ internal extension Endpoint {
         components.queryItems = parameters.map(URLQueryItem.init)
         
         let body = try! JSONSerialization.data(withJSONObject: self.body,
-                                          options: .prettyPrinted)
+                                               options: .prettyPrinted)
+     
         
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue

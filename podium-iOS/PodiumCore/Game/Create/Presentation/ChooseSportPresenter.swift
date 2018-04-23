@@ -19,6 +19,7 @@ final class ChooseSportPresenter {
     private let disposeBag = DisposeBag()
     
     weak var view: ChooseSportView?
+    weak var delegate: CreateSectionDelegate?
     
     init(repository: CreateGameRepositoryProtocol){
         self.repository = repository
@@ -43,4 +44,9 @@ final class ChooseSportPresenter {
                 })
             .disposed(by: disposeBag)
     }
+    
+    func showNext(data: [String: String]) {
+        delegate?.showNext(current: .sport, data: data)
+    }
+    
 }
