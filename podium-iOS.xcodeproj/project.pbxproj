@@ -100,6 +100,14 @@
 		E0EFB24B208782D300A3E76B /* SportsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFB24A208782D300A3E76B /* SportsLayout.swift */; };
 		E0EFB26B2087A57F00A3E76B /* SportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EFB2692087A57F00A3E76B /* SportCell.swift */; };
 		E0EFB26C2087A57F00A3E76B /* SportCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0EFB26A2087A57F00A3E76B /* SportCell.xib */; };
+		E0FDB4A6208DC5B5002DE90E /* CreateGameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4A5208DC5B5002DE90E /* CreateGameSection.swift */; };
+		E0FDB4A8208DD123002DE90E /* CreateGameAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4A7208DD123002DE90E /* CreateGameAssembly.swift */; };
+		E0FDB4B7208DE462002DE90E /* InvitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4B5208DE462002DE90E /* InvitesViewController.swift */; };
+		E0FDB4B8208DE462002DE90E /* InvitesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FDB4B6208DE462002DE90E /* InvitesViewController.xib */; };
+		E0FDB4BA208DE627002DE90E /* InvitesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4B9208DE627002DE90E /* InvitesPresenter.swift */; };
+		E0FDB4BF208DE836002DE90E /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4BD208DE836002DE90E /* UserCell.swift */; };
+		E0FDB4C0208DE836002DE90E /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FDB4BE208DE836002DE90E /* UserCell.xib */; };
+		E0FDB4C6208DECAB002DE90E /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4C5208DECAB002DE90E /* UITableView+Reusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +209,14 @@
 		E0EFB24A208782D300A3E76B /* SportsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsLayout.swift; sourceTree = "<group>"; };
 		E0EFB2692087A57F00A3E76B /* SportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCell.swift; sourceTree = "<group>"; };
 		E0EFB26A2087A57F00A3E76B /* SportCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SportCell.xib; sourceTree = "<group>"; };
+		E0FDB4A5208DC5B5002DE90E /* CreateGameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameSection.swift; sourceTree = "<group>"; };
+		E0FDB4A7208DD123002DE90E /* CreateGameAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameAssembly.swift; sourceTree = "<group>"; };
+		E0FDB4B5208DE462002DE90E /* InvitesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesViewController.swift; sourceTree = "<group>"; };
+		E0FDB4B6208DE462002DE90E /* InvitesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitesViewController.xib; sourceTree = "<group>"; };
+		E0FDB4B9208DE627002DE90E /* InvitesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesPresenter.swift; sourceTree = "<group>"; };
+		E0FDB4BD208DE836002DE90E /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		E0FDB4BE208DE836002DE90E /* UserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		E0FDB4C5208DECAB002DE90E /* UITableView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +292,7 @@
 				E0604FF82072A65300CCFFFD /* UICollectionView+Reusable.swift */,
 				E04ACEB32076705B0073A66A /* CustomNavigationButtonsView.swift */,
 				E030086520867C71007C9F8F /* UIView+Shadow.swift */,
+				E0FDB4C5208DECAB002DE90E /* UITableView+Reusable.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -302,7 +319,6 @@
 		E04D9921208D144700951D11 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				E04D9928208D149200951D11 /* Navigation */,
 				E04D9927208D148000951D11 /* Domain */,
 				E04D9926208D147800951D11 /* Presentation */,
 				E04D9925208D147100951D11 /* DI */,
@@ -329,7 +345,7 @@
 		E04D9925208D147100951D11 /* DI */ = {
 			isa = PBXGroup;
 			children = (
-				E04D992B208D14FB00951D11 /* CreateGameResponse.swift */,
+				E0FDB4A7208DD123002DE90E /* CreateGameAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -343,6 +359,11 @@
 				E04D9933208D1D3900951D11 /* ChooseSportViewController.swift */,
 				E04D9934208D1D3900951D11 /* ChooseSportViewController.xib */,
 				E04D9937208D1E2C00951D11 /* ChooseSportPresenter.swift */,
+				E0FDB4B5208DE462002DE90E /* InvitesViewController.swift */,
+				E0FDB4B6208DE462002DE90E /* InvitesViewController.xib */,
+				E0FDB4B9208DE627002DE90E /* InvitesPresenter.swift */,
+				E0FDB4BD208DE836002DE90E /* UserCell.swift */,
+				E0FDB4BE208DE836002DE90E /* UserCell.xib */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -350,15 +371,10 @@
 		E04D9927208D148000951D11 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				E04D992B208D14FB00951D11 /* CreateGameResponse.swift */,
+				E0FDB4A5208DC5B5002DE90E /* CreateGameSection.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		E04D9928208D149200951D11 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Navigation;
 			sourceTree = "<group>";
 		};
 		E0604FD22072A2F800CCFFFD /* Home */ = {
@@ -689,11 +705,13 @@
 				E030086220866A61007C9F8F /* ferprofile.png in Resources */,
 				E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */,
 				DBD632982073FD8500A1CC26 /* GoogleService-Info.plist in Resources */,
+				E0FDB4B8208DE462002DE90E /* InvitesViewController.xib in Resources */,
 				E030086420866A61007C9F8F /* loreprofile.png in Resources */,
 				E0604FED2072A3FE00CCFFFD /* StripCell.xib in Resources */,
 				E0604FE72072A3D500CCFFFD /* StripView.xib in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
 				E08F0B5E206FB16300E6CDFE /* SubmitView.xib in Resources */,
+				E0FDB4C0208DE836002DE90E /* UserCell.xib in Resources */,
 				E04E6447206EBB5500B7ADEE /* RegisterViewController.xib in Resources */,
 				E0604FF52072A42D00CCFFFD /* HomeViewController.xib in Resources */,
 				E04D9930208D18F400951D11 /* CreateGameViewController.xib in Resources */,
@@ -799,6 +817,7 @@
 				E0604FF42072A42D00CCFFFD /* HomeViewController.swift in Sources */,
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
 				E04D9938208D1E2C00951D11 /* ChooseSportPresenter.swift in Sources */,
+				E0FDB4B7208DE462002DE90E /* InvitesViewController.swift in Sources */,
 				E0604FEF2072A40900CCFFFD /* StripPresenter.swift in Sources */,
 				E0EFB24B208782D300A3E76B /* SportsLayout.swift in Sources */,
 				E030086620867C71007C9F8F /* UIView+Shadow.swift in Sources */,
@@ -811,6 +830,7 @@
 				E0604FE22072A38200CCFFFD /* HomeAssembly.swift in Sources */,
 				E0604FDE2072A36400CCFFFD /* StripItem+Game.swift in Sources */,
 				E0604FD82072A32B00CCFFFD /* HomeRepository.swift in Sources */,
+				E0FDB4A8208DD123002DE90E /* CreateGameAssembly.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
@@ -822,15 +842,18 @@
 				E0852C94204E01A2002A4A81 /* Sport.swift in Sources */,
 				E0DABA112048392400AA3A77 /* Endpoint.swift in Sources */,
 				E0EFB24920877C8B00A3E76B /* SportsPresenter.swift in Sources */,
+				E0FDB4BF208DE836002DE90E /* UserCell.swift in Sources */,
 				E0322527207CAACD00A4A848 /* AuthenticationNavigator.swift in Sources */,
 				E0604FDA2072A34C00CCFFFD /* ListResponse.swift in Sources */,
 				E04D992F208D18F400951D11 /* CreateGameViewController.swift in Sources */,
 				E0D18F4C20599F5F00F8BD80 /* AuthenticationPresenter.swift in Sources */,
 				E04D9932208D18FE00951D11 /* CreateGamePresenter.swift in Sources */,
 				E0D18F4220599B3F00F8BD80 /* AuthenticationAssembly.swift in Sources */,
+				E0FDB4C6208DECAB002DE90E /* UITableView+Reusable.swift in Sources */,
 				E0604FE92072A3E400CCFFFD /* StripLayout.swift in Sources */,
 				E04ACEB620778BE00073A66A /* CheckResponse.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
+				E0FDB4A6208DC5B5002DE90E /* CreateGameSection.swift in Sources */,
 				E04E6441206EB8F800B7ADEE /* RegisterPresenter.swift in Sources */,
 				E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */,
 				E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */,
@@ -844,6 +867,7 @@
 				E08F0B5C206FB15800E6CDFE /* SubmitView.swift in Sources */,
 				E0EFB26B2087A57F00A3E76B /* SportCell.swift in Sources */,
 				E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */,
+				E0FDB4BA208DE627002DE90E /* InvitesPresenter.swift in Sources */,
 				E0D18F4E2059AE0C00F8BD80 /* AuthenticationResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,

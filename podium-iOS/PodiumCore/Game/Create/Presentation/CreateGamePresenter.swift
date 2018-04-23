@@ -10,9 +10,8 @@ import Foundation
 import RxSwift
 
 protocol CreateGameView: class {
-    
-}
 
+}
 
 final class CreateGamePresenter {
     

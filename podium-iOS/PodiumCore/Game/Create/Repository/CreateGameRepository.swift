@@ -11,6 +11,8 @@ import RxSwift
 
 protocol CreateGameRepositoryProtocol {
     func createGame(with data:[String: String]) -> Observable<CreateGameResponse>
+    func sports() -> Observable<ListResponse<Sport>>
+    func users() -> Observable<ListResponse<User>>
 }
 
 final class CreateGameRepository: CreateGameRepositoryProtocol {
@@ -23,5 +25,13 @@ final class CreateGameRepository: CreateGameRepositoryProtocol {
     
     func createGame(with data: [String : String]) -> Observable<CreateGameResponse> {
         return webService.load(_type: CreateGameResponse.self, from: .createGame(data: data))
+    }
+    
+    func sports() -> Observable<ListResponse<Sport>> {
+        return webService.load(_type: ListResponse<Sport>.self, from: .sports)
+    }
+    
+    func users() -> Observable<ListResponse<User>> {
+        return webService.load(_type: ListResponse<User>.self, from: .users)
     }
 }

@@ -8,16 +8,26 @@
 
 import UIKit
 
-class CreateGameViewController: UIViewController{
+protocol CreateSectionDelegate: NSObjectProtocol {
+    func showNext()
+}
+
+class CreateGameViewController: UIViewController {
 
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     private var presenter: CreateGamePresenter
+    private var chooseSportPresenter: ChooseSportPresenter
+    private var sportsPresenter: SportsPresenter
+    private var invitesPresenter: InvitesPresenter
     private var pageController = UIPageViewController()
     
-    init(presenter: CreateGamePresenter) {
+    init(presenter: CreateGamePresenter, chooseSportPresenter: ChooseSportPresenter, sportsPresenter: SportsPresenter, invitesPresenter: InvitesPresenter) {
         self.presenter = presenter
+        self.chooseSportPresenter = chooseSportPresenter
+        self.sportsPresenter = sportsPresenter
+        self.invitesPresenter = invitesPresenter
         
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
@@ -35,11 +45,27 @@ class CreateGameViewController: UIViewController{
     }
     
     func configureInitialView() {
-      
+        let selectorViewController = ChooseSportViewController(presenter: chooseSportPresenter, sportsPresenter: sportsPresenter)
+        selectorViewController.delegate = self
+        pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        pageController.setViewControllers([selectorViewController], direction: .forward, animated: false, completion: nil)
+        containerView.addSubview(pageController.view)
+        pageController.view.frame = containerView.bounds
+        
+        self.addChildViewController(pageController)
+        
     }
 
 }
 
+
 extension CreateGameViewController: CreateGameView {
     
+}
+
+extension CreateGameViewController: CreateSectionDelegate {
+    func showNext() {
+        let nextViewController = InvitesViewController(presenter: invitesPresenter)
+        pageController.setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+    }
 }

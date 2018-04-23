@@ -24,8 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         profileInitialViewController.view?.backgroundColor = .blue
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
-        let createInitialViewController = UIViewController()
-        createInitialViewController.view?.backgroundColor = .green
+        let createInitialViewController = appAssembly.coreAssembly.createGameAssembly.viewController()
         appAssembly.createNavigationController.pushViewController(createInitialViewController,animated: false)
         
         appAssembly.tabBarController.setViewControllers([

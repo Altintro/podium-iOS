@@ -1,46 +1,52 @@
 //
-//  ChooseSportPresenter.swift
+//  InvitesPresenter.swift
 //  podium-iOS
 //
-//  Created by Fernando Frances on 22/04/2018.
+//  Created by Fernando Frances on 23/04/2018.
 //  Copyright © 2018 Fernando Frances. All rights reserved.
 //
 
 import Foundation
 import RxSwift
+import Kingfisher
 
-protocol ChooseSportView: class {
-    func update(with sports: [Sport])
+protocol InvitesView: class {
+    func update(with users:[User])
 }
 
-final class ChooseSportPresenter {
+final class InvitesPresenter {
     
-    private let repository: CreateGameRepositoryProtocol
+    private let repository: CreateGameRepository
     private let disposeBag = DisposeBag()
     
-    weak var view: ChooseSportView?
+    weak var view: InvitesView?
     
-    init(repository: CreateGameRepositoryProtocol){
+    init(repository: CreateGameRepository){
         self.repository = repository
     }
     
-    func didLoad () {
+    func didLoad(){
         loadContents()
     }
     
     func loadContents() {
-        repository.sports()
+        repository.users()
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
                     return
                 }
-                    self.view?.update(with: response.result)
+                self.view?.update(with: response.result)
                 }, onError: { error in
-                    print("Error downloading sports")
+                    print("Error downloading users")
                 }, onDisposed: { [weak self] in
                     print("onDisposed")
-                })
+            })
             .disposed(by: disposeBag)
+    }
+    
+    func present(item: User, in cell: UserCell){
+        cell.thumbnail.kf.setImage(with: URL(string:item.profilePic))
+        cell.title.text = item.name
     }
 }
