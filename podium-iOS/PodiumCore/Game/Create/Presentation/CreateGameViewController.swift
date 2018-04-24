@@ -82,7 +82,7 @@ class CreateGameViewController: UIViewController {
         case .invite:
             let next = FinishViewController(presenter: finishPresenter)
             next.presenter.delegate = presenter
-            sectionTitle.text = NSLocalizedString("Congratulations! the game has been posted successfully", comment: "")
+            sectionTitle.text = NSLocalizedString("Congrats! the game has been created successfully", comment: "")
             return next
             
         // To add: modality, datePicker, map...
@@ -90,7 +90,6 @@ class CreateGameViewController: UIViewController {
     }
 
 }
-
 
 extension CreateGameViewController: CreateGameView {
     

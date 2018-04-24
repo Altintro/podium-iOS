@@ -13,10 +13,10 @@ struct Sport: Decodable {
     let _id                 : String
     let name                : String
     let image               : String
-    let description         : String
+    let description         : String?
     let ranking             : [User]?
-    let rules               : String
-    let popularity          : Float
+    let rules               : String?
+    let popularity          : Float?
     let activeTournaments   : [Tournament]?
     let openTournaments     : [Tournament]?
     let activeGames         : [Game]?

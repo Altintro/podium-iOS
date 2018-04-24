@@ -115,6 +115,13 @@
 		E0FDB4D2208E3421002DE90E /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4D0208E3421002DE90E /* FinishViewController.swift */; };
 		E0FDB4D3208E3421002DE90E /* FinishViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FDB4D1208E3421002DE90E /* FinishViewController.xib */; };
 		E0FDB4D5208E34B9002DE90E /* FinishPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4D4208E34B9002DE90E /* FinishPresenter.swift */; };
+		E0FDB4DF208F6F90002DE90E /* DetailGameRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4DE208F6F90002DE90E /* DetailGameRepository.swift */; };
+		E0FDB4E1208F7644002DE90E /* DetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4E0208F7644002DE90E /* DetailResponse.swift */; };
+		E0FDB4E3208F776F002DE90E /* PostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4E2208F776F002DE90E /* PostResponse.swift */; };
+		E0FDB4E5208F77FD002DE90E /* DetailGameAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4E4208F77FC002DE90E /* DetailGameAssembly.swift */; };
+		E0FDB4EE208F78D8002DE90E /* DetailGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4EC208F78D8002DE90E /* DetailGameViewController.swift */; };
+		E0FDB4EF208F78D8002DE90E /* DetailGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0FDB4ED208F78D8002DE90E /* DetailGameViewController.xib */; };
+		E0FDB4F1208F78E3002DE90E /* DetailGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FDB4F0208F78E3002DE90E /* DetailGamePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -231,6 +238,13 @@
 		E0FDB4D0208E3421002DE90E /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		E0FDB4D1208E3421002DE90E /* FinishViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FinishViewController.xib; sourceTree = "<group>"; };
 		E0FDB4D4208E34B9002DE90E /* FinishPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishPresenter.swift; sourceTree = "<group>"; };
+		E0FDB4DE208F6F90002DE90E /* DetailGameRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameRepository.swift; sourceTree = "<group>"; };
+		E0FDB4E0208F7644002DE90E /* DetailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailResponse.swift; sourceTree = "<group>"; };
+		E0FDB4E2208F776F002DE90E /* PostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostResponse.swift; sourceTree = "<group>"; };
+		E0FDB4E4208F77FC002DE90E /* DetailGameAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameAssembly.swift; sourceTree = "<group>"; };
+		E0FDB4EC208F78D8002DE90E /* DetailGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameViewController.swift; sourceTree = "<group>"; };
+		E0FDB4ED208F78D8002DE90E /* DetailGameViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGameViewController.xib; sourceTree = "<group>"; };
+		E0FDB4F0208F78E3002DE90E /* DetailGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGamePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +295,9 @@
 				E0852C95204E056E002A4A81 /* Gender.swift */,
 				E0AFB832205139EA000E07D4 /* Modality.swift */,
 				DB77C1A4204DD7F8005174FA /* CompType.swift */,
+				E0604FD92072A34C00CCFFFD /* ListResponse.swift */,
+				E0FDB4E0208F7644002DE90E /* DetailResponse.swift */,
+				E0FDB4E2208F776F002DE90E /* PostResponse.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -345,6 +362,10 @@
 		E04D9922208D144D00951D11 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E0FDB4DA208F6F2C002DE90E /* Repository */,
+				E0FDB4D9208F6F28002DE90E /* DI */,
+				E0FDB4D8208F6F1A002DE90E /* Presentation */,
+				E0FDB4D6208F6EFF002DE90E /* Navigators */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -420,7 +441,6 @@
 		E0604FD42072A30800CCFFFD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				E0604FD92072A34C00CCFFFD /* ListResponse.swift */,
 				E0604FDB2072A35500CCFFFD /* HomeSection.swift */,
 				E0604FDD2072A36400CCFFFD /* StripItem+Game.swift */,
 			);
@@ -653,6 +673,39 @@
 			path = Navigator;
 			sourceTree = "<group>";
 		};
+		E0FDB4D6208F6EFF002DE90E /* Navigators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigators;
+			sourceTree = "<group>";
+		};
+		E0FDB4D8208F6F1A002DE90E /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E0FDB4EC208F78D8002DE90E /* DetailGameViewController.swift */,
+				E0FDB4ED208F78D8002DE90E /* DetailGameViewController.xib */,
+				E0FDB4F0208F78E3002DE90E /* DetailGamePresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		E0FDB4D9208F6F28002DE90E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				E0FDB4E4208F77FC002DE90E /* DetailGameAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		E0FDB4DA208F6F2C002DE90E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				E0FDB4DE208F6F90002DE90E /* DetailGameRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -730,6 +783,7 @@
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E04E6437206EB16C00B7ADEE /* FieldView.xib in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
+				E0FDB4EF208F78D8002DE90E /* DetailGameViewController.xib in Resources */,
 				E030086320866A61007C9F8F /* paulaprofile.png in Resources */,
 				E0FDB4D3208E3421002DE90E /* FinishViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
@@ -845,6 +899,7 @@
 				E0FDB4CF208E2B52002DE90E /* CreateGameNavigator.swift in Sources */,
 				E05107C1205DB872001836D4 /* Constants.swift in Sources */,
 				01EE305F207A262E0012ADD7 /* MainTabBarController.swift in Sources */,
+				E0FDB4EE208F78D8002DE90E /* DetailGameViewController.swift in Sources */,
 				E04D992A208D14B000951D11 /* CreateGameRepository.swift in Sources */,
 				E0604FF42072A42D00CCFFFD /* HomeViewController.swift in Sources */,
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
@@ -860,10 +915,12 @@
 				E0FDB4CC208E07FF002DE90E /* ChooseMetadataPresenter.swift in Sources */,
 				E0604FF12072A41D00CCFFFD /* HomePresenter.swift in Sources */,
 				E04D992C208D14FB00951D11 /* CreateGameResponse.swift in Sources */,
+				E0FDB4E3208F776F002DE90E /* PostResponse.swift in Sources */,
 				E0604FE22072A38200CCFFFD /* HomeAssembly.swift in Sources */,
 				E0604FDE2072A36400CCFFFD /* StripItem+Game.swift in Sources */,
 				E0604FD82072A32B00CCFFFD /* HomeRepository.swift in Sources */,
 				E0FDB4A8208DD123002DE90E /* CreateGameAssembly.swift in Sources */,
+				E0FDB4E5208F77FD002DE90E /* DetailGameAssembly.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
@@ -888,6 +945,7 @@
 				E04ACEB620778BE00073A66A /* CheckResponse.swift in Sources */,
 				DB77C1A5204DD7F9005174FA /* CompType.swift in Sources */,
 				E0FDB4A6208DC5B5002DE90E /* CreateGameSection.swift in Sources */,
+				E0FDB4E1208F7644002DE90E /* DetailResponse.swift in Sources */,
 				E04E6441206EB8F800B7ADEE /* RegisterPresenter.swift in Sources */,
 				E0384B84206BF34700FFA71F /* MagicLinkNavigator.swift in Sources */,
 				E04E6449206EC0F400B7ADEE /* NibLoadableView.swift in Sources */,
@@ -898,7 +956,9 @@
 				E04E643D206EB71800B7ADEE /* RegisterSection.swift in Sources */,
 				E0604FF72072A62100CCFFFD /* ReusableView.swift in Sources */,
 				E0EFB24320877AB700A3E76B /* SportsView.swift in Sources */,
+				E0FDB4DF208F6F90002DE90E /* DetailGameRepository.swift in Sources */,
 				E0FDB4D5208E34B9002DE90E /* FinishPresenter.swift in Sources */,
+				E0FDB4F1208F78E3002DE90E /* DetailGamePresenter.swift in Sources */,
 				E08F0B5C206FB15800E6CDFE /* SubmitView.swift in Sources */,
 				E0EFB26B2087A57F00A3E76B /* SportCell.swift in Sources */,
 				E04F5DA02066B18300E9C987 /* AuthenticationPresenter+GoogleDelegates.swift in Sources */,

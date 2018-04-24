@@ -13,8 +13,8 @@ internal enum Endpoint {
     case googleConnect(token: String)
     case facebookConnect(token: String)
     case emailConnect(email: String)
-    case emailRegister(user: [String: String], sports: String)
-    case socialRegister(alias: String, sports: String)
+    case emailRegister(data: [String: String])
+    case socialRegister(data: [String: String])
     case tokens
     case refreshToken
     case checkAlias(alias: String)
@@ -22,6 +22,8 @@ internal enum Endpoint {
     case featuredGames
     case sports
     case users
+    case game(id: String)
+    case joinGame(id: String)
     case createGame(data: [String: String])
 }
 
@@ -36,7 +38,6 @@ internal extension Endpoint {
         let body = try! JSONSerialization.data(withJSONObject: self.body,
                                                options: .prettyPrinted)
      
-        
         var request = URLRequest(url: components.url!)
         request.httpMethod = method.rawValue
         if request.httpMethod != "GET" {
@@ -82,6 +83,10 @@ private extension Endpoint {
             return .get
         case .users:
             return .get
+        case .game:
+            return .get
+        case .joinGame:
+            return .post
         case .createGame:
             return .post
         }
@@ -115,6 +120,10 @@ private extension Endpoint {
             return "sports"
         case .users:
             return "users"
+        case .game(let id):
+            return "game/\(id)/detail"
+        case .joinGame(let id):
+            return "game/\(id)/join"
         case .createGame:
             return "games"
         }
@@ -130,12 +139,10 @@ private extension Endpoint {
             return ["fbToken": token]
         case .emailConnect(let email):
             return ["email": email]
-        case .emailRegister(_, let sports):
-            return ["sports":sports]
-        case .socialRegister(let alias, let sports):
-            var query = ["alias": alias]
-            if !sports.isEmpty { query["sports"] = sports }
-            return query
+        case .emailRegister:
+            return [:]
+        case .socialRegister:
+            return [:]
         case .tokens:
             return [:]
         case .refreshToken:
@@ -149,6 +156,10 @@ private extension Endpoint {
         case .sports:
             return [:]
         case .users:
+            return [:]
+        case .game:
+            return [:]
+        case .joinGame:
             return [:]
         case .createGame:
             return [:]
@@ -165,10 +176,10 @@ private extension Endpoint {
             return [:]
         case .emailConnect:
             return [:]
-        case .emailRegister(let data, _):
+        case .emailRegister(let data):
             return data
-        case .socialRegister:
-            return [:]
+        case .socialRegister(let data):
+            return data
         case .tokens:
             return [:]
         case .refreshToken:
@@ -182,6 +193,10 @@ private extension Endpoint {
         case .sports:
             return [:]
         case .users:
+            return [:]
+        case .game:
+            return [:]
+        case .joinGame:
             return [:]
         case .createGame(let data):
             return data
@@ -201,7 +216,8 @@ private extension Endpoint {
         case .emailRegister:
             return ["Content-Type": "application/json"]
         case .socialRegister:
-            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? "",
+                    "Content-Type": "application/json"]
         case .tokens:
             return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .refreshToken:
@@ -216,8 +232,13 @@ private extension Endpoint {
             return [:]
         case .users:
             return [:]
+        case .game:
+            return [:]
+        case .joinGame:
+            return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
         case .createGame:
-            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? "",
+                    "Content-Type": "application/json"]
         }
     }
 }

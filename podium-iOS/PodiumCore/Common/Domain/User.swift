@@ -13,7 +13,7 @@ struct User: Decodable {
     let _id: String
     let name: String
     let alias: String
-    let email: String
+    let email: String?
     let profilePic: String
     let gender: String?
     let birthdate: String?

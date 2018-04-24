@@ -47,7 +47,12 @@ final class InvitesPresenter {
     }
     
     func present(item: User, in cell: UserCell){
-        cell.thumbnail.kf.setImage(with: URL(string:item.profilePic))
+        if(item.profilePic.isEmpty){
+            cell.thumbnail.backgroundColor = .lightGray
+            cell.thumbnail.alpha = 0.3
+        }else {
+            cell.thumbnail.kf.setImage(with: URL(string:item.profilePic))
+        }
         cell.title.text = item.name
     }
     

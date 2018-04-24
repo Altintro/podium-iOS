@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvitesViewController" customModule="podium_iOS" customModuleProvider="target">
             <connections>
@@ -31,7 +36,8 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="Jby-xW-g1Q"/>
                     </constraints>
-                    <state key="normal" title="Continue">
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                    <state key="normal" title="Send Invites!">
                         <color key="titleColor" white="0.20467122400000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                 </button>

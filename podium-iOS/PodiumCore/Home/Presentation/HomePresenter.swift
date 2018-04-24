@@ -30,8 +30,10 @@ final class HomePresenter {
     }
     
     func didLoad() {
-        
         view?.title = NSLocalizedString("Home", comment: "")
+    }
+    
+    func didAppear() {
         loadContents()
     }
     

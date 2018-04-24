@@ -94,6 +94,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="54" id="aW6-Wq-8af"/>
                             </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
                             <state key="normal" title="Continue">
                                 <color key="titleColor" white="0.20467122400000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>

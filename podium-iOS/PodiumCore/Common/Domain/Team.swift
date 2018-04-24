@@ -10,9 +10,9 @@ import Foundation
 
 struct Team : Decodable {
     
-    let id          : String
-    let players     : [User]
-    let name        : String
+    let _id         : String
+    let players     : [User]?
+    let name        : String?
     let image       : String?
     let description : String?
 }
