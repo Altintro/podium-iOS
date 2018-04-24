@@ -15,7 +15,8 @@ struct Game : Decodable {
     let sport           : Sport?
     let description     : String?
     let tournament      : Tournament?
-    let participants    : [Team]?
+    let participants    : [User]?
+    let teams           : [Team]?
     let wins            : Team?
     let loses           : Team?
     let concluded       : Bool?

@@ -63,18 +63,18 @@ final class RegisterPresenter {
         return registerSections
     }
     
-    func submit(withUserData data: [String : String], sports: String) {
+    func submit(withUserData data: [String : String]) {
         switch registerType {
         case .email:
-            emailRegisterRequest(with: data, sports: sports)
+            emailRegisterRequest(with: data)
         case .social:
-            socialRegisterRequest(with: data, sports: sports)
+            socialRegisterRequest(with: data)
         }
         
     }
     
-    private func emailRegisterRequest(with userData: [String:String], sports: String) {
-        repository.emailRegister(user: userData, sports: sports)
+    private func emailRegisterRequest(with userData: [String:String]) {
+        repository.emailRegister(data: userData)
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
@@ -91,8 +91,8 @@ final class RegisterPresenter {
             .disposed(by: disposeBag)
     }
     
-    private func socialRegisterRequest(with userData: [String: String] , sports: String) {
-            repository.socialRegister(alias: userData["alias"]!, sports: sports)
+    private func socialRegisterRequest(with userData: [String: String]) {
+        repository.socialRegister(data: userData)
                 .observeOn(MainScheduler.instance)
                 .subscribe(onNext: {[weak self] response in
                     guard let `self` = self else {

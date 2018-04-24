@@ -14,12 +14,15 @@ final class StripPresenter {
     func present(item: StripItem, in cell: StripCell) {
         
         cell.title.text = item.title
-        cell.subtitle.text = item.metadata.uppercased()
-//        if let image = item.image {
-//            cell.imageView.kf.setImage(with: URL(string: image))
-//        } else {
-//            cell.imageView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
-//        }
+        cell.subtitle.text = item.sport.uppercased()
+        
+        let thumbnails = cell.background.subviews.filter { $0.isKind(of: UIImageView.self) }
+        var i: Int = 0
+        item.participants.forEach {
+            let imageView = thumbnails[i] as! UIImageView
+            imageView.kf.setImage(with: URL(string:$0.profilePic))
+            i += 1
+        }
     }
 }
 

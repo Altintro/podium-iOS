@@ -24,6 +24,10 @@ class MainTabBarController: UITabBarController {
         super.init(nibName: nil, bundle: nil)
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func setViewControllers(_ viewControllers: [UIViewController]?, animated: Bool) {
         
         var count = 0
@@ -35,7 +39,5 @@ class MainTabBarController: UITabBarController {
         super.setViewControllers(viewControllers, animated: animated)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
+

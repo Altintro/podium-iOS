@@ -14,6 +14,7 @@ import RxSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let appAssembly = AppAssembly()
+    var dummyCreateGameViewController = UIViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -24,17 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         profileInitialViewController.view?.backgroundColor = .blue
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
-        let createInitialViewController = UIViewController()
-        createInitialViewController.view?.backgroundColor = .green
-        appAssembly.createNavigationController.pushViewController(createInitialViewController,animated: false)
-        
         appAssembly.tabBarController.setViewControllers([
             appAssembly.homeNavigationController,
-            appAssembly.createNavigationController,
+            dummyCreateGameViewController,
             appAssembly.profileNavigationController],
                                     animated: true)
-        
-        
+        appAssembly.tabBarController.delegate = self
         appAssembly.window.rootViewController = appAssembly.tabBarController
         appAssembly.window.makeKeyAndVisible()
     
@@ -75,9 +71,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .disposed(by: appAssembly.disposeBag)
         return true
     }
-    
-    
-    
+
+  
+}
+
+extension AppDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController == dummyCreateGameViewController {
+            appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            return false
+        } else {
+            return true
+        }
+    }
+}
+
+extension AppDelegate {
     private func configureFirebase() {
         FirebaseApp.configure()
     }

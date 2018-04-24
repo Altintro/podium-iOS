@@ -35,6 +35,11 @@ class HomeViewController: UIViewController {
         presenter.view = self
         presenter.didLoad()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.didAppear()
+    }
 }
 
 extension HomeViewController: HomeView {

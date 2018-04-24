@@ -29,7 +29,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-gK-sFA">
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-gK-sFA">
                     <rect key="frame" x="45" y="40" width="285" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="53i-GA-unK"/>

@@ -10,8 +10,8 @@ import Foundation
 
 struct StripItem {
     let title: String
-    let image: String?
-    let metadata: String
+    let participants: [User]
+    let sport: String
 }
 
 enum HomeSection {

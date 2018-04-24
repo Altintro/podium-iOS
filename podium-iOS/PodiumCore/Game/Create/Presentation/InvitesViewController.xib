@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="InvitesViewController" customModule="podium_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="xTF-8o-ekq" id="lGG-Vt-YBh"/>
+                <outlet property="tableView" destination="KVY-I1-NJ5" id="HwN-wy-f7t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KVY-I1-NJ5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTF-8o-ekq">
+                    <rect key="frame" x="45" y="563" width="285" height="54"/>
+                    <color key="backgroundColor" white="0.96784596970000003" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="Jby-xW-g1Q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                    <state key="normal" title="Send Invites!">
+                        <color key="titleColor" white="0.20467122400000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xTF-8o-ekq" secondAttribute="trailing" constant="45" id="UHB-uK-rcG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xTF-8o-ekq" secondAttribute="bottom" constant="50" id="Umh-Uk-4xN"/>
+                <constraint firstItem="xTF-8o-ekq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="dIU-vU-Y1a"/>
+                <constraint firstItem="KVY-I1-NJ5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dPI-8d-llm"/>
+                <constraint firstItem="KVY-I1-NJ5" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="gqT-H5-Niu"/>
+                <constraint firstItem="KVY-I1-NJ5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="iTU-Lk-ZFA"/>
+                <constraint firstItem="xTF-8o-ekq" firstAttribute="top" secondItem="KVY-I1-NJ5" secondAttribute="bottom" constant="20" id="q3M-T0-g5Y"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="110.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

@@ -11,8 +11,8 @@ import Foundation
 extension StripItem {
     init(game: Game) {
         title = game.name
-        metadata = game.sport?.name ?? ""
-        image = game.sport?.image ?? ""
+        sport = game.sport?.name ?? ""
+        participants = game.participants ?? []
     }
 }
 
