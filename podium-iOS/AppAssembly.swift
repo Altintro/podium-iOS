@@ -17,7 +17,7 @@ final class AppAssembly {
     private(set) lazy var profileNavigationController = UINavigationController()
     private(set) lazy var homeNavigationController = UINavigationController()
     
-    private(set) lazy var coreAssembly = CoreAssembly(tabBarController: tabBarController)
+    private(set) lazy var coreAssembly = CoreAssembly(tabBarController: tabBarController, profileNavigationController: profileNavigationController)
     
     private(set) lazy var disposeBag = DisposeBag()
     

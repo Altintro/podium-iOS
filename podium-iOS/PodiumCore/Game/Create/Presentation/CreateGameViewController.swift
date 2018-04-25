@@ -12,7 +12,7 @@ protocol CreateGameViewControllerProvider: class {
     func createGameViewController() -> UIViewController
 }
 
-class CreateGameViewController: UIViewController {
+class CreateGameViewController: UIViewController, CustomNavigationButtonsView {
 
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -52,6 +52,7 @@ class CreateGameViewController: UIViewController {
         presenter.view = self
         presenter.didLoad()
         configureInitialView()
+        configureCloseButton()
     }
     
     func configureInitialView() {

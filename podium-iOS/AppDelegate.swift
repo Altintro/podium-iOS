@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
         appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
         
+        //let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController()
         let profileInitialViewController = UIViewController()
-        profileInitialViewController.view?.backgroundColor = .blue
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
         appAssembly.tabBarController.setViewControllers([
@@ -78,7 +78,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController == dummyCreateGameViewController {
-            appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            } else {
+                appAssembly.coreAssembly.authenticationAssembbly.authenticationNavigator().showAuthenticationViewController()
+            }
             return false
         } else {
             return true

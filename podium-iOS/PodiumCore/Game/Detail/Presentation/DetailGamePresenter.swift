@@ -15,12 +15,12 @@ protocol DetailGameView: class {
 
 final class DetailGamePresenter {
     
-    private let repository: DetailGameRepository
+    private let repository: DetailGameRepositoryProtocol
     private let disposeBag = DisposeBag()
     weak var view: DetailGameView?
     
     
-    init(repository: DetailGameRepository){
+    init(repository: DetailGameRepositoryProtocol){
         self.repository = repository
     }
     
@@ -29,7 +29,8 @@ final class DetailGamePresenter {
     }
     
     func loadContents() {
-        repository.gameDetail(with: "dummyId").observeOn(MainScheduler.instance)
+        repository.game(withIdentifier: "dummyId")
+            .observeOn(MainScheduler.instance)
             .subscribe(onNext: {[weak self] response in
                 guard let `self` = self else {
                     return

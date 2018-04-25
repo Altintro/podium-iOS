@@ -10,8 +10,8 @@ import Foundation
 import RxSwift
 
 protocol DetailGameRepositoryProtocol {
-    func gameDetail(with id: String) -> Observable<DetailResponse<Game>>
-    func joinGame(with id: String) -> Observable<PostResponse<Game>>
+    func game(withIdentifier identifier: String) -> Observable<DetailResponse<Game>>
+    func joinGame(withIdentifier identifier: String) -> Observable<PostResponse<Game>>
 }
 
 final class DetailGameRepository : DetailGameRepositoryProtocol {
@@ -22,11 +22,11 @@ final class DetailGameRepository : DetailGameRepositoryProtocol {
         self.webService = webService
     }
     
-    func gameDetail(with id: String) -> Observable<DetailResponse<Game>> {
-        return webService.load(_type: DetailResponse<Game>.self, from: .game(id: id))
+    func game(withIdentifier identifier: String) -> Observable<DetailResponse<Game>> {
+        return webService.load(_type: DetailResponse<Game>.self, from: .game(id: identifier))
     }
     
-    func joinGame(with id: String) -> Observable<PostResponse<Game>> {
-        return webService.load(_type: PostResponse<Game>.self, from: .joinGame(id: id))
+    func joinGame(withIdentifier identifier: String) -> Observable<PostResponse<Game>> {
+        return webService.load(_type: PostResponse<Game>.self, from: .joinGame(id: identifier))
     }
 }

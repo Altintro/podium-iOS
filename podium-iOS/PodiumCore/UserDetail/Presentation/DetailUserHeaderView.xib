@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DetailUserHeaderView" customModule="podium_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="awV-hi-vBb">
+                    <rect key="frame" x="30" y="23" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="SpJ-ik-M8K"/>
+                        <constraint firstAttribute="width" constant="75" id="nj7-h9-ZKB"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbV-V7-GC7">
+                    <rect key="frame" x="126" y="23" width="233" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="e2m-qc-bel"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="951-SR-lm3">
+                    <rect key="frame" x="126" y="61" width="233" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="uZq-wg-G6q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
+                    <color key="textColor" white="0.42461480029999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="951-SR-lm3" firstAttribute="top" secondItem="LbV-V7-GC7" secondAttribute="bottom" constant="2" id="6C9-vm-4yc"/>
+                <constraint firstItem="LbV-V7-GC7" firstAttribute="leading" secondItem="awV-hi-vBb" secondAttribute="trailing" constant="21" id="6dq-Da-TsW"/>
+                <constraint firstItem="LbV-V7-GC7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="23" id="Bo3-wX-rbr"/>
+                <constraint firstItem="951-SR-lm3" firstAttribute="leading" secondItem="awV-hi-vBb" secondAttribute="trailing" constant="21" id="O8b-Nl-9Lm"/>
+                <constraint firstItem="awV-hi-vBb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="23" id="R8G-UO-g0b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LbV-V7-GC7" secondAttribute="trailing" constant="16" id="S9g-lS-5Dh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="951-SR-lm3" secondAttribute="trailing" constant="16" id="rCM-rw-dd4"/>
+                <constraint firstItem="awV-hi-vBb" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="ryf-Uo-KWk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="profilePic" destination="awV-hi-vBb" id="Pga-Ve-AIE"/>
+                <outlet property="subtitle" destination="951-SR-lm3" id="UnW-ZR-xDg"/>
+                <outlet property="title" destination="LbV-V7-GC7" id="HLr-i5-lWx"/>
+            </connections>
+            <point key="canvasLocation" x="-107.5" y="-87"/>
+        </view>
+    </objects>
+</document>
