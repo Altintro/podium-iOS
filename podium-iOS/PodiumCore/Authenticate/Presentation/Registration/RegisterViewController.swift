@@ -24,16 +24,13 @@ class RegisterViewController: UIViewController, CustomNavigationButtonsView {
     private let presenter: RegisterPresenter
     private let sportsPresenter: ThumbPresenter
     private let disposeBag = DisposeBag()
-    private let email: String
-    private var selectedSports = [String]()
     
     // MARK: - Initialization
     
-    init(presenter: RegisterPresenter, sportsPresenter: ThumbPresenter, email: String?) {
+    init(presenter: RegisterPresenter, sportsPresenter: ThumbPresenter) {
         self.presenter = presenter
         self.sportsPresenter = sportsPresenter
-        self.email = email ?? ""
-        
+
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
@@ -103,7 +100,7 @@ private extension RegisterViewController {
                     thumbItem.identifier == item.identifier
                 })
                 sportsView.items.remove(at: index!)
-                self?.selectedSports.append(item.identifier)
+                self?.presenter.sportsIdentifiers.append(item.identifier)
             })
             .disposed(by: sportsView.disposeBag)
         
@@ -121,8 +118,6 @@ private extension RegisterViewController {
     
     private func submit () {
         var userData = [String: String]()
-        userData["email"] = email
-        userData["sports"] = selectedSports.joined(separator: ",")
         stackView.arrangedSubviews.forEach {
             if($0 .isKind(of: FieldView.self)){
                 userData[(($0 as! FieldView).type?.rawValue)!] = ($0 as! FieldView).textField.text

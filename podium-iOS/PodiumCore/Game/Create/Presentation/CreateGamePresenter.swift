@@ -56,7 +56,6 @@ extension CreateGamePresenter: CreateSectionDelegate {
     
     func showNext(current: CreateGameSection, data: [String : String]) {
         data.forEach { gameData[$0] = $1 }
-        print(gameData)
         if (current == .invite){
             self.submit()
         } else {

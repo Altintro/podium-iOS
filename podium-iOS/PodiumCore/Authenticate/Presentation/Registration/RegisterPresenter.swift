@@ -20,14 +20,18 @@ final class RegisterPresenter {
     private let repository: AuthenticationRepositoryProtocol
     private let magicLinkNavigator: MagicLinkNavigator
     private let registerType: RegisterType
+    private let email: String?
+    
+    var sportsIdentifiers = [String]()
     let disposeBag = DisposeBag()
     
     weak var view: RegisterView?
     
-    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator, type: RegisterType){
+    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator, type: RegisterType, email: String?){
         self.repository = repository
         self.magicLinkNavigator = magicLinkNavigator
         self.registerType = type
+        self.email = email ?? ""
     }
     
     func didLoad() {
@@ -65,11 +69,14 @@ final class RegisterPresenter {
     }
     
     func submit(withUserData data: [String : String]) {
+        var userData = data
+        userData["email"] = email
+        userData["sports"] = sportsIdentifiers.joined(separator: ",")
         switch registerType {
         case .email:
-            emailRegisterRequest(with: data)
+            emailRegisterRequest(with: userData)
         case .social:
-            socialRegisterRequest(with: data)
+            socialRegisterRequest(with: userData)
         }
         
     }
