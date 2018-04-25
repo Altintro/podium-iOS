@@ -36,8 +36,8 @@ final public class CreateGameAssembly {
         return ChooseSportPresenter(repository: repository())
     }
     
-    private func sportsPresenter() -> SportsPresenter {
-        return SportsPresenter()
+    private func sportsPresenter() -> ThumbPresenter {
+        return ThumbPresenter()
     }
     
     private func invitesPresenter() -> InvitesPresenter {

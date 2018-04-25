@@ -70,8 +70,8 @@ final public class AuthenticationAssembbly {
                                  type: type)
     }
     
-    func sportsPresenter() -> SportsPresenter {
-        return SportsPresenter()
+    func sportsPresenter() -> ThumbPresenter {
+        return ThumbPresenter()
     }
     
     

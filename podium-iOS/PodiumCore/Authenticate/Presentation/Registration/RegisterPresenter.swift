@@ -11,7 +11,7 @@ import RxSwift
 protocol RegisterView : class {
     var title: String? { get set }
     func update(with sections: [RegisterSection])
-    func updateSection(with sports: [Sport])
+    func updateSection(with items: [ThumbItem])
     func dismissAll()
 }
 
@@ -42,7 +42,8 @@ final class RegisterPresenter {
                 guard let `self` = self else {
                     return
                 }
-                self.view?.updateSection(with: response.result)
+                let items = response.result.map { ThumbItem(sport: $0) }
+                self.view?.updateSection(with: items)
                 }, onError: { error in
                     print("Email downloading sports")
                 }, onDisposed: { [weak self] in
@@ -54,7 +55,7 @@ final class RegisterPresenter {
     private func registerSections() -> [RegisterSection] {
         var registerSections : [RegisterSection] = [
             .field(type: .alias),
-            .sports(title: NSLocalizedString("What sports do you practice?", comment: ""), items:[]),
+            .thumbView(title: NSLocalizedString("What sports do you practice?", comment: ""), items:[]),
             .submit(title: "Sign up!")
         ]
         if registerType == .email{

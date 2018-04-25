@@ -1,5 +1,5 @@
 //
-//  SportsLayout.swift
+//  ThumbViewLayout.swift
 //  podium-iOS
 //
 //  Created by Fernando Frances on 18/04/2018.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-final class SportsLayout: UICollectionViewFlowLayout {
+final class ThumbViewLayout: UICollectionViewFlowLayout {
     
     private enum Constants {
         static let itemSize = CGSize(width: 60, height: 60)
         static let minimumLineSpacing: CGFloat = 16
-        static let sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+        static let sectionInset = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 16)
     }
     
     override func prepare() {

@@ -16,25 +16,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SportsView" customModule="podium_iOS" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ThumbView" customModule="podium_iOS" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="130"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Type in something here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-JK-hYW">
-                    <rect key="frame" x="45" y="0.0" width="285" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Type in something here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RYo-JK-hYW">
+                    <rect key="frame" x="45" y="0.0" width="285" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="hmU-DT-xlb"/>
+                        <constraint firstAttribute="height" constant="40" id="hmU-DT-xlb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" verticalCompressionResistancePriority="751" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="R0k-gK-sFA">
-                    <rect key="frame" x="45" y="40" width="285" height="80"/>
+                    <rect key="frame" x="0.0" y="50" width="375" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="53i-GA-unK"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Ff-Al-3H1" customClass="SportsLayout" customModule="podium_iOS" customModuleProvider="target">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Ff-Al-3H1" userLabel="ThumView Layout" customClass="ThumbViewLayout" customModule="podium_iOS" customModuleProvider="target">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -44,12 +44,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="R0k-gK-sFA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="80a-Ko-uTg"/>
+                <constraint firstItem="R0k-gK-sFA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="80a-Ko-uTg"/>
                 <constraint firstItem="RYo-JK-hYW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="A8q-Gi-N9P"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="RYo-JK-hYW" secondAttribute="trailing" constant="45" id="HwT-nE-pCQ"/>
                 <constraint firstItem="RYo-JK-hYW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="WlQ-2c-euy"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R0k-gK-sFA" secondAttribute="bottom" constant="10" id="aqc-2h-PBY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R0k-gK-sFA" secondAttribute="trailing" constant="45" id="cTU-NY-bgd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="R0k-gK-sFA" secondAttribute="bottom" id="aqc-2h-PBY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="R0k-gK-sFA" secondAttribute="trailing" id="cTU-NY-bgd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

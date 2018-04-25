@@ -54,7 +54,11 @@ private extension DetailUserPresenter {
             .header(DetailUserHeader(user: user))
         ]
         
-        detailSections.append(.sports(title: NSLocalizedString("Participating", comment: ""), items: user.interests ?? []))
+        if let sports = user.interests {
+            let items = sports.map { ThumbItem(sport: $0 )}
+             detailSections.append(.thumbView(title: NSLocalizedString("Participating", comment: ""), items: items))
+        }
+       
         
         if let gamesPlaying = user.gamesPlaying {
             let items = gamesPlaying.map { StripItem(game: $0)}

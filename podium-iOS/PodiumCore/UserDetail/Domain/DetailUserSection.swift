@@ -16,7 +16,7 @@ struct DetailUserHeader {
 
 enum DetailUserSection {
     case header(DetailUserHeader)
-    case sports(title: String, items: [Sport])
+    case thumbView(title: String, items: [ThumbItem])
     case gamesPlaying(title: String, items: [StripItem])
 }
 

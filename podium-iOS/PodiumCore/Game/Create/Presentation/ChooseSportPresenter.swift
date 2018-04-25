@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ChooseSportView: class {
-    func update(with sports: [Sport])
+    func update(with items: [ThumbItem])
 }
 
 final class ChooseSportPresenter {
@@ -36,7 +36,8 @@ final class ChooseSportPresenter {
                 guard let `self` = self else {
                     return
                 }
-                    self.view?.update(with: response.result)
+                let items = response.result.map { ThumbItem(sport: $0) }
+                self.view?.update(with: items)
                 }, onError: { error in
                     print("Error downloading sports")
                 }, onDisposed: { [weak self] in

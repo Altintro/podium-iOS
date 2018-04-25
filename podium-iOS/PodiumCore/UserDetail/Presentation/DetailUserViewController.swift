@@ -14,10 +14,10 @@ class DetailUserViewController: UIViewController {
     
     private let presenter: DetailUserPresenter
     private let headerPresenter: DetailUserHeaderPresenter
-    private let sportsPresenter: SportsPresenter
+    private let sportsPresenter: ThumbPresenter
     private let gamesPresenter: StripPresenter
     
-    init(presenter: DetailUserPresenter, headerPresenter: DetailUserHeaderPresenter, sportsPresenter: SportsPresenter, gamesPresenter: StripPresenter){
+    init(presenter: DetailUserPresenter, headerPresenter: DetailUserHeaderPresenter, sportsPresenter: ThumbPresenter, gamesPresenter: StripPresenter){
         self.presenter = presenter
         self.headerPresenter = headerPresenter
         self.sportsPresenter = sportsPresenter
@@ -52,7 +52,7 @@ extension DetailUserViewController {
         switch section {
         case .header(let header):
             view = headerView(with: header)
-        case .sports(let title, let items):
+        case .thumbView(let title, let items):
             view = sportsView(withTitle: title, items: items)
         case .gamesPlaying(let title, let items):
             view = gamesView(withTitle: title, items: items)
@@ -68,8 +68,8 @@ extension DetailUserViewController {
         return headerView
     }
     
-    func sportsView(withTitle title: String, items: [Sport]) -> UIView {
-        let sportsView = SportsView.instantiate()
+    func sportsView(withTitle title: String, items: [ThumbItem]) -> UIView {
+        let sportsView = ThumbView.instantiate()
         sportsView.presenter = sportsPresenter
         sportsView.title = title
         sportsView.items = items

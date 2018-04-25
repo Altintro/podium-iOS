@@ -19,7 +19,7 @@ class CreateGameViewController: UIViewController, CustomNavigationButtonsView {
     
     private let presenter: CreateGamePresenter
     private let chooseSportPresenter: ChooseSportPresenter
-    private let sportsPresenter: SportsPresenter
+    private let sportsPresenter: ThumbPresenter
     private let invitesPresenter: InvitesPresenter
     private let chooseMetadataPresenter: ChooseMetadataPresenter
     private let finishPresenter: FinishPresenter
@@ -27,7 +27,7 @@ class CreateGameViewController: UIViewController, CustomNavigationButtonsView {
     
     init(presenter: CreateGamePresenter,
          chooseSportPresenter: ChooseSportPresenter,
-         sportsPresenter: SportsPresenter,
+         sportsPresenter: ThumbPresenter,
          invitesPresenter: InvitesPresenter,
          chooseMetadataPresenter: ChooseMetadataPresenter,
          finishPresenter: FinishPresenter) {

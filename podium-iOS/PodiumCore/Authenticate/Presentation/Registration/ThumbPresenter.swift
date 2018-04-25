@@ -9,10 +9,10 @@
 import RxSwift
 import Kingfisher
 
-final class SportsPresenter {
+final class ThumbPresenter {
     
-    func present(item: Sport?, in cell: SportCell) {
-        if let urlString = item?.image {
+    func present(thumbItem: ThumbItem?, in cell: ThumbItemCell) {
+        if let urlString = thumbItem?.thumbnail {
             cell.imageView.kf.setImage(with: URL(string: urlString))
         } else {
             cell.imageView.backgroundColor = UIColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)

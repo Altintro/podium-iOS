@@ -35,8 +35,8 @@ final public class DetailUserAssembly {
         return DetailUserHeaderPresenter()
     }
     
-    func sportsPresenter() -> SportsPresenter {
-        return SportsPresenter()
+    func sportsPresenter() -> ThumbPresenter {
+        return ThumbPresenter()
     }
     
     func gamesPresenter() -> StripPresenter {

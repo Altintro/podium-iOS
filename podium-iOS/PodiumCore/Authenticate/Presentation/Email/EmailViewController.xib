@@ -32,21 +32,21 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmN-go-dt1" userLabel="CheckEmailView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qFJ-5t-AhF">
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="qFJ-5t-AhF">
                             <rect key="frame" x="45" y="253" width="285" height="30"/>
                             <color key="tintColor" red="0.69337815719999996" green="0.97828954459999995" blue="0.84651246459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="Vow-Vi-uJa"/>
                             </constraints>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                         </textField>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nnb-RJ-2ym">
                             <rect key="frame" x="45" y="303" width="285" height="54"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue with email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-GL-Scs">
-                                    <rect key="frame" x="64" y="18" width="157.5" height="19"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwZ-GL-Scs">
+                                    <rect key="frame" x="107" y="18" width="71.5" height="19"/>
                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -59,10 +59,20 @@
                                 <constraint firstItem="IwZ-GL-Scs" firstAttribute="centerY" secondItem="Nnb-RJ-2ym" secondAttribute="centerY" id="c4o-ok-Zk8"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type in your email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nrv-gN-S08">
+                            <rect key="frame" x="45" y="203" width="285" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="T7d-O1-7ET"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="Nnb-RJ-2ym" firstAttribute="top" secondItem="qFJ-5t-AhF" secondAttribute="bottom" constant="20" id="0R5-s9-Tap"/>
+                        <constraint firstAttribute="trailing" secondItem="nrv-gN-S08" secondAttribute="trailing" constant="45" id="14z-bm-7CV"/>
                         <constraint firstItem="qFJ-5t-AhF" firstAttribute="centerX" secondItem="pmN-go-dt1" secondAttribute="centerX" id="3rm-9Z-vfv"/>
                         <constraint firstAttribute="trailing" secondItem="qFJ-5t-AhF" secondAttribute="trailing" constant="45" id="7P5-83-OvM"/>
                         <constraint firstItem="qFJ-5t-AhF" firstAttribute="leading" secondItem="pmN-go-dt1" secondAttribute="leading" constant="45" id="AGp-2M-LIA"/>
@@ -70,6 +80,8 @@
                         <constraint firstAttribute="trailing" secondItem="Nnb-RJ-2ym" secondAttribute="trailing" constant="45" id="bDy-Fo-zjy"/>
                         <constraint firstItem="Nnb-RJ-2ym" firstAttribute="leading" secondItem="pmN-go-dt1" secondAttribute="leading" constant="45" id="dA7-Xp-6Qi"/>
                         <constraint firstItem="Nnb-RJ-2ym" firstAttribute="centerX" secondItem="pmN-go-dt1" secondAttribute="centerX" id="dRd-B7-Q5P"/>
+                        <constraint firstItem="qFJ-5t-AhF" firstAttribute="top" secondItem="nrv-gN-S08" secondAttribute="bottom" constant="10" id="eU6-UD-bZC"/>
+                        <constraint firstItem="nrv-gN-S08" firstAttribute="leading" secondItem="pmN-go-dt1" secondAttribute="leading" constant="45" id="uhb-7Q-zx5"/>
                     </constraints>
                 </view>
             </subviews>

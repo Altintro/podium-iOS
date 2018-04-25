@@ -10,7 +10,7 @@ import Foundation
 
 enum RegisterSection {
     case field(type: FieldType)
-    case sports(title: String, items: [Sport])
+    case thumbView(title: String, items: [ThumbItem])
     case submit(title: String)
 }
 
