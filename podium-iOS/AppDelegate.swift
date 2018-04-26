@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
         appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
         
-        //let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController()
-        let profileInitialViewController = UIViewController()
+        let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController(userType: .me)
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
         appAssembly.tabBarController.setViewControllers([
@@ -84,6 +83,13 @@ extension AppDelegate: UITabBarControllerDelegate {
                 appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
             }
             return false
+        } else if viewController == appAssembly.profileNavigationController {
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                return true
+            } else {
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
+            }
+            return true
         } else {
             return true
         }

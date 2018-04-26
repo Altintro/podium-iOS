@@ -20,6 +20,7 @@
 		E01665DB2092018500BF9371 /* DetailGameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DA2092018500BF9371 /* DetailGameNavigator.swift */; };
 		E01665DD209243B200BF9371 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DC209243B200BF9371 /* Date+Utilities.swift */; };
 		E01665DF209251D300BF9371 /* DetailUserNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DE209251D300BF9371 /* DetailUserNavigator.swift */; };
+		E01665E120926F4300BF9371 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665E020926F4300BF9371 /* UserType.swift */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02BB0FF2091EE5B00F81719 /* DetailGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */; };
 		E02BB1012091EE6500F81719 /* DetailGameHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */; };
@@ -158,6 +159,7 @@
 		E01665DA2092018500BF9371 /* DetailGameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameNavigator.swift; sourceTree = "<group>"; };
 		E01665DC209243B200BF9371 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		E01665DE209251D300BF9371 /* DetailUserNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserNavigator.swift; sourceTree = "<group>"; };
+		E01665E020926F4300BF9371 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameHeaderView.swift; sourceTree = "<group>"; };
 		E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGameHeaderView.xib; sourceTree = "<group>"; };
@@ -804,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				E0FDB503208FAB32002DE90E /* DetailUserSection.swift */,
+				E01665E020926F4300BF9371 /* UserType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1083,6 +1086,7 @@
 				E0FDB506208FAE2A002DE90E /* DetailUserHeaderView.swift in Sources */,
 				E0FDB4F9208FA2D4002DE90E /* DetailUserAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,
+				E01665E120926F4300BF9371 /* UserType.swift in Sources */,
 				E04ACEB42076705B0073A66A /* CustomNavigationButtonsView.swift in Sources */,
 				E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */,
 				E0C278A820641A0700C17DD2 /* EmailPresenter.swift in Sources */,

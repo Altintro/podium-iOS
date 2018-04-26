@@ -17,7 +17,17 @@ final class DetailUserHeaderView: UIView, NibLoadableView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     
+    override func awakeFromNib() {
+        configureViews()
+    }
+    
     override var intrinsicContentSize: CGSize {
         return CGSize(width: UIViewNoIntrinsicMetric, height: Constants.height)
+    }
+}
+
+private extension DetailUserHeaderView {
+    func configureViews() {
+        profilePic.layer.cornerRadius = profilePic.bounds.width/2
     }
 }

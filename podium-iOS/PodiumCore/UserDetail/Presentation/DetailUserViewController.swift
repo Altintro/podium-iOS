@@ -12,7 +12,7 @@ protocol DetailUserViewControllerProvider: class {
     func detailUserViewController(identifier: String) -> UIViewController
 }
 
-class DetailUserViewController: UIViewController {
+class DetailUserViewController: UIViewController, CustomNavigationButtonsView {
     
     @IBOutlet weak var stackView: UIStackView!
     
@@ -36,8 +36,17 @@ class DetailUserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+        if(presenter.userType == .other){
+            configureBackButton()
+        }
         presenter.view = self
         presenter .didLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.didAppear()
     }
 
 }
@@ -84,6 +93,11 @@ extension DetailUserViewController {
         let gamesView = StripView.instantiate()
         gamesView.presenter = gamesPresenter
         gamesView.items = items
+        gamesView.itemSelected
+            .subscribe(onNext: {[weak self] item in
+                self?.presenter.gameTapped(withIdentifier: item.identifier)
+            })
+            .disposed(by: gamesView.disposeBag)
         return gamesView
     }
 }

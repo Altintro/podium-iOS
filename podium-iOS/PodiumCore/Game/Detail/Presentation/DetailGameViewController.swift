@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxGesture
 
 protocol DetailGameViewControllerProvider: class {
     func detailGameViewController(identifier: String) -> UIViewController
@@ -84,6 +85,11 @@ private extension DetailGameViewController {
         thumbView.presenter = thumbPresenter
         thumbView.items = items
         thumbView.title = title
+        thumbView.itemSelected
+            .subscribe(onNext: {[weak self] item in
+                self?.presenter.didSelectParticipant(withIdentifier: item.identifier)
+            })
+            .disposed(by: thumbView.disposeBag)
         
         return thumbView
     }

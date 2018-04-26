@@ -26,6 +26,7 @@ internal enum Endpoint {
     case joinGame(id: String)
     case createGame(data: [String: String])
     case user(id: String)
+    case me
 }
 
 internal extension Endpoint {
@@ -92,6 +93,8 @@ private extension Endpoint {
             return .post
         case .user:
             return .get
+        case .me:
+            return .get
         }
     }
     
@@ -131,6 +134,8 @@ private extension Endpoint {
             return "games"
         case .user(let id):
             return "users/\(id)/detail"
+        case .me:
+            return "users/me"
         }
     }
     
@@ -170,6 +175,8 @@ private extension Endpoint {
             return [:]
         case .user:
             return [:]
+        case .me:
+            return [:]
         }
     }
     
@@ -208,6 +215,8 @@ private extension Endpoint {
         case .createGame(let data):
             return data
         case .user:
+            return [:]
+        case .me:
             return [:]
         }
     }
@@ -250,6 +259,8 @@ private extension Endpoint {
                     "Content-Type": "application/json"]
         case .user:
             return [:]
+        case .me:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         }
     }
 }

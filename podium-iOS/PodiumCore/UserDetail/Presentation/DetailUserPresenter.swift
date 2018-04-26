@@ -16,24 +16,44 @@ protocol DetailUserView : class {
 final class DetailUserPresenter {
     
     private let repository: DetailUserRepositoryProtocol
-    private let identifier: String
+    private let identifier: String?
     private let disposeBag = DisposeBag()
+    let userType: UserType
     
     weak var view: DetailUserView?
     
-    init(repository: DetailUserRepositoryProtocol, identifier: String){
+    init(repository: DetailUserRepositoryProtocol, identifier: String?, userType: UserType){
         self.repository = repository
-        self.identifier = identifier
+        self.identifier = identifier ?? ""
+        self.userType = userType
     }
     
     func didLoad() {
+
+    }
+    
+    func didAppear() {
         loadContents()
+    }
+    
+    func gameTapped(withIdentifier identifier: String){
+        // Navigate to detail game
     }
 }
 
 private extension DetailUserPresenter {
     func loadContents() {
-        repository.user(withIdentifier: identifier)
+        switch userType {
+        case .me:
+            getUserOwnerDetail()
+        case .other:
+            getOtherUserDetail()
+        }
+        
+    }
+    
+    func getOtherUserDetail(){
+        repository.user(withIdentifier: identifier!)
             .map { [weak self] response in
                 self?.detailUserSections(for: response.result) ?? []
             }
@@ -41,7 +61,23 @@ private extension DetailUserPresenter {
             .subscribe(onNext: { [weak self] sections in
                 self?.view?.update(with: sections)
                 }, onError: { error in
-                    print("Error posting game")
+                    print("Error getting user detail")
+            }, onDisposed: { [weak self] in
+                print("onDisposed")
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func getUserOwnerDetail() {
+        repository.me()
+            .map { [weak self] response in
+                self?.detailUserSections(for: response.result) ?? []
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: { [weak self] sections in
+                self?.view?.update(with: sections)
+                }, onError: { error in
+                    print("Error getting my user detail")
             }, onDisposed: { [weak self] in
                 print("onDisposed")
             })

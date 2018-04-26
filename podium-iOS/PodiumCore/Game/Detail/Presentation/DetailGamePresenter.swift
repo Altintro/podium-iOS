@@ -38,6 +38,10 @@ final class DetailGamePresenter {
         loadContents()
     }
     
+    func didSelectParticipant(withIdentifier identifier: String) {
+        detailUserNavigator.showDetailUser(withIdentifier: identifier)
+    }
+    
     func joinGame() {
         if (UserDefaults.standard.string(forKey: "access-token") != nil) {
             repository.joinGame(withIdentifier: identifier)

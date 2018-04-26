@@ -10,6 +10,7 @@ import RxSwift
 
 protocol DetailUserRepositoryProtocol {
     func user(withIdentifier identifier:String) -> Observable<DetailResponse<User>>
+    func me() -> Observable<DetailResponse<User>>
 }
 
 final class DetailUserRepository : DetailUserRepositoryProtocol {
@@ -23,6 +24,10 @@ final class DetailUserRepository : DetailUserRepositoryProtocol {
     func user(withIdentifier identifier:String) -> Observable<DetailResponse<User>> {
         return webService.load(_type: DetailResponse<User>.self, from: .user(id: identifier
             ))
+    }
+    
+    func me() -> Observable<DetailResponse<User>> {
+        return webService.load(_type: DetailResponse<User>.self, from: .me)
     }
     
 }
