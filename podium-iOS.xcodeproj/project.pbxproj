@@ -83,6 +83,7 @@
 		E0B38ECF2090FDDE000FF08A /* ModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B38ECE2090FDDE000FF08A /* ModelType.swift */; };
 		E0B38ED12090FECC000FF08A /* ThumbItem+Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B38ED02090FECC000FF08A /* ThumbItem+Sport.swift */; };
 		E0B38ED32090FED9000FF08A /* ThumbItem+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B38ED22090FED9000FF08A /* ThumbItem+User.swift */; };
+		E0B38ED720911EBB000FF08A /* DetailGameSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B38ED620911EBB000FF08A /* DetailGameSection.swift */; };
 		E0C278A22061949F00C17DD2 /* Google.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C278A12061949F00C17DD2 /* Google.swift */; };
 		E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C278A32064173100C17DD2 /* EmailViewController.swift */; };
 		E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0C278A42064173100C17DD2 /* EmailViewController.xib */; };
@@ -217,6 +218,7 @@
 		E0B38ECE2090FDDE000FF08A /* ModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelType.swift; sourceTree = "<group>"; };
 		E0B38ED02090FECC000FF08A /* ThumbItem+Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThumbItem+Sport.swift"; sourceTree = "<group>"; };
 		E0B38ED22090FED9000FF08A /* ThumbItem+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThumbItem+User.swift"; sourceTree = "<group>"; };
+		E0B38ED620911EBB000FF08A /* DetailGameSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameSection.swift; sourceTree = "<group>"; };
 		E0C278A12061949F00C17DD2 /* Google.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Google.swift; sourceTree = "<group>"; };
 		E0C278A32064173100C17DD2 /* EmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewController.swift; sourceTree = "<group>"; };
 		E0C278A42064173100C17DD2 /* EmailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmailViewController.xib; sourceTree = "<group>"; };
@@ -389,6 +391,8 @@
 		E04D9922208D144D00951D11 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				E0B38ED520911EB0000FF08A /* Domain */,
+				E0B38ED420911EAB000FF08A /* New Group */,
 				E0FDB4DA208F6F2C002DE90E /* Repository */,
 				E0FDB4D9208F6F28002DE90E /* DI */,
 				E0FDB4D8208F6F1A002DE90E /* Presentation */,
@@ -548,6 +552,21 @@
 				E08F0B5D206FB16300E6CDFE /* SubmitView.xib */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		E0B38ED420911EAB000FF08A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		E0B38ED520911EB0000FF08A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				E0B38ED620911EBB000FF08A /* DetailGameSection.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		E0D18F3B20599AD300F8BD80 /* Authenticate */ = {
@@ -1010,6 +1029,7 @@
 				E0604FD82072A32B00CCFFFD /* HomeRepository.swift in Sources */,
 				E0FDB4A8208DD123002DE90E /* CreateGameAssembly.swift in Sources */,
 				E0FDB4E5208F77FD002DE90E /* DetailGameAssembly.swift in Sources */,
+				E0B38ED720911EBB000FF08A /* DetailGameSection.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
