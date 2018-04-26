@@ -124,9 +124,9 @@ private extension Endpoint {
         case .users:
             return "users"
         case .game(let id):
-            return "game/\(id)/detail"
+            return "games/\(id)/detail"
         case .joinGame(let id):
-            return "game/\(id)/join"
+            return "games/\(id)/join"
         case .createGame:
             return "games"
         case .user(let id):
@@ -244,7 +244,7 @@ private extension Endpoint {
         case .game:
             return [:]
         case .joinGame:
-            return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .createGame:
             return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? "",
                     "Content-Type": "application/json"]

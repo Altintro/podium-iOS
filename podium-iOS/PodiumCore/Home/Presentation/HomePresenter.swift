@@ -20,26 +20,26 @@ final class HomePresenter {
     
     private let repository: HomeRepositoryProtocol
     private let authenticationNavigator: AuthenticationNavigator
+    private let detailGameNavigator: DetailGameNavigator
     private let disposeBag = DisposeBag()
     
     weak var view: HomeView?
     
-    init(repository: HomeRepositoryProtocol, authenticationNavigator: AuthenticationNavigator) {
+    init(repository: HomeRepositoryProtocol, authenticationNavigator: AuthenticationNavigator, detailGameNavigator: DetailGameNavigator) {
         self.repository = repository
         self.authenticationNavigator = authenticationNavigator
+        self.detailGameNavigator = detailGameNavigator
     }
     
     func didLoad() {
         view?.title = NSLocalizedString("Home", comment: "")
-    }
-    
-    func didAppear() {
         loadContents()
     }
     
-    func gameTapped() {
+    func gameTapped(withIdentifier identifier: String) {
         // Si el usuario esta registrado, muestro detalle, si no, muestro authentication
-        authenticationNavigator.showAuthenticationViewController()
+        //authenticationNavigator.showAuthenticationViewController()
+        detailGameNavigator.showDetailGame(withIdentifier: identifier)
     }
 }
 

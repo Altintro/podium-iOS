@@ -8,16 +8,16 @@
 
 import Foundation
 
-struct DetailUserHeader {
-    let profilePic: String?
-    let name: String
-    let alias: String
-}
-
 enum DetailUserSection {
     case header(DetailUserHeader)
     case thumbView(title: String, items: [ThumbItem])
     case gamesPlaying(title: String, items: [StripItem])
+}
+
+struct DetailUserHeader {
+    let profilePic: String?
+    let name: String
+    let alias: String
 }
 
 extension DetailUserHeader {

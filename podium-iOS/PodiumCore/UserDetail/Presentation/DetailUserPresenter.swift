@@ -33,14 +33,11 @@ private extension DetailUserPresenter {
     func loadContents() {
         repository.user(withIdentifier: "dummyId")
             .map { [weak self] response in
-                self?.detailUserSections(for: response.result)
+                self?.detailUserSections(for: response.result) ?? []
             }
             .observeOn(MainScheduler.instance)
             .subscribe(onNext: { [weak self] sections in
-                guard let `self` = self else {
-                    return
-                }
-                self.view?.update(with: sections!)
+                self?.view?.update(with: sections)
                 }, onError: { error in
                     print("Error posting game")
             }, onDisposed: { [weak self] in
@@ -54,15 +51,14 @@ private extension DetailUserPresenter {
             .header(DetailUserHeader(user: user))
         ]
         
-        if let sports = user.interests {
-            let items = sports.map { ThumbItem(sport: $0 )}
-             detailSections.append(.thumbView(title: NSLocalizedString("Participating", comment: ""), items: items))
+        let sports = user.interests?.map { ThumbItem(sport: $0)}
+        if let sports = sports {
+             detailSections.append(.thumbView(title: NSLocalizedString("Participating", comment: ""), items: sports))
         }
        
-        
-        if let gamesPlaying = user.gamesPlaying {
-            let items = gamesPlaying.map { StripItem(game: $0)}
-            detailSections.append(.gamesPlaying(title: NSLocalizedString("Games Playing", comment: ""), items: items))
+        let gamesPlaying = user.gamesPlaying?.map { StripItem(game: $0)}
+        if let gamesPlaying = gamesPlaying {
+            detailSections.append(.gamesPlaying(title: NSLocalizedString("Games Playing", comment: ""), items: gamesPlaying))
         }
         
         return detailSections

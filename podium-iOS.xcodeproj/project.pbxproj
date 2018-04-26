@@ -16,7 +16,13 @@
 		DB77C1AB204DD843005174FA /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AA204DD843005174FA /* Level.swift */; };
 		DB77C1AD204DD856005174FA /* Clasification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB77C1AC204DD856005174FA /* Clasification.swift */; };
 		DBD632982073FD8500A1CC26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */; };
+		E01665D92091F86D00BF9371 /* StripItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665D82091F86D00BF9371 /* StripItem.swift */; };
+		E01665DB2092018500BF9371 /* DetailGameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DA2092018500BF9371 /* DetailGameNavigator.swift */; };
+		E01665DD209243B200BF9371 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DC209243B200BF9371 /* Date+Utilities.swift */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
+		E02BB0FF2091EE5B00F81719 /* DetailGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */; };
+		E02BB1012091EE6500F81719 /* DetailGameHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */; };
+		E02BB1032091EE7300F81719 /* DetailGameHeaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BB1022091EE7300F81719 /* DetailGameHeaderPresenter.swift */; };
 		E02F5BDC204B022000531033 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E02F5BDD204B022000531033 /* RxSwift.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
 		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
@@ -150,7 +156,13 @@
 		DB77C1AA204DD843005174FA /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DB77C1AC204DD856005174FA /* Clasification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clasification.swift; sourceTree = "<group>"; };
 		DBD632972073FD3F00A1CC26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E01665D82091F86D00BF9371 /* StripItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripItem.swift; sourceTree = "<group>"; };
+		E01665DA2092018500BF9371 /* DetailGameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameNavigator.swift; sourceTree = "<group>"; };
+		E01665DC209243B200BF9371 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
+		E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameHeaderView.swift; sourceTree = "<group>"; };
+		E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGameHeaderView.xib; sourceTree = "<group>"; };
+		E02BB1022091EE7300F81719 /* DetailGameHeaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameHeaderPresenter.swift; sourceTree = "<group>"; };
 		E02F5BDD204B022000531033 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -353,6 +365,7 @@
 				E04ACEB32076705B0073A66A /* CustomNavigationButtonsView.swift */,
 				E030086520867C71007C9F8F /* UIView+Shadow.swift */,
 				E0FDB4C5208DECAB002DE90E /* UITableView+Reusable.swift */,
+				E01665DC209243B200BF9371 /* Date+Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -392,7 +405,6 @@
 			isa = PBXGroup;
 			children = (
 				E0B38ED520911EB0000FF08A /* Domain */,
-				E0B38ED420911EAB000FF08A /* New Group */,
 				E0FDB4DA208F6F2C002DE90E /* Repository */,
 				E0FDB4D9208F6F28002DE90E /* DI */,
 				E0FDB4D8208F6F1A002DE90E /* Presentation */,
@@ -473,6 +485,7 @@
 			isa = PBXGroup;
 			children = (
 				E0604FDB2072A35500CCFFFD /* HomeSection.swift */,
+				E01665D82091F86D00BF9371 /* StripItem.swift */,
 				E0604FDD2072A36400CCFFFD /* StripItem+Game.swift */,
 			);
 			path = Domain;
@@ -552,13 +565,6 @@
 				E08F0B5D206FB16300E6CDFE /* SubmitView.xib */,
 			);
 			path = Registration;
-			sourceTree = "<group>";
-		};
-		E0B38ED420911EAB000FF08A /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		E0B38ED520911EB0000FF08A /* Domain */ = {
@@ -726,6 +732,7 @@
 		E0FDB4D6208F6EFF002DE90E /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
+				E01665DA2092018500BF9371 /* DetailGameNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -736,6 +743,9 @@
 				E0FDB4EC208F78D8002DE90E /* DetailGameViewController.swift */,
 				E0FDB4ED208F78D8002DE90E /* DetailGameViewController.xib */,
 				E0FDB4F0208F78E3002DE90E /* DetailGamePresenter.swift */,
+				E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */,
+				E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */,
+				E02BB1022091EE7300F81719 /* DetailGameHeaderPresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -889,6 +899,7 @@
 				E05107BF205D966F001836D4 /* aqua.ttf in Resources */,
 				E04E6437206EB16C00B7ADEE /* FieldView.xib in Resources */,
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
+				E02BB1012091EE6500F81719 /* DetailGameHeaderView.xib in Resources */,
 				E0FDB4EF208F78D8002DE90E /* DetailGameViewController.xib in Resources */,
 				E030086320866A61007C9F8F /* paulaprofile.png in Resources */,
 				E0FDB4D3208E3421002DE90E /* FinishViewController.xib in Resources */,
@@ -1019,7 +1030,9 @@
 				E04F5D9E206586EE00E9C987 /* EmailNavigator.swift in Sources */,
 				E04D9935208D1D3900951D11 /* ChooseSportViewController.swift in Sources */,
 				E0AFB833205139EA000E07D4 /* Modality.swift in Sources */,
+				E01665D92091F86D00BF9371 /* StripItem.swift in Sources */,
 				E0604FF92072A65300CCFFFD /* UICollectionView+Reusable.swift in Sources */,
+				E01665DB2092018500BF9371 /* DetailGameNavigator.swift in Sources */,
 				E0FDB4CC208E07FF002DE90E /* ChooseMetadataPresenter.swift in Sources */,
 				E0604FF12072A41D00CCFFFD /* HomePresenter.swift in Sources */,
 				E04D992C208D14FB00951D11 /* CreateGameResponse.swift in Sources */,
@@ -1031,6 +1044,7 @@
 				E0FDB4E5208F77FD002DE90E /* DetailGameAssembly.swift in Sources */,
 				E0B38ED720911EBB000FF08A /* DetailGameSection.swift in Sources */,
 				E0D18F4920599F4800F8BD80 /* AuthenticationViewController.swift in Sources */,
+				E02BB1032091EE7300F81719 /* DetailGameHeaderPresenter.swift in Sources */,
 				DB77C1A7204DD828005174FA /* Team.swift in Sources */,
 				E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */,
 				E04E6446206EBB5500B7ADEE /* RegisterViewController.swift in Sources */,
@@ -1038,6 +1052,7 @@
 				E0B38ECF2090FDDE000FF08A /* ModelType.swift in Sources */,
 				E0FDB4FB208FA33F002DE90E /* DetailUserRepository.swift in Sources */,
 				DB77C1AD204DD856005174FA /* Clasification.swift in Sources */,
+				E02BB0FF2091EE5B00F81719 /* DetailGameHeaderView.swift in Sources */,
 				E0B38ED12090FECC000FF08A /* ThumbItem+Sport.swift in Sources */,
 				DB77C1A9204DD837005174FA /* Game.swift in Sources */,
 				E0604FEB2072A3EF00CCFFFD /* StripCell.swift in Sources */,
@@ -1080,6 +1095,7 @@
 				E0FDB4BA208DE627002DE90E /* InvitesPresenter.swift in Sources */,
 				E0D18F4E2059AE0C00F8BD80 /* AuthenticationResponse.swift in Sources */,
 				E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */,
+				E01665DD209243B200BF9371 /* Date+Utilities.swift in Sources */,
 				E0FDB506208FAE2A002DE90E /* DetailUserHeaderView.swift in Sources */,
 				E0FDB4F9208FA2D4002DE90E /* DetailUserAssembly.swift in Sources */,
 				E0DABA152048393400AA3A77 /* WebService.swift in Sources */,

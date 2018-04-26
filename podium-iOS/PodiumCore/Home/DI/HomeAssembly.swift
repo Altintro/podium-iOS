@@ -12,11 +12,14 @@ final public class HomeAssembly {
     
     private let webServiceAssembly: WebServiceAssembly
     private let authenticationAssembly: AuthenticationAssembbly
+    private let detailGameAssembly: DetailGameAssembly
     
     init(webServiceAssembly: WebServiceAssembly,
-         authenticationAssembly: AuthenticationAssembbly) {
+         authenticationAssembly: AuthenticationAssembbly,
+         detailGameAssembly: DetailGameAssembly) {
         self.webServiceAssembly = webServiceAssembly
         self.authenticationAssembly = authenticationAssembly
+        self.detailGameAssembly = detailGameAssembly
     }
     
     public func viewController() -> UIViewController {
@@ -24,7 +27,9 @@ final public class HomeAssembly {
     }
     
     func presenter() -> HomePresenter {
-        return HomePresenter(repository: repository(), authenticationNavigator: authenticationAssembly.authenticationNavigator())
+        return HomePresenter(repository: repository(),
+                             authenticationNavigator: authenticationAssembly.authenticationNavigator(),
+                             detailGameNavigator: detailGameAssembly.navigator())
     }
     
     func stripPresenter() -> StripPresenter {

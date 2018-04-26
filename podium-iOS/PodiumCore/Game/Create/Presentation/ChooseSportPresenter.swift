@@ -39,7 +39,7 @@ final class ChooseSportPresenter {
                 let items = response.result.map { ThumbItem(sport: $0) }
                 self.view?.update(with: items)
                 }, onError: { error in
-                    print("Error downloading sports")
+                    print("Error downloading sports: \(error)")
                 }, onDisposed: { [weak self] in
                     print("onDisposed")
                 })

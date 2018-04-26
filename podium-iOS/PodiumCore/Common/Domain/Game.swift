@@ -20,10 +20,10 @@ struct Game : Decodable {
     let wins            : Team?
     let loses           : Team?
     let concluded       : Bool?
-    let open            : Bool
+    let open            : Bool?
     let date            : String?
     let latitude        : Float?
     let longitude       : Float?
-    let modality        : Modality
-    let levelAverage    : Level?
+    let modality        : Modality?
+    let levelAverage    : String?
 }

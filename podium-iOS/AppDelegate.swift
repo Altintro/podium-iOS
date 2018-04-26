@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = queryParams["token"]
         UserDefaults.standard.set(token, forKey:"access-token")
         // ☝🏼this token should expire shortly, the me() request should return another valid token, then save it 👇🏽
-        appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().tokens()
+        appAssembly.coreAssembly.authenticationAssembly.authenticationRepository().tokens()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {  [weak self] response in
@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if(response.auth){
                         UserDefaults.standard.set(response.accessToken, forKey: "access-token")
                         UserDefaults.standard.set(response.refreshToken, forKey: "refresh-token")
-                        self.appAssembly.coreAssembly.authenticationAssembbly.navigationController.dismiss(animated: true, completion: nil)
+                        self.appAssembly.coreAssembly.authenticationAssembly.navigationController.dismiss(animated: true, completion: nil)
                     }
                 }, onError: { error in
                     print(error)
@@ -81,7 +81,7 @@ extension AppDelegate: UITabBarControllerDelegate {
             if  UserDefaults.standard.string(forKey: "access-token") != nil {
                 appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
             } else {
-                appAssembly.coreAssembly.authenticationAssembbly.authenticationNavigator().showAuthenticationViewController()
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
             }
             return false
         } else {

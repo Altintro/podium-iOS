@@ -10,13 +10,13 @@ import UIKit
 
 final public class DetailUserAssembly {
     
-    private let navigationController: UINavigationController
+    private let tabBarController: UITabBarController
     private let webServiceAssembly: WebServiceAssembly
     
     init(webServiceAssembly: WebServiceAssembly,
-         navigationController: UINavigationController) {
+         tabBarController: UITabBarController) {
         self.webServiceAssembly = webServiceAssembly
-        self.navigationController = navigationController
+        self.tabBarController = tabBarController
     }
     
     func viewController() -> DetailUserViewController {
