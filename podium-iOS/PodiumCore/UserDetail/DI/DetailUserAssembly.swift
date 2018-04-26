@@ -19,7 +19,7 @@ final public class DetailUserAssembly {
         self.navigationController = navigationController
     }
     
-    func viewController() -> DetailUserViewController {
+    public func viewController() -> DetailUserViewController {
         return DetailUserViewController(presenter: presenter(), headerPresenter: headerPresenter(), sportsPresenter: sportsPresenter(), gamesPresenter: gamesPresenter())
     }
     

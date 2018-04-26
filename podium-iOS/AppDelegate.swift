@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
         appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
         
-        //let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController()
-        let profileInitialViewController = UIViewController()
+        let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController()
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
         appAssembly.tabBarController.setViewControllers([
