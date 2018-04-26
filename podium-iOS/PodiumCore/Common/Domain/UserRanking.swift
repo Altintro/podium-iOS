@@ -13,5 +13,4 @@ struct UserRanking: Decodable {
     let sport   : Sport
     let ranking : Int
     let points  : Float
-    
 }

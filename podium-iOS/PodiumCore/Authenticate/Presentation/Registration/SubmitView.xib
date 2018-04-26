@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SubmitView" customModule="podium_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCL-n3-yee">
+                    <rect key="frame" x="45" y="0.0" width="285" height="54"/>
+                    <color key="backgroundColor" white="0.96784596972995329" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="3NQ-PF-cA5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                    <state key="normal" title="Sign up!">
+                        <color key="titleColor" white="0.20467122395833334" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OCL-n3-yee" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="45" id="M7F-2R-Bdk"/>
+                <constraint firstItem="OCL-n3-yee" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="fOm-kN-NuE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OCL-n3-yee" secondAttribute="trailing" constant="45" id="k2A-zv-xry"/>
+                <constraint firstItem="OCL-n3-yee" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="yzW-Uu-neh"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="submitButton" destination="OCL-n3-yee" id="OwM-VX-03U"/>
+            </connections>
+            <point key="canvasLocation" x="5.5" y="-154"/>
+        </view>
+    </objects>
+</document>

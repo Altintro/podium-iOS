@@ -7,39 +7,97 @@
 //
 
 import UIKit
+import Firebase
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
+    let appAssembly = AppAssembly()
+    var dummyCreateGameViewController = UIViewController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
+        appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
+        
+        let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController(userType: .me)
+        appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
+        
+        appAssembly.tabBarController.setViewControllers([
+            appAssembly.homeNavigationController,
+            dummyCreateGameViewController,
+            appAssembly.profileNavigationController],
+                                    animated: true)
+        appAssembly.tabBarController.delegate = self
+        appAssembly.window.rootViewController = appAssembly.tabBarController
+        appAssembly.window.makeKeyAndVisible()
+    
+        configureFirebase()
+
+        return true
+    }
+    
+    // Handle Universal links
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+
+        // If we use more than one deeplink, check the path to make difference between urls
+        let comps = URLComponents(url: userActivity.webpageURL!,
+                                  resolvingAgainstBaseURL: false)
+        var queryParams = [String: String] ()
+        comps?.queryItems?.forEach { queryParams[$0.name] = $0.value }
+        
+        let token = queryParams["token"]
+        UserDefaults.standard.set(token, forKey:"access-token")
+        // ☝🏼this token should expire shortly, the me() request should return another valid token, then save it 👇🏽
+        appAssembly.coreAssembly.authenticationAssembly.authenticationRepository().tokens()
+            .observeOn(MainScheduler.instance)
+            .subscribe(
+                onNext: {  [weak self] response in
+                    guard let `self` = self else {
+                        return
+                    }
+                    if(response.auth){
+                        UserDefaults.standard.set(response.accessToken, forKey: "access-token")
+                        UserDefaults.standard.set(response.refreshToken, forKey: "refresh-token")
+                        self.appAssembly.coreAssembly.authenticationAssembly.navigationController.dismiss(animated: true, completion: nil)
+                    }
+                }, onError: { error in
+                    print(error)
+                }, onDisposed: {
+                print("onDisposed")
+            })
+            .disposed(by: appAssembly.disposeBag)
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-
+  
 }
 
+extension AppDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        if viewController == dummyCreateGameViewController {
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            } else {
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
+            }
+            return false
+        } else if viewController == appAssembly.profileNavigationController {
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                return true
+            } else {
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
+            }
+            return true
+        } else {
+            return true
+        }
+    }
+}
+
+extension AppDelegate {
+    private func configureFirebase() {
+        FirebaseApp.configure()
+    }
+}
