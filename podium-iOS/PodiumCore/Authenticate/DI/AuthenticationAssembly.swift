@@ -64,14 +64,14 @@ final public class AuthenticationAssembbly {
                                  viewControllerProvider: self)
     }
     
-    func registerPresenter(type: RegisterType) -> RegisterPresenter {
+    func registerPresenter(type: RegisterType, email: String) -> RegisterPresenter {
         return RegisterPresenter(repository: authenticationRepository(),
                                  magicLinkNavigator: magicLinkNavigator(),
-                                 type: type)
+                                 type: type, email: email)
     }
     
-    func sportsPresenter() -> SportsPresenter {
-        return SportsPresenter()
+    func sportsPresenter() -> ThumbPresenter {
+        return ThumbPresenter()
     }
     
     
@@ -85,10 +85,9 @@ extension AuthenticationAssembbly: AuthenticationViewControllerProvider, EmailVi
     
     func registerViewController(registerType: RegisterType, email: String) -> UIViewController {
         let presenter : RegisterPresenter
-        presenter = registerPresenter(type: registerType)
+        presenter = registerPresenter(type: registerType, email: email)
         return RegisterViewController(presenter: presenter,
-                                      sportsPresenter: sportsPresenter(),
-                                      email: email)
+                                      sportsPresenter: sportsPresenter())
     }
     
     func emailViewController() -> UIViewController {

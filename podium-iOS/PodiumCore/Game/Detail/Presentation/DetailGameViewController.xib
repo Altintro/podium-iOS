@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailGameViewController" customModule="podium_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="stackView" destination="dgQ-cP-V1q" id="C1Y-CR-8Xm"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,12 +20,29 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-WR-Iop">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uvm-WR-Iop">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="dgQ-cP-V1q">
+                            <rect key="frame" x="0.0" y="64" width="375" height="246"/>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="dgQ-cP-V1q" secondAttribute="bottom" constant="337" id="0mn-Pf-pZg"/>
+                        <constraint firstItem="dgQ-cP-V1q" firstAttribute="leading" secondItem="uvm-WR-Iop" secondAttribute="leading" id="MZQ-r7-keo"/>
+                        <constraint firstItem="dgQ-cP-V1q" firstAttribute="width" secondItem="uvm-WR-Iop" secondAttribute="width" id="jOd-2s-hTY"/>
+                        <constraint firstItem="dgQ-cP-V1q" firstAttribute="top" secondItem="uvm-WR-Iop" secondAttribute="top" constant="64" id="pCX-c8-fFQ"/>
+                        <constraint firstAttribute="trailing" secondItem="dgQ-cP-V1q" secondAttribute="trailing" id="x61-KE-Cr8"/>
+                    </constraints>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="uvm-WR-Iop" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="IpT-TV-jUy"/>
+                <constraint firstItem="uvm-WR-Iop" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Mw3-EP-UPN"/>
+                <constraint firstItem="uvm-WR-Iop" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="SGI-ic-1i7"/>
+                <constraint firstItem="uvm-WR-Iop" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="f6f-gq-61b"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>

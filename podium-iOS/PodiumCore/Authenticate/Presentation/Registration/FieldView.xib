@@ -20,28 +20,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Type in something here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4J-j3-rgA">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Type in something here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4J-j3-rgA">
                     <rect key="frame" x="45" y="0.0" width="285" height="40"/>
-                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="neS-2H-0uA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-zn-QSQ">
+                <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="RKU-zn-QSQ">
                     <rect key="frame" x="45" y="50" width="285" height="30"/>
                     <color key="tintColor" red="0.69337815719999996" green="0.97828954459999995" blue="0.84651246459999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="26g-UM-PV5"/>
+                    </constraints>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Faf-yu-CgC" firstAttribute="trailing" secondItem="RKU-zn-QSQ" secondAttribute="trailing" constant="45" id="6ne-LP-DT1"/>
-                <constraint firstItem="RKU-zn-QSQ" firstAttribute="top" secondItem="S4J-j3-rgA" secondAttribute="bottom" constant="10" id="APC-wd-bwa"/>
                 <constraint firstItem="S4J-j3-rgA" firstAttribute="top" secondItem="Faf-yu-CgC" secondAttribute="top" id="aJP-Pf-EZ4"/>
                 <constraint firstItem="S4J-j3-rgA" firstAttribute="leading" secondItem="Faf-yu-CgC" secondAttribute="leading" constant="45" id="ab4-En-Yh8"/>
                 <constraint firstItem="Faf-yu-CgC" firstAttribute="trailing" secondItem="S4J-j3-rgA" secondAttribute="trailing" constant="45" id="b97-Fc-KaD"/>
                 <constraint firstItem="RKU-zn-QSQ" firstAttribute="leading" secondItem="Faf-yu-CgC" secondAttribute="leading" constant="45" id="d7L-bn-MHz"/>
+                <constraint firstItem="RKU-zn-QSQ" firstAttribute="top" secondItem="S4J-j3-rgA" secondAttribute="bottom" constant="10" id="uF8-ki-udX"/>
                 <constraint firstItem="RKU-zn-QSQ" firstAttribute="bottom" secondItem="Faf-yu-CgC" secondAttribute="bottom" id="vrW-uw-7gT"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -10,36 +10,84 @@ import Foundation
 import RxSwift
 
 protocol DetailGameView: class {
-    func update(with game: Game)
+    func update(with sections: [DetailGameSection])
+    func reload()
 }
 
 final class DetailGamePresenter {
     
-    private let repository: DetailGameRepository
-    private let disposeBag = DisposeBag()
+    private let repository: DetailGameRepositoryProtocol
+    private let authenticationNavigator: AuthenticationNavigator
+    private let detailUserNavigator: DetailUserNavigator
+    private let dateFormatter: DateFormatter
+
+    private let identifier: String
     weak var view: DetailGameView?
     
+    private let disposeBag = DisposeBag()
     
-    init(repository: DetailGameRepository){
+    init(repository: DetailGameRepositoryProtocol, authenticationNavigator: AuthenticationNavigator, detailUserNavigator: DetailUserNavigator, dateFormatter: DateFormatter, identifier: String){
         self.repository = repository
+        self.authenticationNavigator = authenticationNavigator
+        self.detailUserNavigator = detailUserNavigator
+        self.dateFormatter = dateFormatter
+        self.identifier = identifier
     }
     
     func didLoad() {
         loadContents()
     }
     
+    func didSelectParticipant(withIdentifier identifier: String) {
+        detailUserNavigator.showDetailUser(withIdentifier: identifier)
+    }
+    
+    func joinGame() {
+        if (UserDefaults.standard.string(forKey: "access-token") != nil) {
+            repository.joinGame(withIdentifier: identifier)
+                .observeOn(MainScheduler.instance)
+                .subscribe(onNext: {[weak self] sections in
+                    print("game joined")
+                    self?.view?.reload()
+                    }, onError: { error in
+                        print("Error joining game: \(error)")
+                }, onDisposed: { [weak self] in
+                    print("onDisposed")
+                })
+                .disposed(by: disposeBag)
+        } else {
+            authenticationNavigator.showAuthenticationViewController()
+        }
+    }
+    
     func loadContents() {
-        repository.gameDetail(with: "dummyId").observeOn(MainScheduler.instance)
-            .subscribe(onNext: {[weak self] response in
-                guard let `self` = self else {
-                    return
-                }
-                self.view?.update(with: response.result)
-                }, onError: { error in
-                    print("Error posting game")
+        repository.game(withIdentifier: identifier)
+            .map { [weak self] response in
+                self?.detailSections(for: response.result) ?? []
+            }
+            .observeOn(MainScheduler.instance)
+            .subscribe(onNext: {[weak self] sections in
+                self?.view?.update(with: sections)
+            }, onError: { error in
+                print("Error getting game detail: \(error)")
             }, onDisposed: { [weak self] in
                 print("onDisposed")
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func detailSections(for game: Game) -> [DetailGameSection] {
+        var detailSections: [DetailGameSection] = [
+            .header(DetailGameHeader(game: game, dateFormatter: dateFormatter))
+        ]
+        
+        let participants = game.participants?.map { ThumbItem(user: $0) }
+        if let participants = participants {
+            detailSections.append(.thumView(title: NSLocalizedString("Participants", comment: ""), items: participants))
+        }
+        
+        detailSections.append(.join(title: "Join the game!"))
+        
+        return detailSections
     }
 }

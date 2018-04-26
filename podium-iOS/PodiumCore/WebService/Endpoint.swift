@@ -25,6 +25,8 @@ internal enum Endpoint {
     case game(id: String)
     case joinGame(id: String)
     case createGame(data: [String: String])
+    case user(id: String)
+    case me
 }
 
 internal extension Endpoint {
@@ -89,6 +91,10 @@ private extension Endpoint {
             return .post
         case .createGame:
             return .post
+        case .user:
+            return .get
+        case .me:
+            return .get
         }
     }
     
@@ -121,11 +127,15 @@ private extension Endpoint {
         case .users:
             return "users"
         case .game(let id):
-            return "game/\(id)/detail"
+            return "games/\(id)/detail"
         case .joinGame(let id):
-            return "game/\(id)/join"
+            return "games/\(id)/join"
         case .createGame:
             return "games"
+        case .user(let id):
+            return "users/\(id)/detail"
+        case .me:
+            return "users/me"
         }
     }
     
@@ -162,6 +172,10 @@ private extension Endpoint {
         case .joinGame:
             return [:]
         case .createGame:
+            return [:]
+        case .user:
+            return [:]
+        case .me:
             return [:]
         }
     }
@@ -200,6 +214,10 @@ private extension Endpoint {
             return [:]
         case .createGame(let data):
             return data
+        case .user:
+            return [:]
+        case .me:
+            return [:]
         }
     }
     
@@ -235,10 +253,14 @@ private extension Endpoint {
         case .game:
             return [:]
         case .joinGame:
-            return ["x-refresh-token": UserDefaults.standard.string(forKey: "refresh-token") ?? ""]
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         case .createGame:
             return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? "",
                     "Content-Type": "application/json"]
+        case .user:
+            return [:]
+        case .me:
+            return ["x-access-token": UserDefaults.standard.string(forKey: "access-token") ?? ""]
         }
     }
 }

@@ -11,7 +11,7 @@ import RxSwift
 protocol RegisterView : class {
     var title: String? { get set }
     func update(with sections: [RegisterSection])
-    func updateSection(with sports: [Sport])
+    func updateSection(with items: [ThumbItem])
     func dismissAll()
 }
 
@@ -20,14 +20,18 @@ final class RegisterPresenter {
     private let repository: AuthenticationRepositoryProtocol
     private let magicLinkNavigator: MagicLinkNavigator
     private let registerType: RegisterType
+    private let email: String?
+    
+    var sportsIdentifiers = [String]()
     let disposeBag = DisposeBag()
     
     weak var view: RegisterView?
     
-    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator, type: RegisterType){
+    init(repository: AuthenticationRepositoryProtocol, magicLinkNavigator: MagicLinkNavigator, type: RegisterType, email: String?){
         self.repository = repository
         self.magicLinkNavigator = magicLinkNavigator
         self.registerType = type
+        self.email = email ?? ""
     }
     
     func didLoad() {
@@ -42,7 +46,8 @@ final class RegisterPresenter {
                 guard let `self` = self else {
                     return
                 }
-                self.view?.updateSection(with: response.result)
+                let items = response.result.map { ThumbItem(sport: $0) }
+                self.view?.updateSection(with: items)
                 }, onError: { error in
                     print("Email downloading sports")
                 }, onDisposed: { [weak self] in
@@ -54,7 +59,7 @@ final class RegisterPresenter {
     private func registerSections() -> [RegisterSection] {
         var registerSections : [RegisterSection] = [
             .field(type: .alias),
-            .sports(title: NSLocalizedString("What sports do you practice?", comment: ""), items:[]),
+            .thumbView(title: NSLocalizedString("What sports do you practice?", comment: ""), items:[]),
             .submit(title: "Sign up!")
         ]
         if registerType == .email{
@@ -64,11 +69,14 @@ final class RegisterPresenter {
     }
     
     func submit(withUserData data: [String : String]) {
+        var userData = data
+        userData["email"] = email
+        userData["sports"] = sportsIdentifiers.joined(separator: ",")
         switch registerType {
         case .email:
-            emailRegisterRequest(with: data)
+            emailRegisterRequest(with: userData)
         case .social:
-            socialRegisterRequest(with: data)
+            socialRegisterRequest(with: userData)
         }
         
     }

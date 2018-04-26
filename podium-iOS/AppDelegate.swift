@@ -21,8 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let homeInitialViewController = appAssembly.coreAssembly.homeAssembly.viewController()
         appAssembly.homeNavigationController.pushViewController(homeInitialViewController, animated: false)
         
-        let profileInitialViewController = UIViewController()
-        profileInitialViewController.view?.backgroundColor = .blue
+        let profileInitialViewController = appAssembly.coreAssembly.detailUserAssembly.viewController(userType: .me)
         appAssembly.profileNavigationController.pushViewController(profileInitialViewController, animated: false)
         
         appAssembly.tabBarController.setViewControllers([
@@ -51,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = queryParams["token"]
         UserDefaults.standard.set(token, forKey:"access-token")
         // ☝🏼this token should expire shortly, the me() request should return another valid token, then save it 👇🏽
-        appAssembly.coreAssembly.authenticationAssembbly.authenticationRepository().tokens()
+        appAssembly.coreAssembly.authenticationAssembly.authenticationRepository().tokens()
             .observeOn(MainScheduler.instance)
             .subscribe(
                 onNext: {  [weak self] response in
@@ -61,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     if(response.auth){
                         UserDefaults.standard.set(response.accessToken, forKey: "access-token")
                         UserDefaults.standard.set(response.refreshToken, forKey: "refresh-token")
-                        self.appAssembly.coreAssembly.authenticationAssembbly.navigationController.dismiss(animated: true, completion: nil)
+                        self.appAssembly.coreAssembly.authenticationAssembly.navigationController.dismiss(animated: true, completion: nil)
                     }
                 }, onError: { error in
                     print(error)
@@ -78,8 +77,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController == dummyCreateGameViewController {
-            appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                appAssembly.coreAssembly.createGameAssembly.navigator().showCreateGameViewController()
+            } else {
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
+            }
             return false
+        } else if viewController == appAssembly.profileNavigationController {
+            if  UserDefaults.standard.string(forKey: "access-token") != nil {
+                return true
+            } else {
+                appAssembly.coreAssembly.authenticationAssembly.authenticationNavigator().showAuthenticationViewController()
+            }
+            return true
         } else {
             return true
         }

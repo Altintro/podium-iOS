@@ -22,18 +22,15 @@ class RegisterViewController: UIViewController, CustomNavigationButtonsView {
     // MARK: - Properties
     
     private let presenter: RegisterPresenter
-    private let sportsPresenter: SportsPresenter
+    private let sportsPresenter: ThumbPresenter
     private let disposeBag = DisposeBag()
-    private let email: String
-    private var selectedSports = [String]()
     
     // MARK: - Initialization
     
-    init(presenter: RegisterPresenter, sportsPresenter: SportsPresenter, email: String?) {
+    init(presenter: RegisterPresenter, sportsPresenter: ThumbPresenter) {
         self.presenter = presenter
         self.sportsPresenter = sportsPresenter
-        self.email = email ?? ""
-        
+
         super.init(nibName: nil, bundle: Bundle(for: type(of: self)))
     }
     
@@ -55,11 +52,11 @@ extension RegisterViewController: RegisterView {
         sections.forEach { addView(for: $0) }
     }
     
-    func updateSection(with sports: [Sport]) {
+    func updateSection(with items: [ThumbItem]) {
         stackView.arrangedSubviews.forEach {
-            if ($0.isKind(of: SportsView.self)){
-                let sportsView = $0 as! SportsView
-                sportsView.items = sports
+            if ($0.isKind(of: ThumbView.self)){
+                let sportsView = $0 as! ThumbView
+                sportsView.items = items
             }
         }
     }
@@ -76,12 +73,11 @@ private extension RegisterViewController {
         switch section {
         case .field(let type):
             view = fieldView(withType: type)
-        case .sports(let title, let items):
+        case .thumbView(let title, let items):
             view = sportsView(withTitle: title, items: items)
         case .submit(let title):
             view = submitView(withTitle: title)
         }
-        
         
         stackView.addArrangedSubview(view)
     }
@@ -93,18 +89,18 @@ private extension RegisterViewController {
         return field
     }
     
-    func sportsView(withTitle title: String, items: [Sport]) -> UIView {
-        let sportsView = SportsView.instantiate()
+    func sportsView(withTitle title: String, items: [ThumbItem]) -> UIView {
+        let sportsView = ThumbView.instantiate()
         sportsView.presenter = sportsPresenter
         sportsView.title = title
         sportsView.items = items
         sportsView.itemSelected
             .subscribe(onNext: {[weak self] item in
-                let index = sportsView.items.index(where: { (sport) -> Bool in
-                    sport.name == item.name
+                let index = sportsView.items.index(where: { (thumbItem) -> Bool in
+                    thumbItem.identifier == item.identifier
                 })
                 sportsView.items.remove(at: index!)
-                self?.selectedSports.append(item.name.lowercased())
+                self?.presenter.sportsIdentifiers.append(item.identifier)
             })
             .disposed(by: sportsView.disposeBag)
         
@@ -122,8 +118,6 @@ private extension RegisterViewController {
     
     private func submit () {
         var userData = [String: String]()
-        userData["email"] = email
-        userData["sports"] = selectedSports.joined(separator: ",")
         stackView.arrangedSubviews.forEach {
             if($0 .isKind(of: FieldView.self)){
                 userData[(($0 as! FieldView).type?.rawValue)!] = ($0 as! FieldView).textField.text

@@ -58,6 +58,8 @@ extension CustomNavigationButtonsView where Self: UIViewController {
         closeButton.rx.tap.bind {
             if let parentVC = self.parent as? UINavigationController {
                 parentVC.dismiss(animated: true, completion: nil)
+            } else {
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

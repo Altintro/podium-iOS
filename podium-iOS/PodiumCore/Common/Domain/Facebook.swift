@@ -12,6 +12,16 @@ struct Facebook: Decodable {
     
     let id: String
     let name: String
-    let picture: String
     let email: String
+    let picture: FacebookPicture
+    
+    struct FacebookPicture: Decodable {
+        let data: FacebookPictureData
+    }
+    
+    struct FacebookPictureData: Decodable {
+        let url : String
+    }
 }
+
+

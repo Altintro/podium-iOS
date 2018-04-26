@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct StripItem {
-    let title: String
-    let participants: [User]
-    let sport: String
-}
-
 enum HomeSection {
     case strip(items: [StripItem])
 }

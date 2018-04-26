@@ -30,7 +30,6 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.prefersLargeTitles = true
         presenter.view = self
         presenter.didLoad()
@@ -38,7 +37,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        presenter.didAppear()
+        self.navigationController?.isNavigationBarHidden = false
     }
 }
 
@@ -69,7 +68,7 @@ extension HomeViewController {
         
         stripView.itemSelected
         .subscribe(onNext: {[weak self] item in
-            self?.presenter.gameTapped()
+            self?.presenter.gameTapped(withIdentifier: item.identifier)
         })
         .disposed(by: stripView.disposeBag)
         

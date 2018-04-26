@@ -12,14 +12,14 @@ protocol CreateGameViewControllerProvider: class {
     func createGameViewController() -> UIViewController
 }
 
-class CreateGameViewController: UIViewController {
+class CreateGameViewController: UIViewController, CustomNavigationButtonsView {
 
     @IBOutlet weak var sectionTitle: UILabel!
     @IBOutlet weak var containerView: UIView!
     
     private let presenter: CreateGamePresenter
     private let chooseSportPresenter: ChooseSportPresenter
-    private let sportsPresenter: SportsPresenter
+    private let sportsPresenter: ThumbPresenter
     private let invitesPresenter: InvitesPresenter
     private let chooseMetadataPresenter: ChooseMetadataPresenter
     private let finishPresenter: FinishPresenter
@@ -27,7 +27,7 @@ class CreateGameViewController: UIViewController {
     
     init(presenter: CreateGamePresenter,
          chooseSportPresenter: ChooseSportPresenter,
-         sportsPresenter: SportsPresenter,
+         sportsPresenter: ThumbPresenter,
          invitesPresenter: InvitesPresenter,
          chooseMetadataPresenter: ChooseMetadataPresenter,
          finishPresenter: FinishPresenter) {
@@ -52,6 +52,7 @@ class CreateGameViewController: UIViewController {
         presenter.view = self
         presenter.didLoad()
         configureInitialView()
+        configureCloseButton()
     }
     
     func configureInitialView() {

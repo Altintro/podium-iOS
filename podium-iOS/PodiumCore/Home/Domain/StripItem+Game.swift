@@ -10,6 +10,7 @@ import Foundation
 
 extension StripItem {
     init(game: Game) {
+        identifier = game._id
         title = game.name
         sport = game.sport?.name ?? ""
         participants = game.participants ?? []

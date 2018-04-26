@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-final class SportCell: UICollectionViewCell, ReusableView, NibLoadableView{
+final class ThumbItemCell: UICollectionViewCell, ReusableView, NibLoadableView{
     
     @IBOutlet weak var imageView: UIImageView!
     
