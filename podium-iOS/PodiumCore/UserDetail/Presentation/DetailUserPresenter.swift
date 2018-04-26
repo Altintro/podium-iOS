@@ -16,12 +16,14 @@ protocol DetailUserView : class {
 final class DetailUserPresenter {
     
     private let repository: DetailUserRepositoryProtocol
+    private let identifier: String
     private let disposeBag = DisposeBag()
     
     weak var view: DetailUserView?
     
-    init(repository: DetailUserRepositoryProtocol){
+    init(repository: DetailUserRepositoryProtocol, identifier: String){
         self.repository = repository
+        self.identifier = identifier
     }
     
     func didLoad() {
@@ -31,7 +33,7 @@ final class DetailUserPresenter {
 
 private extension DetailUserPresenter {
     func loadContents() {
-        repository.user(withIdentifier: "dummyId")
+        repository.user(withIdentifier: identifier)
             .map { [weak self] response in
                 self?.detailUserSections(for: response.result) ?? []
             }

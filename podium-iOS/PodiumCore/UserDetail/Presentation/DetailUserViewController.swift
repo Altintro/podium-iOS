@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DetailUserViewControllerProvider: class {
+    func detailUserViewController(identifier: String) -> UIViewController
+}
+
 class DetailUserViewController: UIViewController {
     
     @IBOutlet weak var stackView: UIStackView!

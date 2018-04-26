@@ -19,12 +19,12 @@ final public class DetailUserAssembly {
         self.tabBarController = tabBarController
     }
     
-    func viewController() -> DetailUserViewController {
-        return DetailUserViewController(presenter: presenter(), headerPresenter: headerPresenter(), sportsPresenter: sportsPresenter(), gamesPresenter: gamesPresenter())
-    }
+//    func viewController() -> DetailUserViewController {
+//        return DetailUserViewController(presenter: presenter(), headerPresenter: headerPresenter(), sportsPresenter: sportsPresenter(), gamesPresenter: gamesPresenter())
+//    }
     
-    func presenter() -> DetailUserPresenter {
-        return DetailUserPresenter(repository: repository())
+    func presenter(identifier: String) -> DetailUserPresenter {
+        return DetailUserPresenter(repository: repository(), identifier: identifier)
     }
     
     func repository() -> DetailUserRepository {
@@ -43,5 +43,17 @@ final public class DetailUserAssembly {
         return StripPresenter()
     }
     
-    
+    func navigator() -> DetailUserNavigator {
+        return DetailUserNavigator(tabBarController: tabBarController,
+                                   viewControllerProvider: self)
+    }
+}
+
+extension DetailUserAssembly: DetailUserViewControllerProvider {
+    func detailUserViewController(identifier: String) -> UIViewController {
+        return DetailUserViewController(presenter: presenter(identifier: identifier),
+                                        headerPresenter: headerPresenter(),
+                                        sportsPresenter: sportsPresenter(),
+                                        gamesPresenter: gamesPresenter())
+    }
 }

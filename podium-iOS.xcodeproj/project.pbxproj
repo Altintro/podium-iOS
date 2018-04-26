@@ -19,6 +19,7 @@
 		E01665D92091F86D00BF9371 /* StripItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665D82091F86D00BF9371 /* StripItem.swift */; };
 		E01665DB2092018500BF9371 /* DetailGameNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DA2092018500BF9371 /* DetailGameNavigator.swift */; };
 		E01665DD209243B200BF9371 /* Date+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DC209243B200BF9371 /* Date+Utilities.swift */; };
+		E01665DF209251D300BF9371 /* DetailUserNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01665DE209251D300BF9371 /* DetailUserNavigator.swift */; };
 		E01B1B022053082A007C6016 /* CoreAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01B1B012053082A007C6016 /* CoreAssembly.swift */; };
 		E02BB0FF2091EE5B00F81719 /* DetailGameHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */; };
 		E02BB1012091EE6500F81719 /* DetailGameHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */; };
@@ -27,9 +28,6 @@
 		E02F5BDF204B026D00531033 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BDE204B026D00531033 /* AppAssembly.swift */; };
 		E02F5BE6204B06A100531033 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE5204B06A100531033 /* User.swift */; };
 		E02F5BE8204B088000531033 /* Tournament.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02F5BE7204B088000531033 /* Tournament.swift */; };
-		E030086220866A61007C9F8F /* ferprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = E030085F20866A60007C9F8F /* ferprofile.png */; };
-		E030086320866A61007C9F8F /* paulaprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = E030086020866A61007C9F8F /* paulaprofile.png */; };
-		E030086420866A61007C9F8F /* loreprofile.png in Resources */ = {isa = PBXBuildFile; fileRef = E030086120866A61007C9F8F /* loreprofile.png */; };
 		E030086620867C71007C9F8F /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E030086520867C71007C9F8F /* UIView+Shadow.swift */; };
 		E0322527207CAACD00A4A848 /* AuthenticationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0322526207CAACD00A4A848 /* AuthenticationNavigator.swift */; };
 		E0384B7F206BEE4F00FFA71F /* MagicLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */; };
@@ -159,6 +157,7 @@
 		E01665D82091F86D00BF9371 /* StripItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripItem.swift; sourceTree = "<group>"; };
 		E01665DA2092018500BF9371 /* DetailGameNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameNavigator.swift; sourceTree = "<group>"; };
 		E01665DC209243B200BF9371 /* Date+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utilities.swift"; sourceTree = "<group>"; };
+		E01665DE209251D300BF9371 /* DetailUserNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUserNavigator.swift; sourceTree = "<group>"; };
 		E01B1B012053082A007C6016 /* CoreAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAssembly.swift; sourceTree = "<group>"; };
 		E02BB0FE2091EE5B00F81719 /* DetailGameHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGameHeaderView.swift; sourceTree = "<group>"; };
 		E02BB1002091EE6500F81719 /* DetailGameHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailGameHeaderView.xib; sourceTree = "<group>"; };
@@ -167,9 +166,6 @@
 		E02F5BDE204B026D00531033 /* AppAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAssembly.swift; sourceTree = "<group>"; };
 		E02F5BE5204B06A100531033 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E02F5BE7204B088000531033 /* Tournament.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tournament.swift; sourceTree = "<group>"; };
-		E030085F20866A60007C9F8F /* ferprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ferprofile.png; sourceTree = "<group>"; };
-		E030086020866A61007C9F8F /* paulaprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paulaprofile.png; sourceTree = "<group>"; };
-		E030086120866A61007C9F8F /* loreprofile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loreprofile.png; sourceTree = "<group>"; };
 		E030086520867C71007C9F8F /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		E0322526207CAACD00A4A848 /* AuthenticationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationNavigator.swift; sourceTree = "<group>"; };
 		E0384B7D206BEE4F00FFA71F /* MagicLinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicLinkViewController.swift; sourceTree = "<group>"; };
@@ -346,7 +342,6 @@
 		E02F5BE1204B067E00531033 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E030085E20866A3A007C9F8F /* Dummy images */,
 				E05107BE205D966F001836D4 /* aqua.ttf */,
 				E0384B81206BF0D900FFA71F /* Montserrat-SemiBold.ttf */,
 				E05107BC205D42AF001836D4 /* Montserrat-Regular.ttf */,
@@ -368,16 +363,6 @@
 				E01665DC209243B200BF9371 /* Date+Utilities.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		E030085E20866A3A007C9F8F /* Dummy images */ = {
-			isa = PBXGroup;
-			children = (
-				E030085F20866A60007C9F8F /* ferprofile.png */,
-				E030086120866A61007C9F8F /* loreprofile.png */,
-				E030086020866A61007C9F8F /* paulaprofile.png */,
-			);
-			path = "Dummy images";
 			sourceTree = "<group>";
 		};
 		E04D9920208D143300951D11 /* Game */ = {
@@ -810,6 +795,7 @@
 		E0FDB4F7208FA2B8002DE90E /* Navigators */ = {
 			isa = PBXGroup;
 			children = (
+				E01665DE209251D300BF9371 /* DetailUserNavigator.swift */,
 			);
 			path = Navigators;
 			sourceTree = "<group>";
@@ -901,14 +887,11 @@
 				E0C278A62064173100C17DD2 /* EmailViewController.xib in Resources */,
 				E02BB1012091EE6500F81719 /* DetailGameHeaderView.xib in Resources */,
 				E0FDB4EF208F78D8002DE90E /* DetailGameViewController.xib in Resources */,
-				E030086320866A61007C9F8F /* paulaprofile.png in Resources */,
 				E0FDB4D3208E3421002DE90E /* FinishViewController.xib in Resources */,
 				E0DABA012047FF0A00AA3A77 /* Assets.xcassets in Resources */,
-				E030086220866A61007C9F8F /* ferprofile.png in Resources */,
 				E0384B82206BF0D900FFA71F /* Montserrat-SemiBold.ttf in Resources */,
 				DBD632982073FD8500A1CC26 /* GoogleService-Info.plist in Resources */,
 				E0FDB4B8208DE462002DE90E /* InvitesViewController.xib in Resources */,
-				E030086420866A61007C9F8F /* loreprofile.png in Resources */,
 				E0604FED2072A3FE00CCFFFD /* StripCell.xib in Resources */,
 				E0604FE72072A3D500CCFFFD /* StripView.xib in Resources */,
 				E05107BD205D42AF001836D4 /* Montserrat-Regular.ttf in Resources */,
@@ -1023,6 +1006,7 @@
 				E0604FF42072A42D00CCFFFD /* HomeViewController.swift in Sources */,
 				E0C278A52064173100C17DD2 /* EmailViewController.swift in Sources */,
 				E04D9938208D1E2C00951D11 /* ChooseSportPresenter.swift in Sources */,
+				E01665DF209251D300BF9371 /* DetailUserNavigator.swift in Sources */,
 				E0FDB4B7208DE462002DE90E /* InvitesViewController.swift in Sources */,
 				E0604FEF2072A40900CCFFFD /* StripPresenter.swift in Sources */,
 				E0EFB24B208782D300A3E76B /* ThumbViewLayout.swift in Sources */,

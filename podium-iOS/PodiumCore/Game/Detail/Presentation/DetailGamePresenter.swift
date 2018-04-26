@@ -18,6 +18,7 @@ final class DetailGamePresenter {
     
     private let repository: DetailGameRepositoryProtocol
     private let authenticationNavigator: AuthenticationNavigator
+    private let detailUserNavigator: DetailUserNavigator
     private let dateFormatter: DateFormatter
 
     private let identifier: String
@@ -25,9 +26,10 @@ final class DetailGamePresenter {
     
     private let disposeBag = DisposeBag()
     
-    init(repository: DetailGameRepositoryProtocol, authenticationNavigator: AuthenticationNavigator, dateFormatter: DateFormatter, identifier: String){
+    init(repository: DetailGameRepositoryProtocol, authenticationNavigator: AuthenticationNavigator, detailUserNavigator: DetailUserNavigator, dateFormatter: DateFormatter, identifier: String){
         self.repository = repository
         self.authenticationNavigator = authenticationNavigator
+        self.detailUserNavigator = detailUserNavigator
         self.dateFormatter = dateFormatter
         self.identifier = identifier
     }

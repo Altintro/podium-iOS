@@ -13,16 +13,21 @@ final public class DetailGameAssembly {
     
     let tabBarController: UITabBarController
     let authenticationAssembly: AuthenticationAssembbly
+    let detailUserAssembly: DetailUserAssembly
     let webServiceAssembly: WebServiceAssembly
     
-    init(webServiceAssembly: WebServiceAssembly, authenticationAssembly: AuthenticationAssembbly, tabBarController: UITabBarController) {
+    init(webServiceAssembly: WebServiceAssembly,
+         authenticationAssembly: AuthenticationAssembbly,
+         detailUserAssembly: DetailUserAssembly,
+         tabBarController: UITabBarController) {
         self.webServiceAssembly = webServiceAssembly
         self.authenticationAssembly = authenticationAssembly
+        self.detailUserAssembly = detailUserAssembly
         self.tabBarController = tabBarController
     }
     
     func presenter (identifier: String) -> DetailGamePresenter {
-        return DetailGamePresenter(repository: repository(), authenticationNavigator: authenticationAssembly.authenticationNavigator(), dateFormatter: webServiceAssembly.dateFormatter, identifier: identifier)
+        return DetailGamePresenter(repository: repository(), authenticationNavigator: authenticationAssembly.authenticationNavigator(), detailUserNavigator: detailUserAssembly.navigator(), dateFormatter: webServiceAssembly.dateFormatter, identifier: identifier)
     }
     
     func headerPresenter() -> DetailGameHeaderPresenter {
