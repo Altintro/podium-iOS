@@ -39,6 +39,8 @@ class DetailUserViewController: UIViewController, CustomNavigationButtonsView {
         self.navigationController?.isNavigationBarHidden = true
         if(presenter.userType == .other){
             configureBackButton()
+        }else {
+            stackView.frame = CGRect(x: 0, y: 0, width: stackView.frame.width, height: stackView.frame.height)
         }
         presenter.view = self
         presenter .didLoad()

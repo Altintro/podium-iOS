@@ -16,7 +16,7 @@ final class StripPresenter {
         cell.title.text = item.title
         cell.subtitle.text = item.sport.uppercased()
         
-        let thumbnails = cell.background.subviews.filter { $0.isKind(of: UIImageView.self) }
+        let thumbnails = cell.background.subviews.reversed().filter { $0.isKind(of: UIImageView.self) }
         var i: Int = 0
         item.participants.forEach {
             let imageView = thumbnails[i] as! UIImageView
