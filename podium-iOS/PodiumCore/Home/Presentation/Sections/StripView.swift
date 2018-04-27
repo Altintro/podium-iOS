@@ -15,7 +15,7 @@ final class StripView: UIView, NibLoadableView {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private enum Constants {
-        static let height: CGFloat = UIScreen.main.bounds.height - 220
+        static let height: CGFloat = UIScreen.main.bounds.height - 160
     }
     
     var presenter: StripPresenter?
@@ -53,6 +53,7 @@ final class StripView: UIView, NibLoadableView {
     }
     
     override var intrinsicContentSize: CGSize {
+        
         return CGSize(width: UIViewNoIntrinsicMetric, height: Constants.height)
     }
     

@@ -14,6 +14,7 @@ protocol DetailUserViewControllerProvider: class {
 
 class DetailUserViewController: UIViewController, CustomNavigationButtonsView {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     
     private let presenter: DetailUserPresenter
@@ -39,8 +40,6 @@ class DetailUserViewController: UIViewController, CustomNavigationButtonsView {
         self.navigationController?.isNavigationBarHidden = true
         if(presenter.userType == .other){
             configureBackButton()
-        }else {
-            stackView.frame = CGRect(x: 0, y: 0, width: stackView.frame.width, height: stackView.frame.height)
         }
         presenter.view = self
         presenter .didLoad()
