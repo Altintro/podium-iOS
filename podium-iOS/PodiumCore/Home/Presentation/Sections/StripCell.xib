@@ -33,6 +33,13 @@
                                 <constraint firstAttribute="width" constant="30" id="YzY-r5-oEx"/>
                             </constraints>
                         </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-vj-q52">
+                            <rect key="frame" x="65" y="142" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="3Po-Ab-EXf"/>
+                                <constraint firstAttribute="width" constant="30" id="nW7-vv-QWI"/>
+                            </constraints>
+                        </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xih-Fz-gW9">
                             <rect key="frame" x="87" y="142" width="30" height="30"/>
                             <constraints>
@@ -55,13 +62,6 @@
                             <color key="textColor" red="0.46448683375634514" green="0.46448683375634514" blue="0.46448683375634514" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kKA-vj-q52">
-                            <rect key="frame" x="65" y="142" width="30" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="3Po-Ab-EXf"/>
-                                <constraint firstAttribute="width" constant="30" id="nW7-vv-QWI"/>
-                            </constraints>
-                        </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>

@@ -19,7 +19,7 @@ class MainTabBarController: UITabBarController {
         let profileIcon = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "profile_btn"), selectedImage: #imageLiteral(resourceName: "profile_btn"))
         
         tabBarItems = [homeIcon, createIcon, profileIcon]
-        tabBarItems.forEach { $0.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -9, right: 0)}
+        tabBarItems.forEach { $0.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -9, right: 0)}
         
         super.init(nibName: nil, bundle: nil)
     }

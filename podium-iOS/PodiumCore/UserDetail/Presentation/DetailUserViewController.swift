@@ -14,6 +14,7 @@ protocol DetailUserViewControllerProvider: class {
 
 class DetailUserViewController: UIViewController, CustomNavigationButtonsView {
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var stackView: UIStackView!
     
     private let presenter: DetailUserPresenter
